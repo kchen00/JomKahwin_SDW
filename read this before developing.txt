@@ -1,0 +1,5 @@
+run this following commands before starting developing
+composer install
+copy .env.exmaple .env
+rename APP_NAME and DB_DATABASE to JomKahwin_SDW
+php artisan key:generate
