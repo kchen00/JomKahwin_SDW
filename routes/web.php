@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // a route to show user the homepage
-Route::view("/", "homepage");
+Route::view("/", "homepage.homepage");
 
 // a route to show user the contact page
 Route::view("/contact", "contact");
