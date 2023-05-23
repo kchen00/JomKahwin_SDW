@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// a route to show user the homepage
+Route::view("/", "homepage");
+
+// a route to show user the contact page
+Route::view("/contact", "contact");
