@@ -1,7 +1,8 @@
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
-
+        <p>DAFTAR AKAUN BAHARU</p><br>
+        <p>Sila masukkan maklumat seperti berikut</p>
         <!-- Ic number -->
         <div class="mt-4">
             <x-input-label for="ic_number" :value="__('Nombor IC')" />
@@ -38,18 +39,20 @@
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
-    
-        <!-- Gender -->
+        
+        <!-- choose gender -->
         <div class="mt-4">
-            <x-input-label for="gender" :value="__('Jantina')" />
-            {{-- <x-dropdown/>  --}}
-            <x-text-input id="gender" class="block mt-1 w-full" type="gender" name="gender" :value="old('gender')" required autocomplete="gender" />
-            <x-input-error :messages="$errors->get('gender')" class="mt-2" />
+            {{-- <x-input-label for="ic_number" :value="__('Sila pilih jantina anda')" /> --}}
+            <select selected="default" class="block mt-1 w-full">
+                <option selected disabled hidden>Silih Pilih Jantina Anda</option>
+                <option value="M">Lelaki</option>
+                <option value="F">Perempuan</option>
+            </select>
         </div>
 
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
+                {{ __('Sudah daftar?') }}
             </a>
 
             <x-primary-button class="ml-4">
