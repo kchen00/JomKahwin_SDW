@@ -4,8 +4,8 @@
 
         <!-- IC number -->
         <div>
-            <x-input-label for="name" :value="__('Nombor IC')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('ic_num')" required autofocus autocomplete="name" />
+            <x-input-label for="ic_num" :value="__('Nombor IC')" />
+            <x-text-input id="ic_num" class="block mt-1 w-full" type="text" name="name" :value="old('ic_num')" required autofocus autocomplete="ic_num" />
             <x-input-error :messages="$errors->get('ic_num')" class="mt-2" />
         </div>
         
@@ -42,7 +42,7 @@
         <!-- Gender -->
         <div class="mt-4">
             <x-input-label for="gender" :value="__('JANTINA')" />
-            <select class="block mt-1 w-full">
+            <select class="block mt-1 w-full" name="gender">
                 <option value="" selected hidden disabled>SILA PILIH JANTINA ANDA</option>
                 <option value="M">LELAKI</option>
                 <option value="F">PEREMPUAN</option>
