@@ -43,7 +43,7 @@
         <!-- choose gender -->
         <div class="mt-4">
             {{-- <x-input-label for="ic_number" :value="__('Sila pilih jantina anda')" /> --}}
-            <select selected="default" class="block mt-1 w-full">
+            <select selected="default" class="block mt-1 w-full" name="gender">
                 <option selected disabled hidden>Silih Pilih Jantina Anda</option>
                 <option value="M">Lelaki</option>
                 <option value="F">Perempuan</option>
