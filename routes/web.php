@@ -18,8 +18,12 @@ Route::get('/', function () {
     return view('homepage.homepage');
 });
 
-Route::get('/incentive', function () {
-    return view('incentive.dashboard');
+Route::get('/Incentive-Admin', function () {
+    return view('IncentiveAdmin.dashboard');
+});
+
+Route::get('/Incentive-User', function () {
+    return view('ManageSpecialIncentiveView.User.UserMainPageView');
 });
 
 Route::get('/dashboard', function () {

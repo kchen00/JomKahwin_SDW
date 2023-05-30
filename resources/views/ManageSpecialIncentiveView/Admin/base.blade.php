@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="https://www.eperolehan.gov.my/documents/10182/17020/agency-links-02.png">
     
 
-	<title>E-Munakahat</title>
+	<title>MOF - Sistem Cukai Pelancongan (MyTTX)</title>
 
 	<style>
 		body {
@@ -102,8 +102,8 @@
 				<div class="container-fluid">
 
 					{{-- Yield --}}
-                    @yield('incentive.dashboard')
-        
+                    @yield('ManageSpecialIncentiveView.Admin.AdminMainPageView')
+      
 
 
 
