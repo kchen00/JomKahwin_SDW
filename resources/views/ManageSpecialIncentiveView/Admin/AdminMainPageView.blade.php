@@ -1,5 +1,5 @@
-@extends('ManageSpecialIncentiveView.Admin.base')
-@section('ManageSpecialIncentiveView.Admin.AdminMainPageView')
+@extends('incentive.base')
+@section('incentive.dashboard')
 
 <div class="header">
     <h1 class="header-title">
