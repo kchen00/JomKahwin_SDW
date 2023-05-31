@@ -11,19 +11,22 @@ class IIncentiveController extends Controller
    
     public function index()
     {
-        //
+        $i_incentive = I_incentive::all();
+        return view ('ManageSpecialIncentiveView.User.UserApplyIncentiveView',[
+            'user-apply' => $i_incentive
+        ]);
     }
 
    
     public function create()
     {
-        //
+        
     }
 
   
     public function store(StoreI_incentiveRequest $request)
     {
-        //
+        
     }
 
 

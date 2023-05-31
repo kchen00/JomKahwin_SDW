@@ -128,6 +128,8 @@
 
 					{{-- Yield --}}
                     @yield('ManageSpecialIncentiveView.User.UserMainPageView')
+					@yield('ManageSpecialIncentiveView.User.UserViewStatusIncentiveView')
+					@yield('ManageSpecialIncentiveView.User.UserApplyIncentiveView')
 					</div>
 
 			</main>
