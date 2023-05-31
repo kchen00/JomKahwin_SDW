@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('m_marriages', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('U_userID');
-            $table->foreignId('ST_staffID');
+            $table->id("M_marriageID");
+            // $table->foreignId('U_userID');
+            // $table->foreignId('ST_staffID');
             $table->foreignId('P_paymentID');
             $table->foreignId('W_waliID');
             $table->foreignId('Wit_witnessID');
-            $table->foreignId('D_documentID');
+            // $table->foreignId('D_documentID');
             $table->string('M_applicationStatus');
             $table->string('M_nikahCategory');
             $table->integer('M_akuanNumber');
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('M_pemberianLain');
             $table->string('M_jurunikahName');
             $table->string('M_lafaztaliq');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
