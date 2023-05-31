@@ -10,9 +10,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('i_incentives', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('U_userID');
-            $table->foreignId('ST_staffID');
+            $table->id("I_incentiveID");
+            // $table->foreignId('U_userID');
+            // $table->foreignId('ST_staffID');
             $table->foreignId('M_marriageID');
             $table->enum('I_applicationStatus', ['Lulus', 'Tidak lulus']);
             $table->string('I_bankName');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('I_relativePostcode');
             $table->string('I_relativeRelation');
             $table->string('I_relativePhoneHouse');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

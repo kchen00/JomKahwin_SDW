@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('req_consultations', function (Blueprint $table) {
             $table->id("RC_reqConsultation");
-            $table->bigInteger("U_userID")->unsigned();
-            $table->foreign("U_userID")->references("U_userID")->on("users");
+            $table->foreignId("U_userID")->references("U_userID")->on("users");
+            $table->foreignId("ST_staffID")->references("ST_staffID")->on("staff");
             $table->string("RC_purpose", 50);
             $table->string("RC_paidChoice", 20);
         });
