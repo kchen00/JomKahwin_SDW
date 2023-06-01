@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('consultations', function (Blueprint $table) {
+        Schema::create('CO_consultations', function (Blueprint $table) {
             $table->id("CO_consultationID");
-            $table->integer("SA_advisorID");
+            // $table->integer("SA_advisorID");
             $table->foreignId("SA_advisorID")->references("SA_advisorID")->on("SA_serviceAdvisor");
-            $table->integer("U_userID");
-            $table->foreignId("U_userID")->references("U_userID")->on("users");
+            // $table->integer("U_userID");
+            $table->foreignId("U_userID")->references("U_userID")->on("U_user");
             $table->dateTime("CO_consultationDateTimeStart");
             $table->dateTime("CO_consultationDateTimeEnd");
             $table->string("CO_consultationLocation", 50);

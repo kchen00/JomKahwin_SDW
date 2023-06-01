@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('accounts', function (Blueprint $table) {
+        Schema::create('A_account', function (Blueprint $table) {
             $table->integer("A_accountID")->autoIncrement();
             $table->string('A_password', 20);
             $table->enum("A_accountType", ["S", "N"]);
