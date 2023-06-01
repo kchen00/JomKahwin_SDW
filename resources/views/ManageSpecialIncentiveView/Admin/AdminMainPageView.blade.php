@@ -1,4 +1,4 @@
-@extends('base')
+@extends('incentive.base')
 @section('incentive.dashboard')
 
 <div class="header">
