@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('SA_serviceAdvisor', function (Blueprint $table) {
-            $table->id("SA_advisorID");
-            # decalring the foreign key A_accountID
-            $table->integer("A_accountID");
-            $table->foreign("A_accountID")->references("A_accountID")->on("A_account");
+        Schema::create('C_MarriageCourse', function (Blueprint $table) {
+            $table->id('C_courseID');
+            $table->foreignId("ST_staffID")->references("ST_staffID")->on("ST_staff");
+            $table->dateTime("C_courseDateTime");
+            $table->string("C_courseVenue", 50);
+            $table->string("C_displayCourse", 50);
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_advisors');
+        //
     }
 };
