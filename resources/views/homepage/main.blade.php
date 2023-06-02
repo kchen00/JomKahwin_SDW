@@ -38,9 +38,8 @@
 
     <div class="wrapper">
 		<nav id="sidebar" class="sidebar">
-			<a class="sidebar-brand" href="dashboard-admin">
+			<a class="sidebar-brand" href="/dashboard">
 				<img src="https://www.eperolehan.gov.my/documents/10182/17020/agency-links-02.png" style="height: 50px;">
-				MyTTX
 			</a>
 			<div class="sidebar-content">
 				<div class="sidebar-user">
@@ -81,9 +80,7 @@
 		</nav>
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-theme">
-				
-
-			
+					
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item dropdown ms-lg-2">
@@ -102,17 +99,8 @@
 				<div class="container-fluid">
 
 					{{-- Yield --}}
-                    @yield('incentive.dashboard')
 					@yield("homepage.homepage")
-					@yield("ManageAccount.RegisterAccountView")
-					@yield("ManageAccount.LoginAccountView")
-        
-
-
-
-
-
-					</div>
+				</div>
 
 			</main>
 			<footer class="footer">

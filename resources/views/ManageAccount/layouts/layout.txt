@@ -1,0 +1,2 @@
+reusable templates in for manage Account
+remember to edit code in app\view\components if the component is already registered
