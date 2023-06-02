@@ -42,7 +42,6 @@ class Account extends Model
     ];
 
     public static function register($information) {
-        print_r($information['A_email']);
         $newAccount = DB::table('A_account')
             ->insert(
                 [

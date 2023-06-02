@@ -1,6 +1,7 @@
 <?php
 
 // specify the contoller class here
+use App\Http\Controllers\ManageAccountController\ManageAccountRegisterPublic;
 use App\Http\Controllers\ManageAccountController\ManageAccountRegister;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +27,14 @@ Route::get('/incentive', function () {
 // Route::view("/register", "ManageAccountView.RegisterAccountView");
 Route::view("/login", "ManageAccountView.LoginAccountView");
 // Route::resource('/register', ManageAccountRegister::class);
+
+// Route::controller(ManageAccountRegisterPublic::class)->group(function () {
+//     Route::get('/register', 'index');
+//     Route::post('/register_new_user', 'store');
+// });
+
 Route::controller(ManageAccountRegister::class)->group(function () {
     Route::get('/register', 'index');
-    Route::post('/register_new_user', 'store');
+    Route::post('/register_new_user', 'storePublicAccount');
+    Route::post('/register_new_staff', 'storeStaffAccount');
 });

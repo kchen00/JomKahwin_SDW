@@ -1,7 +1,9 @@
-@extends("base")
+{{-- @extends("ManageAccountView.ManageAccounViewBase")
+@section("ManageAccountView.RegisterStaffAccountView") --}}
+
 <x-guest-layout>
     {{-- <form method="POST" action="{{ route('register') }}"> --}}
-    <form method="POST" action="/register_new_user">
+    <form method="POST" action="/register_new_staff">
         @csrf
 
         <!-- Ic number -->
@@ -50,7 +52,33 @@
             <select class="block mt-1 w-full" name="A_gender">
                 <option selected hidden disabled value="">SILA PILIH JANTINA ANDA</option>
                 <option value="M">LELAKI</option>
-                <option salue="F">PEREMPUAN</option>
+                <option value="F">PEREMPUAN</option>
+            </select>
+        </div>
+
+        <!-- Position -->
+        <div class="mt-4">
+            <x-input-label for="ST_staffPosition" :value="__('Posisi')" />
+            {{-- <x-dropdown/>  --}}
+            {{-- <x-text-input id="gender" class="block mt-1 w-full" type="gender" name="gender" :value="old('gender')" required autocomplete="gender" />
+            <x-input-error :messages="$errors->get('gender')" class="mt-2" /> --}}
+            <select class="block mt-1 w-full" name="ST_staffPosition">
+                <option selected hidden disabled value="">SILA PILIH POSISI STAFF BAHARU</option>
+                <option value="JS">STAFF JAIP</option>
+                <option value="SA">PENASIHAT</option>
+            </select>
+        </div>
+
+        <!-- Access level -->
+        <div class="mt-4">
+            <x-input-label for="ST_staffAccessLevel" :value="__('Posisi Staf B')" />
+            {{-- <x-dropdown/>  --}}
+            {{-- <x-text-input id="gender" class="block mt-1 w-full" type="gender" name="gender" :value="old('gender')" required autocomplete="gender" />
+            <x-input-error :messages="$errors->get('gender')" class="mt-2" /> --}}
+            <select class="block mt-1 w-full" name="ST_staffAccessLevel">
+                <option selected hidden disabled value="">SILA PILIH LEVEL AKSES STAFF BAHARU</option>
+                <option value="1">level 1</option>
+                <option value="2">level 2</option>
             </select>
         </div>
 
@@ -65,3 +93,5 @@
         </div>
     </form>
 </x-guest-layout>
+
+{{-- @stop --}}
