@@ -1,7 +1,7 @@
 @extends("base")
 <x-guest-layout>
     {{-- <form method="POST" action="{{ route('register') }}"> --}}
-    <form method="POST" action="/">
+    <form method="POST" action="/register_new_user">
         @csrf
 
         <!-- Ic number -->
@@ -32,11 +32,11 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Ulang Kata Laluan')" />
+            <x-input-label for="A_password_confirmation" :value="__('Ulang Kata Laluan')" />
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+            <x-text-input id="A_password_confirmation" class="block mt-1 w-full"
                             type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+                            name="A_password_confirmation" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
