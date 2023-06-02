@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DashboardAdminIncentive;
+use App\Models\I_incentive;
 use App\Http\Requests\StoreDashboardAdminIncentiveRequest;
 use App\Http\Requests\UpdateDashboardAdminIncentiveRequest;
 
@@ -11,9 +12,9 @@ class DashboardAdminIncentiveController extends Controller
  
     public function index()
     {
-        $dashboardAdminIncentive = DashboardAdminIncentive::all();
+        $i_incentive = I_incentive::all();
         return view('ManageSpecialIncentiveView.Admin.AdminMainPageView',[
-            'admin-dashboard' => $dashboardAdminIncentive
+            'i_incentive' => $i_incentive
         ]);
     }
 
@@ -30,7 +31,8 @@ class DashboardAdminIncentiveController extends Controller
      */
     public function store(StoreDashboardAdminIncentiveRequest $request)
     {
-        //
+      
+
     }
 
     /**
