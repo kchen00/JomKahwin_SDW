@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('A_account', function (Blueprint $table) {
-            $table->string("A_password")->change();
+        Schema::create('P_payment', function (Blueprint $table) {
+            $table->id("P_paymentID");
+            $table->foreignId("U_userID")->references("U_userID")->on("U_user");
+            $table->timestamp("P_patmentDateTime");
+            $table->string("P_paymentType", 20);
+            $table->string("P_amount", 20);
         });
     }
 
@@ -21,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        
+        //
     }
 };
