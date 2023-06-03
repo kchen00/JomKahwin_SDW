@@ -11,6 +11,8 @@ class Account extends Authenticatable
 {
     use HasFactory;
     protected $table = 'A_account';
+    protected $primaryKey = 'A_accountID';
+    protected $password = 'A_password';
     // attributes that can be mass assigned, ie can be updated with create, update method
     protected $fillable = [
         'A_accountType',

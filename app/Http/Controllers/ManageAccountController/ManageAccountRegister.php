@@ -23,8 +23,7 @@ class ManageAccountRegister extends Controller
      */
     public function index()
     {
-        $this->user = Auth::user();
-        // $this->user["A_accountType"]="S";
+        $this->user = Auth::guard("account")->user();
         // display the public register form
         if($this->user != null && $this->user["A_accountType"]=="S") {
             return view("ManageAccountView.RegisterStaffAccountView");
