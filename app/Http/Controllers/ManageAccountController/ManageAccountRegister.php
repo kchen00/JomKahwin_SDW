@@ -4,7 +4,9 @@ namespace App\Http\Controllers\ManageAccountController;
 
 use App\Http\Controllers\Controller;
 use App\Models\Account\Account;
+use App\Models\Account\User;
 use App\Models\Account\Staff;
+use App\Models\Account\ServiceAdvisor;
 use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -60,10 +62,12 @@ class ManageAccountRegister extends Controller
             'A_email' => $request->A_email,
             'A_password' => Hash::make($request->A_password),  //hashing the password
             'A_gender' => $request->A_gender,
-            "A_accountType" => "P",  // public register form so by default P
+            "A_accountType" => "N",  // public register form so by default P
         ]);
 
-
+        $user = User::register([
+            'A_email'=>$request->A_email,
+        ]);
 
         // Auth::login($account);
 
@@ -94,11 +98,18 @@ class ManageAccountRegister extends Controller
             "A_accountType" => "S",  // internal register form so by default S
         ]);
 
-        $staff = Staff::register([
-            'A_email'=>$request->A_email,
-            'ST_staffPosition'=>$request->ST_staffPosition,
-            'ST_staffAccessLevel'=>$request->ST_staffAccessLevel
-        ]);
+        if($request->ST_staffPosition == "JS") {
+            $staff = Staff::register([
+                'A_email'=>$request->A_email,
+                'ST_staffPosition'=>$request->ST_staffPosition,
+                'ST_staffAccessLevel'=>$request->ST_staffAccessLevel
+            ]);
+        }
+        else {
+            $serviceAdvisor = ServiceAdvisor::register([
+                'A_email'=>$request->A_email,
+            ]);
+        }
 
         // Auth::login($account);
 

@@ -2,7 +2,7 @@
 @section("ManageAccountView.RegisterPublicAccountView") --}}
 <x-guest-layout>
     {{-- <form method="POST" action="{{ route('register') }}"> --}}
-    <form method="POST" action="/register_new_staff">
+    <form method="POST" action="/register_new_user">
         @csrf
 
         <!-- Ic number -->

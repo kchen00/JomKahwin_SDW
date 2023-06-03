@@ -4,33 +4,33 @@
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     {{-- <form method="POST" action="{{ route('login') }}"> --}}
-    <form method="POST" action="/">
+    <form method="POST" action="/authenticate">
         @csrf
 
-        <!-- Email Address -->
+        <!-- ic number input -->
         <div>
-            <x-input-label for="no_ic" :value="__('No Kad Pengenalan')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-input-label for="A_icNum" :value="__('No Kad Pengenalan')" />
+            <x-text-input id="A_icNum" class="block mt-1 w-full" type="text" name="A_icNum" :value="old('A_icNum')" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('A_icNum')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Kata Laluan')" />
+            <x-input-label for="A_password" :value="__('Kata Laluan')" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
+            <x-text-input id="A_password" class="block mt-1 w-full"
                             type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+                            name="A_password"
+                            required autocomplete="A_password" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            <x-input-error :messages="$errors->get('A_password')" class="mt-2" />
         </div>
 
         <!-- Select role -->
         <div class="mt-4">
-            <x-input-label for="account_type" :value="__('Jenis Akaun')" />
+            <x-input-label for="A_accountType" :value="__('Jenis Akaun')" />
 
-            <select class="block mt-1 w-full">
+            <select class="block mt-1 w-full" name="A_accountType">
                 <option selected disabled hidden value="">SILA PILIH JENIS AKAUN ANDA</option>
                 <option value="N">Pengguna Biasa</option>
                 <option value="S">Staff</option>

@@ -7,15 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
 
-class Account extends Model
+class Account extends Authenticatable
 {
     use HasFactory;
-    protected $table = 'a_account';
+    protected $table = 'A_account';
     // attributes that can be mass assigned, ie can be updated with create, update method
     protected $fillable = [
         'A_accountType',
         'A_icNum',
-        'A_accountID',
         'A_password',
         'A_accountType',
         'A_IcNum',
@@ -41,6 +40,8 @@ class Account extends Model
         'A_password',
     ];
 
+    protected $guard = "account";
+
     public static function register($information) {
         $newAccount = DB::table('A_account')
             ->insert(
@@ -55,4 +56,8 @@ class Account extends Model
             );
     }
 
+    public function getAuthPassword()
+    {
+         return $this->A_password;
+    }
 }
