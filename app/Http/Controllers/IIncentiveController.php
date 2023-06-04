@@ -8,7 +8,7 @@ use App\Http\Requests\UpdateI_incentiveRequest;
 
 class IIncentiveController extends Controller
 {
-   
+    
     public function index()
     {
         $i_incentive = I_incentive::all();
