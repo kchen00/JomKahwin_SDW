@@ -26,6 +26,18 @@ Route::get('/Incentive-User', function () {
     return view('ManageSpecialIncentiveView.User.UserMainPageView');
 });
 
+Route::get('/', function () {
+    return view('ManageMarriagePrepCourse.mainPageView');
+});
+
+Route::get('/', function () {
+    return view('ManageMarriagePrepCourse.searchAnjuran');
+});
+
+Route::get('/', function () {
+    return view('ManageMarriagePrepCourse.registerCourse');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
