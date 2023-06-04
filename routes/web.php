@@ -24,10 +24,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/Incentive-User', function () {
-    return view('ManageSpecialIncentiveView.User.UserMainPageView');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -40,7 +36,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('admin-dashboard', DashboardAdminIncentiveController::class);
-Route::resource('user-dashboard', DashboardUserIncentiveController::class);
+Route::resource('admin-dashboardIncentive', DashboardAdminIncentiveController::class);
+Route::resource('user-dashboardIncentive', DashboardUserIncentiveController::class);
 Route::resource('user-status', UserViewStatusIncentiveController::class);
 Route::resource('user-apply', IIncentiveController::class);

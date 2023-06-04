@@ -9,6 +9,7 @@
 	<meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template">
 	<meta name="author" content="Bootlab">
     <link rel="icon" type="image/png" href="https://jaip.pahang.gov.my/wp-content/uploads/2020/10/jata-pahang.png">
+	<link href="\css\modern.css" rel="stylesheet">
     
 
 	<title>JomKahwin-EMunakahat</title>
@@ -17,24 +18,23 @@
 		body {
 			opacity: 0;
 		}
-		#chartdiv {
-       width: 100%;
-       height: 500px;
-        }
-       #chartdivPie {
-      width: 100%;
-      height: 300px;
-       }
+		.wrapper:before
+		{
+			background:#153d77;
+			content:" ";
+			height:264px;
+			left:0;
+			position:absolute;
+			top:0;width:100%
+		}
 
 	</style>
 	<script src="js/settings.js"></script>
+	<script src="js/app.js"></script>
 	<!-- END SETTINGS -->
 </head>
 
 <body>
-	<div class="splash active">
-		<div class="splash-icon"></div>
-	</div>
 
     <div class="wrapper">
 		<nav id="sidebar" class="sidebar">
@@ -85,7 +85,7 @@
 						</a>
 					</li>
                     <li class="sidebar-item active">
-						<a class="sidebar-link" href="dashboard-admin">
+						<a class="sidebar-link" href="user-dashboard">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
                                 <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
@@ -159,7 +159,7 @@
 			</symbol>
 		</defs>
 	</svg>
-	<script src="js/app.js"></script>
+	
 
 </body>
 
