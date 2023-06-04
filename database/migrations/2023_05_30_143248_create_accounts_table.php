@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('accounts', function (Blueprint $table) {
+        Schema::create('A_account', function (Blueprint $table) {
             $table->integer("A_accountID")->autoIncrement();
-            $table->string('A_password', 20);
-            $table->enum("A_accountType", ["S", "N"]);
+            $table->string('A_password');  //password will be hashed, cannot just limit them to 20 char
+            $table->enum("A_accountType", ["S", "P"]);
             $table->string("A_icNum", 12)->unique();
             $table->string("A_email", 100)->unique();
             $table->enum("A_gender", ["M", "F"]);

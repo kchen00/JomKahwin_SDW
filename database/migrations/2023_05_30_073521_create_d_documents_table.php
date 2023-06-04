@@ -9,7 +9,7 @@ return new class extends Migration
     
     public function up(): void
     {
-        Schema::create('d_documents', function (Blueprint $table) {
+        Schema::create('D_document', function (Blueprint $table) {
             $table->id("D_documentID");
             // $table->foreignId('U_userID');
             // $table->foreignId('AD_adminID');

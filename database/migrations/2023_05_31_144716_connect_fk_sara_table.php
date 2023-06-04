@@ -11,20 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('m_marriages', function (Blueprint $table) {
-            $table->foreignId("ST_staffID")->references("ST_staffID")->on("staff");
-            $table->foreignId("U_userID")->references("U_userID")->on("users");
+        Schema::table('M_marriage', function (Blueprint $table) {
+            $table->foreignId("ST_staffID")->references("ST_staffID")->on("ST_staff");
+            $table->foreignId("U_userID")->references("U_userID")->on("U_user");
         });
 
-        Schema::table('i_incentives', function (Blueprint $table) {
-            $table->foreignId("ST_staffID")->references("ST_staffID")->on("staff");
-            $table->foreignId("U_userID")->references("U_userID")->on("users");
-            $table->foreignId("D_documentID")->references("D_documentID")->on("d_documents");
+        Schema::table('I_incentive', function (Blueprint $table) {
+            $table->foreignId("ST_staffID")->references("ST_staffID")->on("ST_staff");
+            $table->foreignId("U_userID")->references("U_userID")->on("U_user");
+            $table->foreignId("D_documentID")->references("D_documentID")->on("D_document");
+            $table->foreignId('M_marriageID')->references("M_marriageID")->on("M_marriage");
         });
 
-        Schema::table('d_documents', function (Blueprint $table) {
-            $table->foreignId("ST_staffID")->references("ST_staffID")->on("staff");
-            $table->foreignId("U_userID")->references("U_userID")->on("users");
+        Schema::table('D_document', function (Blueprint $table) {
+            $table->foreignId("ST_staffID")->references("ST_staffID")->on("ST_staff");
+            $table->foreignId("U_userID")->references("U_userID")->on("U_user");
         });
     }
 
