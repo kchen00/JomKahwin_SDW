@@ -32,7 +32,7 @@
 
             <select class="block mt-1 w-full" name="A_accountType">
                 <option selected disabled hidden value="">SILA PILIH JENIS AKAUN ANDA</option>
-                <option value="N">Pengguna Biasa</option>
+                <option value="P">Pengguna Biasa</option>
                 <option value="S">Staff</option>
             </select>
         </div>

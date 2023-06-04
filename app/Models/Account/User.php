@@ -13,7 +13,7 @@ class User extends Model
     public static function register($information) {
         $account = DB::table("A_account")
                         ->select("A_accountID")
-                        ->where("A_accountType", "=", "N")
+                        ->where("A_accountType", "=", "P")
                         ->where("A_email", "=", $information["A_email"])
                         ->get();
         

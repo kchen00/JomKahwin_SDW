@@ -61,7 +61,7 @@ class ManageAccountRegister extends Controller
             'A_email' => $request->A_email,
             'A_password' => Hash::make($request->A_password),  //hashing the password
             'A_gender' => $request->A_gender,
-            "A_accountType" => "N",  // public register form so by default P
+            "A_accountType" => "P",  // public register form so by default P
         ]);
 
         $user = User::register([
