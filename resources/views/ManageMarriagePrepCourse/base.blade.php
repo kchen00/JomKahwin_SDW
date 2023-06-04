@@ -32,21 +32,7 @@
 </head>
 
 <body>
-	<div class="header">
-		style:text-align="center";
-	</div>
-
-	<div class='register'>
-        style:display="inline-block";
-        style:width="150px";
-        style:text-align="right";
-	</div>
-    
-	label {
-        display: inline-block;
-        width: 150px;
-        text-align: right;
-      }
+	
 
 
 
