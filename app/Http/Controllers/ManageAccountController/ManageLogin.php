@@ -1,5 +1,5 @@
 <?php
-
+// a contoller that manages login
 namespace App\Http\Controllers\ManageAccountController;
 
 use App\Http\Controllers\Controller;
@@ -33,9 +33,10 @@ class ManageLogin extends Controller
         if(Auth::guard("account")->attempt(['password'=>$credentials['A_password'], 'A_icNum'=>$credentials["A_icNum"], 'A_accountType'=>$credentials["A_accountType"]])) {
             $request->session()->regenerate();
             Auth::guard("account")->loginUsingId(Auth::guard("account")->id());
-            return(Auth::guard("account")->user());
+            // Session::put('user', $user);
+            // return(Auth::guard("account")->user());
             // Auth::guard("account")->login($user);
-            return "success";
+            return redirect("/dashboard");
         }
         // if the credential does not match, go back and display error message
         return back()->withErrors([

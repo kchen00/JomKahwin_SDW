@@ -1,5 +1,5 @@
 <?php
-
+// a controller that manages account registration
 namespace App\Http\Controllers\ManageAccountController;
 
 use App\Http\Controllers\Controller;

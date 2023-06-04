@@ -3,6 +3,7 @@
 // specify the contoller class here
 use App\Http\Controllers\ManageAccountController\ManageAccountRegister;
 use App\Http\Controllers\ManageAccountController\ManageLogin;
+use App\Http\Controllers\ManageProfileController\ManageProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Manager;
 
@@ -39,7 +40,12 @@ Route::controller(ManageAccountRegister::class)->group(function () {
     Route::post('/register_new_user', 'storePublicAccount');
     Route::post('/register_new_staff', 'storeStaffAccount');
 });
+
 Route::controller(ManageLogin::class)->group(function () {
     Route::get('/login', 'index');
     Route::post('/authenticate', 'authenticate');
+});
+
+Route::controller(ManageProfileController::class)->group(function () {
+    Route::get('/dashboard', 'index');
 });
