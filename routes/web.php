@@ -38,6 +38,16 @@ Route::get('/', function () {
     return view('ManageMarriagePrepCourse.registerCourse');
 });
 
+Route::get('/', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarTempat');
+});
+
+Route::get('/', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarMaklumat');
+});
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
