@@ -5,6 +5,7 @@ use App\Http\Controllers\ManageAccountController\ManageAccountRegister;
 use App\Http\Controllers\ManageAccountController\ManageLogin;
 use App\Http\Controllers\ManageProfileController\ManageProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Manager;
 
 /*
@@ -48,4 +49,6 @@ Route::controller(ManageLogin::class)->group(function () {
 
 Route::controller(ManageProfileController::class)->group(function () {
     Route::get('/dashboard', 'index');
+    Route::get('/update_profile', 'showUpdateProfileForm');
+    Route::post('/update_profile_store', 'update');
 });

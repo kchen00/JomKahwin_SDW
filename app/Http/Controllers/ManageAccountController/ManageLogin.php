@@ -35,7 +35,7 @@ class ManageLogin extends Controller
             Auth::guard("account")->loginUsingId(Auth::guard("account")->id());
             // Session::put('user', $user);
             // return(Auth::guard("account")->user());
-            // Auth::guard("account")->login($user);
+            // Auth::guard("account")->login($user);    
             return redirect("/dashboard");
         }
         // if the credential does not match, go back and display error message

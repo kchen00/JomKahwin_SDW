@@ -106,6 +106,7 @@
 					@yield("homepage.homepage")
 					@yield("ManageAccountView.RegisterStaffAccountView")
 					@yield("ManageAccountView.RegisterPublicAccountView")
+					@yield("ManageProfielView.ManageUpdateProfileView")
 					{{-- @yield("ManageAccount.LoginAccountView") --}}
         
 
