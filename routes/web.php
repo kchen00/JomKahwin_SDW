@@ -26,18 +26,41 @@ Route::get('/Incentive-User', function () {
     return view('ManageSpecialIncentiveView.User.UserMainPageView');
 });
 
-Route::get('/search', function () {
-    return view('ManageMarriageRequest.User.searchKP');
+
+Route::get('/mainPage', function () {
+    return view('ManageMarriagePrepCourse.mainPageView');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/anjuran', function () {
+    return view('ManageMarriagePrepCourse.searchAnjuran');
+});
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::get('/register', function () {
+    return view('ManageMarriagePrepCourse.registerCourse');
+});
+
+Route::get('/tempat', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarTempat');
+});
+
+Route::get('/maklumat', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarMaklumat');
+});
+
+Route::get('/peserta', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarPeserta');
+});
+
+Route::get('/kehadiran', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarKehadiran');
+});
+
+Route::get('/kelulusan', function () {
+    return view('ManageMarriagePrepCourse.adminKelulusan');
+});
+
+Route::get('/search', function () {
+    return view('ManageMarriageRequest.User.searchKP');
 });
 
 require __DIR__.'/auth.php';
