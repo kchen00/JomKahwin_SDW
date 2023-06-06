@@ -137,7 +137,8 @@
                 <div class="container-fluid">
 
                     {{-- Yield --}}
-                    @yield('ManageSpecialIncentiveView.Admin.AdminMainPageView')
+                    @yield('ManageMarriageRequest.searchKP')
+					
                 </div>
 
             </main>

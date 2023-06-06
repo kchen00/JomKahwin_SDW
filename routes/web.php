@@ -22,6 +22,10 @@ Route::get('/incentive', function () {
     return view('incentive.dashboard');
 });
 
+Route::get('/search', function () {
+    return view('ManageMarriageRequest.User.searchKP');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
