@@ -26,25 +26,38 @@ Route::get('/Incentive-User', function () {
     return view('ManageSpecialIncentiveView.User.UserMainPageView');
 });
 
-Route::get('/', function () {
+Route::get('/mainPage', function () {
     return view('ManageMarriagePrepCourse.mainPageView');
 });
 
-Route::get('/', function () {
+Route::get('/anjuran', function () {
     return view('ManageMarriagePrepCourse.searchAnjuran');
 });
 
-Route::get('/', function () {
+Route::get('/register', function () {
     return view('ManageMarriagePrepCourse.registerCourse');
 });
 
-Route::get('/', function () {
+Route::get('/tempat', function () {
     return view('ManageMarriagePrepCourse.adminDaftarTempat');
 });
 
-Route::get('/', function () {
+Route::get('/maklumat', function () {
     return view('ManageMarriagePrepCourse.adminDaftarMaklumat');
 });
+
+Route::get('/peserta', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarPeserta');
+});
+
+Route::get('/kehadiran', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarKehadiran');
+});
+
+Route::get('/kelulusan', function () {
+    return view('ManageMarriagePrepCourse.adminKelulusan');
+});
+
 
 
 

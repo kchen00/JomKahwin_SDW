@@ -133,6 +133,9 @@
                     @yield('ManageMarriagePrepCourse.registerCourse')
                     @yield('ManageMarriagePrepCourse.adminDaftarTempat')
 					@yield('ManageMarriagePrepCourse.adminDaftarMaklumat')
+                    @yield('ManageMarriagePrepCourse.adminDaftarPeserta')
+					@yield('ManageMarriagePrepCourse.adminDaftarKehadiran')
+					@yield('ManageMarriagePrepCourse.adminKelulusan')
 
 
 
