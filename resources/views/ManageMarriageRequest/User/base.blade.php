@@ -15,7 +15,7 @@
         }
 
         .wrapper:before {
-            background: #1AA781;
+            background: #153d77;
             content: " ";
             height: 264px;
             left: 0;
@@ -33,7 +33,7 @@
 
     <div class="wrapper">
         <nav id="sidebar" class="sidebar">
-            <a class="sidebar-brand" style="background: #1AA781;" href="dashboard-admin">
+            <a class="sidebar-brand" style="background: #153d77;" href="dashboard-admin">
                 <img src="https://jaip.pahang.gov.my/wp-content/uploads/2020/10/jata-pahang.png" style="height: 50px;">
                 Jom Kahwin
             </a>
@@ -70,7 +70,7 @@
                             </svg> <span class="align-middle">Daftar Kursus Kahwin</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
+                    <li class="sidebar-item active">
                         <a class="sidebar-link" href="dashboard-admin">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -88,7 +88,7 @@
                             </svg><span class="align-middle">Daftar Perkahwinan</span>
                         </a>
                     </li>
-                    <li class="sidebar-item active">
+                    <li class="sidebar-item ">
                         <a class="sidebar-link" href="user-dashboard">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-cash-coin" viewBox="0 0 16 16">
@@ -138,6 +138,7 @@
 
                     {{-- Yield --}}
                     @yield('ManageMarriageRequest.User.searchKP')
+                    @yield('ManageMarriageRequest.User.ApplicantInformation')
 					
                 </div>
 
@@ -163,3 +164,4 @@
 </body>
 
 </html>
+
