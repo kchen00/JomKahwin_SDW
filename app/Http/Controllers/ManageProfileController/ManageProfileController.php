@@ -4,6 +4,7 @@ namespace App\Http\Controllers\ManageProfileController;
 
 use Illuminate\Http\Request;
 use App\Models\Account\Account;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -23,11 +24,16 @@ class ManageProfileController extends Controller
                 return redirect("update_profile");
             }
             else {
-                //if the user if a public account
-                if($user->A_accountType == "P") {
-                    return view("ManageProfileView.public_dashboard", ['account'=>$user]);
+                $base_template = "ManageProfileView.ManageProfileViewBaseAdmin";
+                $displaying_profile = FALSE;
+                // if the user is a public account, change the base template
+                if($user->A_accountType == "P"){
+                    $base_template = 'ManageProfileView.ManageProfileViewBaseUser';                    
                 }
-                return view("ManageProfileView.admin_dashboard");
+                return view("ManageProfileView.ManageDisplayProfile", 
+                            ['base_template'=> $base_template,
+                             'account'=>$user,
+                             "displaying_profile" => $displaying_profile]);
             }
 
         }
@@ -56,7 +62,19 @@ class ManageProfileController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // checks if user who made this show request is an staff or not
+        if(Auth::guard("account")->user()->A_accountType == "S") {
+            //search db for the account id
+            $result = DB::table("A_account")
+                        ->where("A_accountID", $id)
+                        ->limit(1)
+                        ->first();
+            return view("ManageProfileView.ManageDisplayProfile", 
+                        ["account"=>$result, 
+                         'base_template'=> 'ManageProfileView.ManageProfileViewBaseAdmin',
+                         "displaying_profile"=>TRUE]);
+        }
+        return redirect()->back();
     }
 
     /**
@@ -71,7 +89,10 @@ class ManageProfileController extends Controller
     public function showUpdateProfileForm() {
         $user = Auth::guard('account')->user();
         if($user) {
-            return view("ManageProfileView/ManageUpdateProfileView");
+            if($user->A_accountType == "P") {
+                return view("ManageProfileView/ManageUpdateProfileView", ['base_template'=> 'ManageProfileView.ManageProfileViewBaseUser','account'=>$user]);   
+            }
+            return view("ManageProfileView/ManageUpdateProfileView", ['base_template'=> 'ManageProfileView.ManageProfileViewBaseAdmin','account'=>$user]);
         }
         return redirect("/login");
     }
@@ -118,6 +139,29 @@ class ManageProfileController extends Controller
                 'A_profilePhoto' => $profileImageName,
             ]);
         return redirect("dashboard");
+    }
+
+    public function showSearchForm() {
+        if(Auth::guard("account")->user()->A_accountType == "S") {
+            $users = DB::table('A_account')
+                        ->limit(10)
+                        ->get();
+            // return($users);
+            return view("ManageProfileView.ManageSearchProfileView", [
+                'user_list'=>$users
+            ]);
+        }
+        return redirect()->back();
+    }
+
+    public function searchUser(Request $request) {
+        $results = DB::table("A_account")
+                    ->where("A_icNum", $request->A_icNum)
+                    ->orwhere("A_accountType", $request->A_accountType)
+                    ->get();
+        return view("ManageProfileView.ManageSearchProfileView", [
+            'user_list'=>$results
+        ]);
     }
 
     /**

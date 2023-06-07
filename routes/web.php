@@ -45,10 +45,14 @@ Route::controller(ManageAccountRegister::class)->group(function () {
 Route::controller(ManageLogin::class)->group(function () {
     Route::get('/login', 'index');
     Route::post('/authenticate', 'authenticate');
+    Route::get("logout", "logout");
 });
 
 Route::controller(ManageProfileController::class)->group(function () {
     Route::get('/dashboard', 'index');
     Route::get('/update_profile', 'showUpdateProfileForm');
     Route::post('/update_profile_store', 'update');
+    Route::get("/user_directory", 'showSearchForm');
+    Route::post("/search_user", "searchUser");
+    Route::get("user/{id}", "show");
 });

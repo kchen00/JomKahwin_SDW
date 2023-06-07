@@ -1,5 +1,5 @@
-{{-- @extends("ManageAccountView.ManageAccounViewBase")
-@section("ManageAccountView.RegisterPublicAccountView") --}}
+@extends("ManageAccountView.ManageAccountViewBaseUser")
+@section("ManageAccountView.RegisterPublicAccountView")
 <x-guest-layout>
     {{-- <form method="POST" action="{{ route('register') }}"> --}}
     <form method="POST" action="/register_new_user">
@@ -66,4 +66,4 @@
         </div>
     </form>
 </x-guest-layout>
-{{-- @stop --}}
+@stop

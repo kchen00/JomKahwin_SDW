@@ -2,10 +2,11 @@
 // a contoller that manages login
 namespace App\Http\Controllers\ManageAccountController;
 
-use App\Http\Controllers\Controller;
-use App\Models\Account\Account;
 use Illuminate\Http\Request;
+use App\Models\Account\Account;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 
 class ManageLogin extends Controller
 {
@@ -14,7 +15,9 @@ class ManageLogin extends Controller
      */
     public function index()
     {
-        
+        if(Auth::guard("account")->user()) {
+            return redirect("dashboard");
+        }
         return view("ManageAccountView.LoginAccountView");
     }
 
@@ -43,5 +46,16 @@ class ManageLogin extends Controller
             'A_icNum' => 'Info akaun adalah tidak betul.',
         ])->onlyInput('A_icNum');
     }
+    
+    /**
+ * Log the user out of the application.
+ */
+public function logout(Request $request): RedirectResponse
+{
+    Auth::guard("account")->logout(); 
+    $request->session()->invalidate(); 
+    $request->session()->regenerateToken(); 
+    return redirect('/');
+}
 
 }

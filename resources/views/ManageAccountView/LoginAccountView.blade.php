@@ -1,4 +1,5 @@
-{{-- @extends("base") --}}
+@extends("ManageAccountView.ManageAccountViewBaseUser")
+@section("ManageAccountView.LoginAccountView")
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -62,3 +63,4 @@
         </div>
     </form>
 </x-guest-layout>
+@stop

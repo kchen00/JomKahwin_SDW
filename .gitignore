@@ -18,3 +18,5 @@ yarn-error.log
 /.idea
 /.vscode
 /public/A_profilePhoto
+resources/views/User
+resources/views/Admin

@@ -1,5 +1,3 @@
-{{-- @extends('base')
-@section("ManageProfielView.ManageUpdateProfileView") --}}
 <x-app-layout>
     <div class="row">
         <form method="POST" action="/update_profile_store" enctype="multipart/form-data">
@@ -9,13 +7,13 @@
                 <h2>Maklumat Asas</h2>
                 <div>
                     <x-input-label for="A_name" :value="__('Nama')" />
-                    <x-text-input id="A_name" class="block mt-1 w-full" type="text" name="A_name" :value="old('A_name')" required autofocus autocomplete="A_name" />
+                    <x-text-input id="A_name" class="block mt-1 w-full" type="text" name="A_name" :value="old('A_name', $account->A_name)" required autofocus autocomplete="A_name" />
                     <x-input-error :messages="$errors->get('A_name')" class="mt-2" />
                 </div> 
 
                 <div>
                     <x-input-label for="A_ethnicity" :value="__('Kaum')" />
-                    <select name="A_ethnicity" class="block mt-1 w-full">
+                    <select name="A_ethnicity" class="block mt-1 w-full" :value="old("A_ethnicity", $account->A_ethnicity)">
                         <option disabled selected hidden>SILA PILIH KAUM ANDA</option>
                         <option value="Melayu">Melayu</option>
                         <option value="Cina">Cina</option>
@@ -35,39 +33,39 @@
             <div name="contact_information">
                 <div>
                     <x-input-label for="A_houseAddress" :value="__('Alamat rumah')" />
-                    <x-text-input id="A_houseAddress" class="block mt-1 w-full" type="text" name="A_houseAddress" :value="old('A_houseAddress')" required autofocus autocomplete="A_houseAddress" />
+                    <x-text-input id="A_houseAddress" class="block mt-1 w-full" type="text" name="A_houseAddress" :value="old('A_houseAddress', $account->A_houseAddress)" required autofocus autocomplete="A_houseAddress" />
                     <x-input-error :messages="$errors->get('A_houseAddress')" class="mt-2" />
                 </div> 
                 <div>
                     <x-input-label for="A_telephoneNum" :value="__('Nombor telefon')" />
-                    <x-text-input id="A_telephoneNum" class="block mt-1 w-full" type="text" name="A_telephoneNum" :value="old('A_telephoneNum')" required autofocus autocomplete="A_telephoneNum" />
+                    <x-text-input id="A_telephoneNum" class="block mt-1 w-full" type="text" name="A_telephoneNum" :value="old('A_telephoneNum', $account->A_telephoneNum)" required autofocus autocomplete="A_telephoneNum" />
                     <x-input-error :messages="$errors->get('A_telephoneNum')" class="mt-2" />
                 </div> 
                 <div>
                     <x-input-label for="A_landlineNumber" :value="__('Nombor telefon rumah')" />
-                    <x-text-input id="A_landlineNumber" class="block mt-1 w-full" type="text" name="A_landlineNumber" :value="old('A_landlineNumber')" required autofocus autocomplete="A_landlineNumber" />
+                    <x-text-input id="A_landlineNumber" class="block mt-1 w-full" type="text" name="A_landlineNumber" :value="old('A_landlineNumber', $account->A_landlineNumber)" required autofocus autocomplete="A_landlineNumber" />
                     <x-input-error :messages="$errors->get('A_landlineNumber')" class="mt-2" />
                 </div> 
             </div>
             <div name="job information">
                 <div>
                     <x-input-label for="A_jobSector" :value="__('Sektor pekerjaan')" />
-                    <x-text-input id="A_jobSector" class="block mt-1 w-full" type="text" name="A_jobSector" :value="old('A_jobSector')" required autofocus autocomplete="A_jobSector" />
+                    <x-text-input id="A_jobSector" class="block mt-1 w-full" type="text" name="A_jobSector" :value="old('A_jobSector', $account->A_jobSector)" required autofocus autocomplete="A_jobSector" />
                     <x-input-error :messages="$errors->get('A_jobSector')" class="mt-2" />
                 </div>
                 <div>
                     <x-input-label for="A_jobAddress" :value="__('Alamat tempat kerja')" />
-                    <x-text-input id="A_jobAddress" class="block mt-1 w-full" type="text" name="A_jobAddress" :value="old('A_jobAddress')" required autofocus autocomplete="A_jobAddress" />
+                    <x-text-input id="A_jobAddress" class="block mt-1 w-full" type="text" name="A_jobAddress" :value="old('A_jobAddress', $account->A_jobAddress)" required autofocus autocomplete="A_jobAddress" />
                     <x-input-error :messages="$errors->get('A_jobAddress')" class="mt-2" />
                 </div>
                 <div>
                     <x-input-label for="A_officeNo" :value="__('Nombor telefon pejabat')" />
-                    <x-text-input id="A_officeNo" class="block mt-1 w-full" type="text" name="A_officeNo" :value="old('A_officeNo')" required autofocus autocomplete="A_officeNo" />
+                    <x-text-input id="A_officeNo" class="block mt-1 w-full" type="text" name="A_officeNo" :value="old('A_officeNo', $account->A_officeNo)" required autofocus autocomplete="A_officeNo" />
                     <x-input-error :messages="$errors->get('A_officeNo')" class="mt-2" />
                 </div>
                 <div>
                     <x-input-label for="A_income" :value="__('Pendapatan')" />
-                    <x-text-input id="A_income" class="block mt-1 w-full" type="text" name="A_income" :value="old('A_income')" required autofocus autocomplete="A_income" />
+                    <x-text-input id="A_income" class="block mt-1 w-full" type="text" name="A_income" :value="old('A_income', $account->A_income)" required autofocus autocomplete="A_income" />
                     <x-input-error :messages="$errors->get('A_income')" class="mt-2" />
                 </div>
             </div>
@@ -84,7 +82,7 @@
                 </div> 
                 <div>
                     <x-input-label for="A_educationLevel" :value="__('Taraf pendidikan')" />
-                    <x-text-input id="A_educationLevel" class="block mt-1 w-full" type="text" name="A_educationLevel" :value="old('A_educationLevel')" required autofocus autocomplete="A_educationLevel" />
+                    <x-text-input id="A_educationLevel" class="block mt-1 w-full" type="text" name="A_educationLevel" :value="old('A_educationLevel', $account->A_educationLevel)" required autofocus autocomplete="A_educationLevel" />
                     <x-input-error :messages="$errors->get('A_educationLevel')" class="mt-2" />
                 </div> 
             </div>
@@ -101,5 +99,3 @@
         </form>
     </div>
 </x-app-layout>
-
-{{-- @stop --}}
