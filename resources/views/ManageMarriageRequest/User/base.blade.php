@@ -139,6 +139,8 @@
                     {{-- Yield --}}
                     @yield('ManageMarriageRequest.User.searchKP')
                     @yield('ManageMarriageRequest.User.ApplicantInformation')
+                    @yield('ManageMarriageRequest.User.document')
+
 					
                 </div>
 

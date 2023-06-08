@@ -1,6 +1,8 @@
 @extends('ManageMarriageRequest.User.base')
 @section('ManageMarriageRequest.User.searchKP')
 
+
+
     <div class='header'>
         <h5>Search IC</h5>
 

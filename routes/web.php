@@ -34,6 +34,10 @@ Route::get('/applicant', function () {
     return view('ManageMarriageRequest.User.ApplicantInformation');
 });
 
+Route::get('/document', function () {
+    return view('ManageMarriageRequest.User.document');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
