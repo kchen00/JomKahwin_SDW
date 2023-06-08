@@ -63,7 +63,7 @@ class ManageProfileController extends Controller
     public function show(string $id)
     {
         // checks if user who made this show request is an staff or not
-        if(Auth::guard("account")->user()->A_accountType == "S") {
+        if(Auth::user()->A_accountType == "S") {
             //search db for the account id
             $result = DB::table("A_account")
                         ->where("A_accountID", $id)
@@ -87,7 +87,7 @@ class ManageProfileController extends Controller
 
     // method to show the update profile form
     public function showUpdateProfileForm() {
-        $user = Auth::guard('account')->user();
+        $user = Auth::user();
         if($user) {
             if($user->A_accountType == "P") {
                 return view("ManageProfileView/ManageUpdateProfileView", ['base_template'=> 'ManageProfileView.ManageProfileViewBaseUser','account'=>$user]);   

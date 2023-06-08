@@ -35,7 +35,7 @@ class ManageLogin extends Controller
         // password is default condition, so need to assign it with value, instead of specified
         if(Auth::guard("account")->attempt(['password'=>$credentials['A_password'], 'A_icNum'=>$credentials["A_icNum"], 'A_accountType'=>$credentials["A_accountType"]])) {
             $request->session()->regenerate();
-            Auth::guard("account")->loginUsingId(Auth::guard("account")->id());
+            Auth::loginUsingId(Auth::guard("account")->id());
             // Session::put('user', $user);
             // return(Auth::guard("account")->user());
             // Auth::guard("account")->login($user);    
@@ -52,7 +52,7 @@ class ManageLogin extends Controller
  */
 public function logout(Request $request): RedirectResponse
 {
-    Auth::guard("account")->logout(); 
+    Auth::logout(); 
     $request->session()->invalidate(); 
     $request->session()->regenerateToken(); 
     return redirect('/');

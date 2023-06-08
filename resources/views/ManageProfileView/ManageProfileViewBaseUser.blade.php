@@ -107,7 +107,7 @@
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item dropdown ms-lg-2">
-							<a href="/" class="text-light">
+							<a href="/logout" class="text-light">
 								<i class="align-middle me-2 text-light" data-feather="log-out"></i>Sign out
 							</a>
 							

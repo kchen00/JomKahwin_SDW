@@ -3,6 +3,7 @@
 // specify the contoller class here
 use App\Http\Controllers\ManageAccountController\ManageAccountRegister;
 use App\Http\Controllers\ManageAccountController\ManageLogin;
+use App\Http\Controllers\ManageAccountController\ResetPasswordController;
 use App\Http\Controllers\ManageProfileController\ManageProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -55,4 +56,10 @@ Route::controller(ManageProfileController::class)->group(function () {
     Route::get("/user_directory", 'showSearchForm');
     Route::post("/search_user", "searchUser");
     Route::get("user/{id}", "show");
+    
+});
+
+Route::controller(ResetPasswordController::class)->group(function () {
+    Route::view("/forget_password", "ManageAccountView.ManageForgetPasswordView");
+    Route::post("/request_reset_password", "sendResetLink");
 });

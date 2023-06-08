@@ -90,6 +90,11 @@ class Account extends Authenticatable
 
     public function getAuthPassword()
     {
-         return $this->A_password;
+        return $this->A_password;
+    }
+
+    public function getEmailForVerification()
+    {
+        return $this->A_email;
     }
 }
