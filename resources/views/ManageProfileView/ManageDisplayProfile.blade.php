@@ -1,5 +1,5 @@
-@extends($base_template)
-@section("ManageProfileView.ManageDisplayProfile")
+{{-- @extends($base_template)
+@section("ManageProfileView.ManageDisplayProfile") --}}
 {{-- <x-app-layout> --}}
     {{-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -17,6 +17,9 @@
                             <div>
                                 <button>
                                     <a href="/user_directory">Carian Pengguna</a>
+                                </button>
+                                <button>
+                                    <a href="/register">Daftar Akaun Baru Staff</a>
                                 </button>
                             </div>
                         @endif   
@@ -77,4 +80,4 @@
         </div>
     </div>
 {{-- </x-app-layout> --}}
-@stop
+{{-- @stop --}}

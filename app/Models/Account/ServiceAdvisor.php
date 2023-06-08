@@ -18,7 +18,7 @@ class ServiceAdvisor extends Model
                         ->get();
         
         $account_ID = $account->first()->A_accountID;
-        $newUser = DB::table('SA_serviceAdvisosr')
+        $newUser = DB::table('SA_serviceAdvisor')
             ->insert(
                 [
                     'A_accountID' => $account_ID,

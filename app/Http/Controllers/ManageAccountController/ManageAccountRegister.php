@@ -113,7 +113,7 @@ class ManageAccountRegister extends Controller
         // Auth::login($account);
 
 
-        // return redirect("/");
+        return redirect("/dashboard");
     }
 
     /**
