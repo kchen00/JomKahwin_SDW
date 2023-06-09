@@ -10,6 +10,12 @@ class Staff extends Model
 {
     use HasFactory;
 
+    // attributes that can be mass assigned, ie can be updated with create, update method
+    protected $fillable = [
+        "ST_position",
+        "ST_accessLevel"
+    ];
+
     public static function register($information) {
         $account = DB::table("A_account")
                         ->select("A_accountID")

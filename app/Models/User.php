@@ -43,9 +43,5 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function getEmailForPasswordReset()
-    {
-        return $this->A_email;
-    }
 
 }

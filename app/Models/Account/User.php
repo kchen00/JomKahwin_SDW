@@ -10,6 +10,11 @@ class User extends Model
 {
     use HasFactory;
 
+    // attributes that can be mass assigned, ie can be updated with create, update method
+    protected $fillable = [
+        "U_employeeName"
+    ];
+
     public static function register($information) {
         $account = DB::table("A_account")
                         ->select("A_accountID")
