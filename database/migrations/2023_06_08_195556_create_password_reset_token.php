@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ST_staff', function (Blueprint $table) {
-            $table->id("ST_staffID");
-            # decalring the foreign key A_accountID
+        Schema::create('PR_password_reset_token', function (Blueprint $table) {
+            $table->id("PR_id");
             $table->foreignId("A_accountID")->references("A_accountID")->on("A_account");
-            $table->string("ST_staffPosition", 50);
-            $table->string("ST_staffAccessLevel", 50);
-
+            $table->string("PR_token");
+            $table->timestamp("PR_createdAt");
         });
     }
 
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('staff');
+        Schema::dropIfExists('PR_password_reset_token');
     }
 };
