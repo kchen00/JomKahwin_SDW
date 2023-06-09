@@ -18,7 +18,7 @@ class ManageLogin extends Controller
         if(Auth::guard("account")->user()) {
             return redirect("dashboard");
         }
-        return view("ManageAccountView.LoginAccountView");
+        return view("ManageAccountView.ManageLoginView");
     }
 
     //authenticate the login credential
@@ -33,7 +33,7 @@ class ManageLogin extends Controller
         $credentials = $request->only("A_icNum", 'A_password', "A_accountType");
         //specify which guard to use and attempt to authenticate withe condition specified
         // password is default condition, so need to assign it with value, instead of specified
-        if(Auth::guard("account")->attempt(['password'=>$credentials['A_password'], 'A_icNum'=>$credentials["A_icNum"], 'A_accountType'=>$credentials["A_accountType"]])) {
+        if(Auth::guard('account')->attempt(['password'=>$credentials['A_password'], 'A_icNum'=>$credentials["A_icNum"], 'A_accountType'=>$credentials["A_accountType"]])) {
             $request->session()->regenerate();
             Auth::loginUsingId(Auth::guard("account")->id());
             // Session::put('user', $user);
@@ -44,6 +44,8 @@ class ManageLogin extends Controller
         // if the credential does not match, go back and display error message
         return back()->withErrors([
             'A_icNum' => 'Info akaun adalah tidak betul.',
+            'A_password' => 'Info akaun adalah tidak betul.',
+            'A_accountType' => 'Info akaun adalah tidak betul.',
         ])->onlyInput('A_icNum');
     }
     

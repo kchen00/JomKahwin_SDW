@@ -25,8 +25,8 @@
                     <x-input-label for="A_nationality" :value="__('Warganegara')" />
                     <select name="A_nationality" class="block mt-1 w-full">
                         <option disabled selected hidden>SILA PILIH KEWARGANEGARAAN ANDA</option>
-                        <option value="yes">Warganegara Malaysia</option>
-                        <option value="no">Bukan warganegara Malaysia</option>
+                        <option value="Y">Warganegara Malaysia</option>
+                        <option value="N">Bukan warganegara Malaysia</option>
                     </select>
                 </div> 
             </div>
@@ -59,13 +59,13 @@
                     <x-input-error :messages="$errors->get('A_jobAddress')" class="mt-2" />
                 </div>
                 <div>
-                    <x-input-label for="A_officeNo" :value="__('Nombor telefon pejabat')" />
-                    <x-text-input id="A_officeNo" class="block mt-1 w-full" type="text" name="A_officeNo" :value="old('A_officeNo', $account->A_officeNo)" required autofocus autocomplete="A_officeNo" />
-                    <x-input-error :messages="$errors->get('A_officeNo')" class="mt-2" />
+                    <x-input-label for="A_officeNum" :value="__('Nombor telefon pejabat')" />
+                    <x-text-input id="A_officeNum" class="block mt-1 w-full" type="text" name="A_officeNum" :value="old('A_officeNum', $account->A_officeNum)" required autofocus autocomplete="A_officeNum" />
+                    <x-input-error :messages="$errors->get('A_officeNum')" class="mt-2" />
                 </div>
                 <div>
                     <x-input-label for="A_income" :value="__('Pendapatan')" />
-                    <x-text-input id="A_income" class="block mt-1 w-full" type="text" name="A_income" :value="old('A_income', $account->A_income)" required autofocus autocomplete="A_income" />
+                    <x-text-input id="A_income" class="block mt-1 w-full" type="number" step="0.01" name="A_income" :value="old('A_income', $account->A_income)" required autofocus autocomplete="A_income" />
                     <x-input-error :messages="$errors->get('A_income')" class="mt-2" />
                 </div>
             </div>

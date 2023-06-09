@@ -37,13 +37,15 @@
                         </tr>  
                         {{-- listing out all the user --}}
                         @for($i=0; $i<count($user_list); $i++)
-                        <tr>
-                            <td>{{ $i+1 }}.</td>
-                            <td>{{ $user_list[$i]->A_name }}</td>
-                            <td>{{ $user_list[$i]->A_icNum }}</td>
-                            <td>{{ $user_list[$i]->A_telephoneNum }}</td>
-                            <td><button><a href="/user/{{ $user_list[$i]->A_accountID }}">Tunjuk profil</a></button></td>       
-                        </tr>    
+                            @if($user_list[$i]->A_name)
+                                <tr>
+                                    <td>{{ $i+1 }}.</td>
+                                    <td>{{ $user_list[$i]->A_name }}</td>
+                                    <td>{{ $user_list[$i]->A_icNum }}</td>
+                                    <td>{{ $user_list[$i]->A_telephoneNum }}</td>
+                                    <td><button><a href="/user/{{ $user_list[$i]->A_accountID }}">Tunjuk profil</a></button></td>       
+                                </tr>
+                            @endif    
                         @endfor
                         
                     </table>

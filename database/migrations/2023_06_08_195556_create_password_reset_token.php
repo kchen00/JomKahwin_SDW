@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('PR_password_reset_token', function (Blueprint $table) {
+        Schema::create('PR_passwordResetToken', function (Blueprint $table) {
             $table->id("PR_id");
             $table->foreignId("A_accountID")->references("A_accountID")->on("A_account");
             $table->string("PR_token");
             $table->timestamp("PR_createdAt");
+            $table->dateTime("PR_expiredAt");
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('PR_password_reset_token');
+        Schema::dropIfExists('PR_passwordResetToken');
     }
 };

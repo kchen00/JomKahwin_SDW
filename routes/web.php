@@ -3,8 +3,8 @@
 // specify the contoller class here
 use App\Http\Controllers\ManageAccountController\ManageAccountRegister;
 use App\Http\Controllers\ManageAccountController\ManageLogin;
-use App\Http\Controllers\ManageAccountController\ResetPasswordController;
-use App\Http\Controllers\ManageProfileController\ManageProfileController;
+use App\Http\Controllers\ManageAccountController\ManagePasswordReset;
+use App\Http\Controllers\ManageProfileController\ManageProfile;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Manager;
@@ -28,14 +28,7 @@ Route::get('/incentive', function () {
     return view('incentive.dashboard');
 });
 
-// Route::view("/register", "ManageAccountView.RegisterAccountView");
 Route::view("/login", "ManageAccountView.LoginAccountView");
-// Route::resource('/register', ManageAccountRegister::class);
-
-// Route::controller(ManageAccountRegisterPublic::class)->group(function () {
-//     Route::get('/register', 'index');
-//     Route::post('/register_new_user', 'store');
-// });
 
 Route::controller(ManageAccountRegister::class)->group(function () {
     Route::get('/register', 'index');
@@ -46,10 +39,10 @@ Route::controller(ManageAccountRegister::class)->group(function () {
 Route::controller(ManageLogin::class)->group(function () {
     Route::get('/login', 'index');
     Route::post('/authenticate', 'authenticate');
-    Route::get("logout", "logout");
+    Route::get("/logout", "logout");
 });
 
-Route::controller(ManageProfileController::class)->group(function () {
+Route::controller(ManageProfile::class)->group(function () {
     Route::get('/dashboard', 'index');
     Route::get('/update_profile', 'showUpdateProfileForm');
     Route::post('/update_profile_store', 'update');
@@ -59,7 +52,9 @@ Route::controller(ManageProfileController::class)->group(function () {
     
 });
 
-Route::controller(ResetPasswordController::class)->group(function () {
+Route::controller(ManagePasswordReset::class)->group(function () {
     Route::view("/forget_password", "ManageAccountView.ManageForgetPasswordView");
     Route::post("/request_reset_password", "sendResetLink");
+    Route::get("/reset_form/{token}", "displayResetForm");
+    Route::post("/password_reset", "resetPassword");
 });

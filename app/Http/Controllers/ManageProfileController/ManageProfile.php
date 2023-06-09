@@ -9,11 +9,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-class ManageProfileController extends Controller
+class ManageProfile extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    //show the dashboard of the user
     public function index()
     {
         $user = Auth::guard('account')->user();
@@ -60,10 +61,11 @@ class ManageProfileController extends Controller
     /**
      * Display the specified resource.
      */
+    // show user information from the search results
     public function show(string $id)
     {
         // checks if user who made this show request is an staff or not
-        if(Auth::user()->A_accountType == "S") {
+        if(Auth::guard('account')->user()->A_accountType == "S") {
             //search db for the account id
             $result = DB::table("A_account")
                         ->where("A_accountID", $id)
@@ -87,7 +89,7 @@ class ManageProfileController extends Controller
 
     // method to show the update profile form
     public function showUpdateProfileForm() {
-        $user = Auth::user();
+        $user = Auth::guard("account")->user();
         if($user) {
             if($user->A_accountType == "P") {
                 return view("ManageProfileView/ManageUpdateProfileView", ['base_template'=> 'ManageProfileView.ManageProfileViewBaseUser','account'=>$user]);   
@@ -105,25 +107,26 @@ class ManageProfileController extends Controller
         // validating the information
         $validated = $request->validate([
             'A_name' => ["required", "string"],
-            'A_ethnicity' => ['required' ],
-            'A_nationality' => ['required' ],
-            'A_houseAddress' => ['required' ],
-            'A_telephoneNum' => ['required' ],
-            'A_landlineNumber' => ['required' ],
-            'A_jobSector' => ['required' ],
-            'A_jobAddress' => ['required' ],
-            'A_officeNo' => ['required' ],
-            'A_income' => ['required' ],
-            'A_marriageStatus' => ['required' ],
-            'A_educationLevel' => ['required' ],
+            'A_ethnicity' => ['required'],
+            'A_nationality' => ['required'],
+            'A_houseAddress' => ['required'],
+            'A_telephoneNum' => ['required'],
+            'A_landlineNumber' => ['required'],
+            'A_jobSector' => ['required'],
+            'A_jobAddress' => ['required'],
+            'A_officeNum' => ['required'],
+            'A_income' => ['required', "decimal:2"],
+            'A_marriageStatus' => ['required'],
+            'A_educationLevel' => ['required'],
             'A_profilePhoto' => ['required', 'max:4000', 'mimes:jpg, jpeg, png'],
             ]
         );
+        
         //creating a new name for the image
         $profileImageName = time() . "." . $request->A_profilePhoto->extension();
         //sending the validated request to the account model to update the database
         $request->A_profilePhoto->move("A_profilePhoto", $profileImageName, );
-        Account::update_profile([
+        Account::updateProfile([
                 'A_name' => $request->A_name,
                 'A_ethnicity' => $request->A_ethnicity,
                 'A_nationality' => $request->A_nationality,
@@ -132,13 +135,13 @@ class ManageProfileController extends Controller
                 'A_landlineNumber' => $request->A_landlineNumber,
                 'A_jobSector' => $request->A_jobSector,
                 'A_jobAddress' => $request->A_jobAddress,
-                'A_officeNo' => $request->A_officeNo,
+                'A_officeNum' => $request->A_officeNum,
                 'A_income' => $request->A_income,
                 'A_marriageStatus' => $request->A_marriageStatus,
                 'A_educationLevel' => $request->A_educationLevel,
                 'A_profilePhoto' => $profileImageName,
             ]);
-        return redirect("dashboard");
+        return redirect("/dashboard");
     }
 
     public function showSearchForm() {
