@@ -137,9 +137,13 @@
                 <div class="container-fluid">
 
                     {{-- Yield --}}
+<<<<<<< Updated upstream
                     @yield('ManageMarriageRequest.Admin.searchApplicantView')
                     @yield('ManageMarriageRequest.Admin.infoApplicantView')
                     @yield('ManageMarriageRequest.Admin.validateApplicantView')
+=======
+                    @yield('ManageMarriageRequest.Admin.viewApplicant')
+>>>>>>> Stashed changes
 					
                 </div>
 

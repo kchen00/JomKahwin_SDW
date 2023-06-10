@@ -38,6 +38,7 @@ Route::get('/document', function () {
     return view('ManageMarriageRequest.User.document');
 });
 
+<<<<<<< Updated upstream
 Route::get('/search', function () {
     return view('ManageMarriageRequest.Admin.searchApplicantView');
 });
@@ -48,6 +49,10 @@ Route::get('/info', function () {
 
 Route::get('/validate', function () {
     return view('ManageMarriageRequest.Admin.validateApplicantView');
+=======
+Route::get('/view', function () {
+    return view('ManageMarriageRequest.Admin.viewApplicant');
+>>>>>>> Stashed changes
 });
 
 Route::get('/dashboard', function () {
