@@ -138,12 +138,10 @@
 
                     {{-- Yield --}}
 <<<<<<< Updated upstream
-                    @yield('ManageMarriageRequest.Admin.searchApplicantView')
-                    @yield('ManageMarriageRequest.Admin.infoApplicantView')
-                    @yield('ManageMarriageRequest.Admin.validateApplicantView')
-=======
-                    @yield('ManageMarriageRequest.Admin.viewApplicant')
->>>>>>> Stashed changes
+                    @yield('ManageMarriageRequestView.Admin.searchApplicantView')
+                    @yield('ManageMarriageRequestView.Admin.infoApplicantView')
+                    @yield('ManageMarriageRequestView.Admin.validateApplicantView')
+=======>>>>>>> Stashed changes
 					
                 </div>
 

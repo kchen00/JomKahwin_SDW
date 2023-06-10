@@ -26,33 +26,36 @@ Route::get('/Incentive-User', function () {
     return view('ManageSpecialIncentiveView.User.UserMainPageView');
 });
 
-Route::get('/search', function () {
-    return view('ManageMarriageRequest.User.searchKP');
+Route::get('/daftar', function () {
+    return view('ManageMarriageRequestView.User.daftarBaruView');
 });
 
 Route::get('/applicant', function () {
-    return view('ManageMarriageRequest.User.ApplicantInformation');
+    return view('ManageMarriageRequestView.User.ApplicantInformationView');
+});
+
+Route::get('/wali', function () {
+    return view('ManageMarriageRequestView.User.waliDocumentView');
 });
 
 Route::get('/document', function () {
-    return view('ManageMarriageRequest.User.document');
+    return view('ManageMarriageRequestView.User.documentView');
 });
 
-<<<<<<< Updated upstream
+Route::get('/semak', function () {
+    return view('ManageMarriageRequestView.User.senaraiSemakView');
+});
+
 Route::get('/search', function () {
-    return view('ManageMarriageRequest.Admin.searchApplicantView');
+    return view('ManageMarriageRequestView.Admin.searchApplicantView');
 });
 
 Route::get('/info', function () {
-    return view('ManageMarriageRequest.Admin.infoApplicantView');
+    return view('ManageMarriageRequestView.Admin.infoApplicantView');
 });
 
 Route::get('/validate', function () {
-    return view('ManageMarriageRequest.Admin.validateApplicantView');
-=======
-Route::get('/view', function () {
-    return view('ManageMarriageRequest.Admin.viewApplicant');
->>>>>>> Stashed changes
+    return view('ManageMarriageRequestView.Admin.validateApplicantView');
 });
 
 Route::get('/dashboard', function () {

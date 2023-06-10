@@ -137,9 +137,11 @@
                 <div class="container-fluid">
 
                     {{-- Yield --}}
-                    @yield('ManageMarriageRequest.User.searchKP')
-                    @yield('ManageMarriageRequest.User.ApplicantInformation')
-                    @yield('ManageMarriageRequest.User.document')
+                    @yield('ManageMarriageRequestView.User.daftarBaruView')
+                    @yield('ManageMarriageRequestView.User.ApplicantInformationView')
+                    @yield('ManageMarriageRequestView.User.waliDocumentView')
+                    @yield('ManageMarriageRequestView.User.documentView')
+                    @yield('ManageMarriageRequestView.User.senaraiSemakView')
 
 					
                 </div>

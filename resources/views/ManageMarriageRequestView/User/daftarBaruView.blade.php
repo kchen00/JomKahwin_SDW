@@ -1,5 +1,5 @@
-@extends('ManageMarriageRequest.User.base')
-@section('ManageMarriageRequest.User.searchKPView')
+@extends('ManageMarriageRequestView.User.base')
+@section('ManageMarriageRequestView.User.daftarBaruView')
 
 
 
