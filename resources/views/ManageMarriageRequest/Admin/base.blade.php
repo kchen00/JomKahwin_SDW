@@ -137,7 +137,9 @@
                 <div class="container-fluid">
 
                     {{-- Yield --}}
-                    @yield('ManageMarriageRequest.searchKP')
+                    @yield('ManageMarriageRequest.Admin.searchApplicantView')
+                    @yield('ManageMarriageRequest.Admin.infoApplicantView')
+                    @yield('ManageMarriageRequest.Admin.validateApplicantView')
 					
                 </div>
 

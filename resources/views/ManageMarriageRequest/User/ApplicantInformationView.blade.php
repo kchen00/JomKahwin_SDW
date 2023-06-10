@@ -1,5 +1,5 @@
 @extends('ManageMarriageRequest.User.base')
-@section('ManageMarriageRequest.User.ApplicantInformation')
+@section('ManageMarriageRequest.User.ApplicantInformationview')
 
 
 <div class='header'>

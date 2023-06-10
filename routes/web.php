@@ -38,6 +38,18 @@ Route::get('/document', function () {
     return view('ManageMarriageRequest.User.document');
 });
 
+Route::get('/search', function () {
+    return view('ManageMarriageRequest.Admin.searchApplicantView');
+});
+
+Route::get('/info', function () {
+    return view('ManageMarriageRequest.Admin.infoApplicantView');
+});
+
+Route::get('/validate', function () {
+    return view('ManageMarriageRequest.Admin.validateApplicantView');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

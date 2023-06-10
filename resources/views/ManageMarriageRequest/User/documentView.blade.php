@@ -1,5 +1,5 @@
 @extends('ManageMarriageRequest.User.base')
-@section('ManageMarriageRequest.User.document')
+@section('ManageMarriageRequest.User.documentView')
 
 
 <div class="col-6 col-lg-12">
