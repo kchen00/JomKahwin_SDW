@@ -9,6 +9,7 @@ use App\Models\Account\Account;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Mail\password_reset_mail;
+use Illuminate\Cache\RedisTagSet;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -62,7 +63,7 @@ class ManagePasswordReset extends Controller
             // dd($resetURL);
             //sendint the email
             Mail::to($account->A_email)->send(new password_reset_mail($account->A_name, $resetURL));
-            
+            return redirect("/");
         }
         
     }
@@ -78,6 +79,8 @@ class ManagePasswordReset extends Controller
         ];
 
         Account::resetPassword($information);
+        //after reset redirect user back to login page
+        return redirect("/login");
 
     } 
 
