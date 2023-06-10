@@ -1,5 +1,5 @@
 @extends('ManageMarriagePrepCourse.Admin.base')
-@section('ManageMarriagePrepCourse.Admin.adminDaftarTempat')
+@section('ManageMarriagePrepCourse.Admin.daftarTempatView')
 
 <div class="col-12 col-xl-6">
     <div class="card">

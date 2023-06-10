@@ -138,8 +138,8 @@
 
                     {{-- Yield --}}
                     @yield('ManageMarriageRequest.User.mainPageView')
-                    @yield('ManageMarriageRequest.User.searchAnjuran')
-                    @yield('ManageMarriageRequest.User.registerCourse')
+                    @yield('ManageMarriageRequest.User.searchAnjuranView')
+                    @yield('ManageMarriageRequest.User.registerCourseView')
                     
 
 					
