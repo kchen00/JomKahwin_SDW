@@ -1,5 +1,5 @@
-@extends('ManageMarriagePrepCourse.base')
-@section('ManageMarriagePrepCourse.adminDaftarKehadiran')
+@extends('ManageMarriagePrepCourse.Admin.base')
+@section('ManageMarriagePrepCourse.Admin.adminDaftarKehadiran')
 
     <div class='header'>
         <h5>DAFTAR PESERTA>>Kehadiran</h5>

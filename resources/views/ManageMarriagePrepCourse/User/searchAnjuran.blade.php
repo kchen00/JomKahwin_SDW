@@ -14,8 +14,8 @@
                   <div class="mb-3 row">
                       <label class="col-form-label col-sm-2 text-sm-end">Pilih Anjuran</label>
                       <form action="/action_page.php">
-                        <label for="cars">Pilih Anjuran</label>
-                        <select name="cars" id="pejabat">
+                        
+                        <select name="cars" id="pejabat" class="form-control">
                           <option value="semua">SEMUA PEJABAT AGAMA DAERAH</option>
                           <option value="pahang">JABATAN AGAMA ISLAM NEGERI PAHANG</option>
                           <option value="bentong">JABATAN AGAMA ISLAM BENTONG</option>
@@ -32,11 +32,11 @@
                           <option value="raub">JABATAN AGAMA ISLAM RAUB</option>
                           <option value="rompin">JABATAN AGAMA ISLAM ROMPIN</option>
                           <option value="temerloh">JABATAN AGAMA ISLAM TEMERLOH</option>
-                        </select>
+                        </select><br>
                       <div class="col-sm-3">
                           <div class="input-group">
-                              <input type="kad" class="form-control">&nbsp;
-                              &nbsp;<button type="submit" class="btn btn-primary">Cari</button>
+                              
+                              &nbsp;&nbsp;<button type="submit" class="btn btn-primary">Cari</button>
                           </div>
                       </div>
                     
