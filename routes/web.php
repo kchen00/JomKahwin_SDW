@@ -35,7 +35,7 @@ Route::get('/anjuran', function () {
     return view('ManageMarriagePrepCourse.User.searchAnjuran');
 });
 
-Route::get('/register', function () {
+Route::get('/registerCourse', function () {
     return view('ManageMarriagePrepCourse.User.registerCourse');
 });
 

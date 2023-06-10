@@ -1,6 +1,8 @@
 @extends('ManageMarriagePrepCourse.Admin.base')
 @section('ManageMarriagePrepCourse.Admin.adminDaftarKehadiran')
 
+
+
     <div class='header'>
         <h5>DAFTAR PESERTA>>Kehadiran</h5>
 
@@ -172,3 +174,6 @@
         </div>
 
     @stop
+ 
+
+    

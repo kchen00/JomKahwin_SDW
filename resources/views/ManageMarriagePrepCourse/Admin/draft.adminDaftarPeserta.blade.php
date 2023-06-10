@@ -51,7 +51,8 @@
                                             <td>TLOH/001/2023</td>
                                             <td class="table-action">
                                                 <a href="#"><i class="align-middle fas fa-fw fa-search"></i></i></a>
-                                                <a href="#"><i class="align-middle fas fa-fw fa-check-square"></i></i></a>
+                                                <a href="#"><i
+                                                        class="align-middle fas fa-fw fa-check-square"></i></i></a>
                                                 <a href="#"><i class="align-middle fas fa-fw fa-trash"></i></a>
                                             </td>
                                         </tr>
@@ -66,4 +67,6 @@
             </div>
         </div>
 
-    @stop
+    </div>
+    
+@stop
