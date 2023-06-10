@@ -3,11 +3,6 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template">
-	<meta name="author" content="Bootlab">
     <link rel="icon" type="image/png" href="https://jaip.pahang.gov.my/wp-content/uploads/2020/10/jata-pahang.png">
 	<link href="\css\modern.css" rel="stylesheet">
     
@@ -28,6 +23,40 @@
 			top:0;width:100%
 		}
 
+		/* Example CSS for icon buttons */
+		.icon-button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+    }
+    
+    /* Example CSS for icon styles */
+    .icon-view::before {
+      content: "\1F50D"; /* Unicode for the magnifying glass icon */
+    }
+    
+    .icon-approval::before {
+      content: "\2714"; /* Unicode for the checkmark icon */
+    }
+    
+    .icon-send-email::before {
+      content: "\2709"; /* Unicode for the envelope icon */
+    }
+    
+    .icon-print::before {
+      content: "\1F5A8"; /* Unicode for the printer icon */
+    }
+    
+    .icon-delete::before {
+      content: "\1F5D1"; /* Unicode for the trashcan icon */
+    }
+    
+    .icon-update::before {
+      content: "\270E"; /* Unicode for the pencil icon */
+    }
+	
 	</style>
 	<script src="js/settings.js"></script>
 	<script src="js/app.js"></script>
@@ -84,7 +113,7 @@
                               </svg><span class="align-middle">Daftar Perkahwinan</span>
 						</a>
 					</li>
-                    <li class="sidebar-item active">
+                    <li class="sidebar-item">
 						<a class="sidebar-link" href="user-dashboard">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
@@ -94,7 +123,7 @@
                               </svg> <span class="align-middle">Bantuan Insentif Khas</span>
 						</a>
 					</li>
-                    <li class="sidebar-item">
+                    <li class="sidebar-item active">
 						<a class="sidebar-link" href="dashboard-admin">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
                                 <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
@@ -106,7 +135,9 @@
 		</nav>
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-theme">
+				
 
+			
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item dropdown ms-lg-2">
@@ -125,9 +156,13 @@
 				<div class="container-fluid">
 
 					{{-- Yield --}}
-                    @yield('ManageSpecialIncentiveView.User.UserMainPageView')
-					@yield('ManageSpecialIncentiveView.User.UserViewStatusIncentiveView')
-					@yield('ManageSpecialIncentiveView.User.UserApplyIncentiveView')
+                    @yield('ManageConsultationView.User.ApplyConsultationView')
+					@yield('ManageConsultationView.User.ListApplicationRecordView')
+					@yield('ManageConsultationView.User.UserConsultationMainPageView')
+                    @yield('ManageConsultationView.User.UpdateApplicationView')
+					@yield('ManageConsultationView.User.DisplayConsultSessionView')
+					@yield('ManageConsultationView.User.UserViewStatusConsultationView')
+					@yield('ManageConsultationView.User.ListStatusApproveView')
 					</div>
 
 			</main>
