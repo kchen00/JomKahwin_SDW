@@ -30,7 +30,7 @@ return new class extends Migration
             $table->enum("A_marriageStatus", ["single", "married", "divorced", "polygamy"])->nullable();
             $table->string("A_educationLevel", 20)->nullable();
             $table->string("A_profilePhoto")->nullable();
-            $table->timestamp("A_lastUpdated")->nullable();
+            $table->timestamps();
         });
     }
 

@@ -11,7 +11,7 @@ class DashboardUserIncentiveController extends Controller
     {
         $dashboardUserIncentive = I_incentive::all();
         return view('ManageSpecialIncentiveView.User.UserMainPageView',[
-            'user-dashboard' => $dashboardUserIncentive
+            'user-IncentiveDashboard' => $dashboardUserIncentive
         ]);
     }
 }

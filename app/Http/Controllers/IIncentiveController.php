@@ -42,7 +42,7 @@ class IIncentiveController extends Controller
 
         $i_incentive->save();
 
-        return redirect('/butiran-rayuan-pemohon');
+        return redirect('/user-status');
 
     }
 
@@ -61,12 +61,30 @@ class IIncentiveController extends Controller
   
     public function update(UpdateI_incentiveRequest $request, I_incentive $i_incentive)
     {
-        //
+        
+        $i_incentive->I_bankName = $request->I_bankName;
+        $i_incentive->I_noAcc = $request->I_noAcc;
+        $i_incentive->I_relativeName = $request->I_relativeName;
+        $i_incentive->I_relativePhone = $request->I_relativePhone;
+        $i_incentive->I_relativeAddress = $request->I_relativeAddress;
+        $i_incentive->I_relativeCity = $request->I_relativeCity;
+        $i_incentive->I_relativeState = $request->I_relativeState;
+        $i_incentive->I_relativePostcode = $request->I_relativePostcode;
+        $i_incentive->I_relativeRelation = $request->I_relativeRelation;
+        $i_incentive->I_relativePhoneHouse = $request->I_relativePhoneHouse;
+
+        $i_incentive->I_applicationStatus = 'Sedang diproses';
+
+        $i_incentive->save();
+
+        return redirect('/user-status');
     }
 
    
     public function destroy(I_incentive $i_incentive)
     {
-        //
+        $i_incentive->delete();
+
+        return redirect('/user-status');
     }
 }

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign("A_accountID")->references("A_accountID")->on("A_account");
             $table->string("ST_staffPosition", 50);
             $table->string("ST_staffAccessLevel", 50);
+            $table->timestamps();
 
         });
     }

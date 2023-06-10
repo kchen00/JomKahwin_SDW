@@ -3,11 +3,6 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template">
-	<meta name="author" content="Bootlab">
     <link rel="icon" type="image/png" href="https://jaip.pahang.gov.my/wp-content/uploads/2020/10/jata-pahang.png">
 	<link href="\css\modern.css" rel="stylesheet">
     
@@ -15,6 +10,7 @@
 	<title>JomKahwin-EMunakahat</title>
 
 	<style>
+		
 		body {
 			opacity: 0;
 		}
@@ -27,7 +23,7 @@
 			position:absolute;
 			top:0;width:100%
 		}
-
+	
 	</style>
 	<script src="js/settings.js"></script>
 	<script src="js/app.js"></script>

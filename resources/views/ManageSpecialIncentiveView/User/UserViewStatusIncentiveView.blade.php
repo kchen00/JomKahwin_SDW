@@ -27,8 +27,8 @@
                         <thead>
                             <tr>
                                 <th>Bil</th>
-                                <th>K/P Nama Pemohon</th>
-                                <th>No. Slip Permohonan</th>
+                                <th>No K/P Pemohon</th>
+                                <th>No K/P Nama Pasangan</th>
                                 <th>Tarikh Mohon</th>
                                 <th>Status</th>
                                 <th>Operasi</th>
@@ -36,7 +36,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td></td>
+                                @foreach($i_incentive as $i_incentive)
+                                <td>{{$loop->index+1}}</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>

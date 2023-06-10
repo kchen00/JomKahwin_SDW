@@ -36,7 +36,9 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('admin-dashboardIncentive', DashboardAdminIncentiveController::class);
-Route::resource('user-dashboardIncentive', DashboardUserIncentiveController::class);
+Route::resource('admin-IncentiveDashboard', DashboardAdminIncentiveController::class);
+Route::resource('user-IncentiveDashboard', DashboardUserIncentiveController::class);
 Route::resource('user-status', UserViewStatusIncentiveController::class);
-Route::resource('user-apply', IIncentiveController::class);
+Route::resource('user-apply', IIncentiveController::class)->middleware('auth');
+Route::post('user-apply', [IIncentiveController::class, 'store'])->middleware('can:create,I_incentive');
+

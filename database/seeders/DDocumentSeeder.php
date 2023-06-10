@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\D_document;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use League\CommonMark\Node\Block\Document;
 
 class DDocumentSeeder extends Seeder
 {
@@ -12,6 +14,6 @@ class DDocumentSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+     
     }
 }

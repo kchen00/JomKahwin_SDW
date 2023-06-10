@@ -9,9 +9,10 @@ class UserViewStatusIncentiveController extends Controller
 {
     public function index()
     {
-        $userViewStatusIncentive = I_incentive::all();
-        return view('ManageSpecialIncentiveView.User.UserViewStatusIncentiveView',[
-            'user-status' => $userViewStatusIncentive
+        $i_incentive = I_incentive::all();
+        return view('ManageSpecialIncentiveView.User.UserViewStatusIcentiveView',[
+            'user-status' => $i_incentive
         ]);
     }
+ 
 }

@@ -24,8 +24,8 @@
                         <thead>
                             <tr>
                                 <th>Bil</th>
-                                <th>K/P Nama Pemohon</th>
-                                <th>No. Slip Permohonan</th>
+                                <th>No K/P Pemohon</th>
+                                <th>No K/P Pasangan</th>
                                 <th>Tarikh Mohon</th>
                                 <th>Status</th>
                                 <th>Operasi</th>

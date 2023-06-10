@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId("U_userID")->references("U_userID")->on("U_user");
         });
 
-        Schema::table('i_incentives', function (Blueprint $table) {
+        Schema::table('I_incentive', function (Blueprint $table) {
             $table->foreignId("ST_staffID")->references("ST_staffID")->on("ST_staff");
             $table->foreignId("U_userID")->references("U_userID")->on("U_user");
             $table->foreignId("D_documentID")->references("D_documentID")->on("D_document");
