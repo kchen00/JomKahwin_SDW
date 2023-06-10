@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('A_account', function (Blueprint $table) {
-            $table->integer("A_accountID")->autoIncrement();
+            $table->id("A_accountID")->autoIncrement();
             $table->string('A_password');  //password will be hashed, cannot just limit them to 20 char
             $table->enum("A_accountType", ["S", "P"]);
             $table->string("A_icNum", 12)->unique();
@@ -21,12 +21,13 @@ return new class extends Migration
             $table->string("A_name", 50)->nullable();
             $table->string("A_telephoneNum", 12)->nullable();
             $table->string("A_ethnicity", 12)->nullable();
-            $table->string("A_nationality", 2)->nullable();
+            $table->enum("A_nationality", ["Y", "N"])->nullable();
             $table->string("A_houseAddress", 50)->nullable();
             $table->string("A_landlineNumber", 50)->nullable();
             $table->string("A_jobSector", 20)->nullable();
             $table->string("A_jobAddress", 50)->nullable();
             $table->float("A_income")->nullable();
+            $table->string("A_officeNum", 12)->nullable();
             $table->enum("A_marriageStatus", ["single", "married", "divorced", "polygamy"])->nullable();
             $table->string("A_educationLevel", 20)->nullable();
             $table->string("A_profilePhoto")->nullable();

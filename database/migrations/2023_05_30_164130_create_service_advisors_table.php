@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('SA_serviceAdvisor', function (Blueprint $table) {
             $table->id("SA_advisorID");
             # decalring the foreign key A_accountID
-            $table->integer("A_accountID");
-            $table->foreign("A_accountID")->references("A_accountID")->on("A_account");
+            $table->foreignId("A_accountID")->references("A_accountID")->on("A_account");
         });
     }
 
