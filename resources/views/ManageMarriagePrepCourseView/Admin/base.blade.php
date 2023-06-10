@@ -137,11 +137,11 @@
                 <div class="container-fluid">
 
                     {{-- Yield --}}
-                    @yield('ManageMarriagePrepCourse.Admin.daftarTempatView')
-                    @yield('ManageMarriagePrepCourse.Admin.daftarMaklumatView')
-                    @yield('ManageMarriagePrepCourse.Admin.daftarPesertaView')
-                    @yield('ManageMarriagePrepCourse.Admin.daftarKehadiranView')
-                    @yield('ManageMarriagePrepCourse.Admin.KelulusanPesertaView')
+                    @yield('ManageMarriagePrepCourseView.Admin.daftarTempatView')
+                    @yield('ManageMarriagePrepCourseView.Admin.daftarMaklumatView')
+                    @yield('ManageMarriagePrepCourseView.Admin.daftarPesertaView')
+                    @yield('ManageMarriagePrepCourseView.Admin.daftarKehadiranView')
+                    @yield('ManageMarriagePrepCourseView.Admin.KelulusanPesertaView')
 
 					
                 </div>

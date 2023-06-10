@@ -27,39 +27,37 @@ Route::get('/Incentive-User', function () {
 });
 
 Route::get('/mainPage', function () {
-    return view('ManageMarriagePrepCourse.User.mainPageView');
+    return view('ManageMarriagePrepCourseView.User.mainPageView');
 });
 
 Route::get('/anjuran', function () {
-    return view('ManageMarriagePrepCourse.User.searchAnjuranView');
+    return view('ManageMarriagePrepCourseView.User.searchAnjuranView');
 });
 
 Route::get('/registerCourse', function () {
-    return view('ManageMarriagePrepCourse.User.registerCourseView');
+    return view('ManageMarriagePrepCourseView.User.registerCourseView');
 });
 
 Route::get('/tempat', function () {
-    return view('ManageMarriagePrepCourse.Admin.daftarTempatView');
+    return view('ManageMarriagePrepCourseView.Admin.daftarTempatView');
 });
 
 Route::get('/maklumat', function () {
-    return view('ManageMarriagePrepCourse.Admin.daftarMaklumatView');
+    return view('ManageMarriagePrepCourseView.Admin.daftarMaklumatView');
 });
 
 Route::get('/peserta', function () {
-    return view('ManageMarriagePrepCourse.Admin.daftarPesertaView');
+    return view('ManageMarriagePrepCourseView.Admin.daftarPesertaView');
 });
 
 Route::get('/kehadiran', function () {
-    return view('ManageMarriagePrepCourse.Admin.daftarKehadiranView');
+    return view('ManageMarriagePrepCourseView.Admin.daftarKehadiranView');
 });
 
 Route::get('/kelulusan', function () {
-    return view('ManageMarriagePrepCourse.Admin.kelulusanPesertaView');
+    return view('ManageMarriagePrepCourseView.Admin.kelulusanPesertaView');
 });
 
-Route::get('/searchKP', function () {
-    return view('ManageMarriageRequest.User.searchKP');
-});
+
 
 require __DIR__.'/auth.php';

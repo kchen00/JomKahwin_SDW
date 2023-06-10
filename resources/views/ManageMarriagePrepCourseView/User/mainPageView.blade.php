@@ -1,5 +1,5 @@
-@extends('ManageMarriagePrepCourse.User.base')
-@section('ManageMarriagePrepCourse.User.mainPageView')
+@extends('ManageMarriagePrepCourseView.User.base')
+@section('ManageMarriagePrepCourseView.User.mainPageView')
 
 
 <div class="header">

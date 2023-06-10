@@ -1,5 +1,5 @@
-@extends('ManageMarriagePrepCourse.User.base')
-@section('ManageMarriagePrepCourse.User.registerCourseView')
+@extends('ManageMarriagePrepCourseView.User.base')
+@section('ManageMarriagePrepCourseView.User.registerCourseView')
 
     <div class="col-12 col-xl-6">
         <div class="card">

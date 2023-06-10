@@ -137,9 +137,9 @@
                 <div class="container-fluid">
 
                     {{-- Yield --}}
-                    @yield('ManageMarriageRequest.User.mainPageView')
-                    @yield('ManageMarriageRequest.User.searchAnjuranView')
-                    @yield('ManageMarriageRequest.User.registerCourseView')
+                    @yield('ManageMarriagePrepCourseView.User.mainPageView')
+                    @yield('ManageMarriagePrepCourseView.User.searchAnjuranView')
+                    @yield('ManageMarriagePrepCourseView.User.registerCourseView')
                     
 
 					

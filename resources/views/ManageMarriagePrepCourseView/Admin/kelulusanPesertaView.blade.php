@@ -1,10 +1,8 @@
-@extends('ManageMarriagePrepCourse.Admin.base')
-@section('ManageMarriagePrepCourse.Admin.daftarKehadiranView')
-
-
+@extends('ManageMarriagePrepCourseView.Admin.base')
+@section('ManageMarriagePrepCourseView.Admin.kelulusanPesertaView')
 
     <div class='header'>
-        <h5>DAFTAR PESERTA>>Kehadiran</h5>
+        <h5>DAFTAR PESERTA>>Kelulusan</h5>
 
         <div class="col-5 col-xl-12">
             <div class="card">
@@ -128,15 +126,18 @@
 
                         <div class="mb-3">
                             <label class="form-label"></label>
-                            <textarea class="form-control text-center" placeholder="Anjuran: PEJABAT AGAMA ISLAM&#10;No.Siri: TLOH/001/2023&#10;Tarikh Kursus: 27-28 JANUARI 2023&#10;Tempat Kursus: DEWAN TARBIAH ISLAM PERAMU KAMPUNG PERAMU 25150 KUANTAN PAHANG" rows="4"></textarea>
+                            <textarea class="form-control text-center"
+                                placeholder="Anjuran: PEJABAT AGAMA ISLAM&#10;No.Siri: TLOH/001/2023&#10;Tarikh Kursus: 27-28 JANUARI 2023&#10;Tempat Kursus: DEWAN TARBIAH ISLAM PERAMU KAMPUNG PERAMU 25150 KUANTAN PAHANG"
+                                rows="4"></textarea>
                         </div>
-                        
+
 
                         <div class="col-12 col-xl-6">
                             <div class="card">
                                 <div class="card-header">
 
                                 </div>
+
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -145,8 +146,6 @@
                                             <th style="width:25%">No.Kad Pengenalan</th>
                                             <th style="width:25%">Jantina</th>
                                             <th style="width:40%;">Kehadiran</th>
-                                            <th style="width:40%;">Catatan</th>
-                                            <th style="width: 40%;">catatan<div class="additional-box"></div></th>
                                             <th>LULUS</th>
                                         </tr>
                                     </thead>
@@ -156,10 +155,11 @@
                                             <td>AHMAD ZULHILMI BIN MOHD</td>
                                             <td>010115110021</td>
                                             <td>LELAKI</td>
-                                            <td>HADIR</td>
-                                            <td>CATATAN <font color="AEF359"></td>
+                                            <td>LULUS <font color="AEF359">
+                                            </td>
                                             <td class="table-action">
-                                                <a href="#"><i class="align-middle fas fa-fw fa-check-square"></i></i></a>
+                                                <a href="#"><i
+                                                        class="align-middle fas fa-fw fa-check-square"></i></i></a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -173,7 +173,6 @@
             </div>
         </div>
 
-    @stop
+    </div>
  
-
-    
+@stop
