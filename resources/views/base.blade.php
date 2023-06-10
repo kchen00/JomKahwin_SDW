@@ -102,8 +102,13 @@
 				<div class="container-fluid">
 
 					{{-- Yield --}}
-                    @yield('ManageSpecialIncentiveView.Admin.AdminMainPageView')
-      
+                    @yield('incentive.dashboard')
+					@yield("homepage.homepage")
+					@yield("ManageAccountView.RegisterStaffAccountView")
+					@yield("ManageAccountView.RegisterPublicAccountView")
+					@yield("ManageProfielView.ManageUpdateProfileView")
+					{{-- @yield("ManageAccount.LoginAccountView") --}}
+        
 
 
 

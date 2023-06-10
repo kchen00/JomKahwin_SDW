@@ -1,12 +1,22 @@
 <?php
 
+<<<<<<< HEAD
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardAdminIncentiveController;
 use App\Http\Controllers\DashboardUserIncentiveController;
 use App\Http\Controllers\IIncentiveController;
 use App\Http\Controllers\UserViewStatusIncentiveController;
+=======
+// specify the contoller class here
+use App\Http\Controllers\ManageAccountController\ManageAccountRegister;
+use App\Http\Controllers\ManageAccountController\ManageLogin;
+use App\Http\Controllers\ManageAccountController\ManagePasswordReset;
+use App\Http\Controllers\ManageProfileController\ManageProfile;
+>>>>>>> origin/main
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Manager;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,19 +105,100 @@ Route::get('/incentive', function () {
     return view('ManageSpecialIncentiveView.Admin.AdminMainPageView');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::get('/mainPage', function () {
+    return view('ManageMarriagePrepCourse.mainPageView');
 });
 
+<<<<<<< HEAD
 require __DIR__.'/auth.php';
 
 Route::resource('admin-dashboardIncentive', DashboardAdminIncentiveController::class);
 Route::resource('user-dashboardIncentive', DashboardUserIncentiveController::class);
 Route::resource('user-status', UserViewStatusIncentiveController::class);
 Route::resource('user-apply', IIncentiveController::class);
+=======
+Route::get('/anjuran', function () {
+    return view('ManageMarriagePrepCourse.searchAnjuran');
+});
+
+Route::get('/register', function () {
+    return view('ManageMarriagePrepCourse.registerCourse');
+});
+
+Route::get('/tempat', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarTempat');
+});
+
+Route::get('/maklumat', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarMaklumat');
+});
+
+Route::get('/peserta', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarPeserta');
+});
+
+Route::get('/kehadiran', function () {
+    return view('ManageMarriagePrepCourse.adminDaftarKehadiran');
+});
+
+Route::get('/kelulusan', function () {
+    return view('ManageMarriagePrepCourse.adminKelulusan');
+});
+
+Route::get('/search', function () {
+    return view('ManageMarriageRequest.User.searchKP');
+Route::view("/login", "ManageAccountView.LoginAccountView");
+});
+
+Route::controller(ManageAccountRegister::class)->group(function () {
+    Route::get('/register', 'index');
+    Route::post('/register_new_user', 'storePublicAccount');
+    Route::post('/register_new_staff', 'storeStaffAccount');
+});
+
+Route::controller(ManageLogin::class)->group(function () {
+    Route::get('/login', 'index');
+    Route::post('/authenticate', 'authenticate');
+    Route::get("/logout", "logout");
+});
+
+Route::view("/login", "ManageAccountView.LoginAccountView");
+
+Route::controller(ManageAccountRegister::class)->group(function () {
+    Route::get('/register', 'index');
+    Route::post('/register_new_user', 'storePublicAccount');
+    Route::post('/register_new_staff', 'storeStaffAccount');
+});
+
+Route::controller(ManageLogin::class)->group(function () {
+    Route::get('/login', 'index');
+    Route::post('/authenticate', 'authenticate');
+    Route::get("/logout", "logout");
+});
+
+Route::controller(ManageProfile::class)->group(function () {
+    Route::get('/dashboard', 'index');
+    Route::get('/update_profile', 'showUpdateProfileForm');
+    Route::post('/update_profile_store', 'update');
+    Route::get("/user_directory", 'showSearchForm');
+    Route::post("/search_user", "searchUser");
+    Route::get("user/{id}", "show");
+    
+});
+
+Route::controller(ManagePasswordReset::class)->group(function () {
+    Route::view("/forget_password", "ManageAccountView.ManageForgetPasswordView");
+    Route::post("/request_reset_password", "sendResetLink");
+    Route::get("/reset_form/{token}", "displayResetForm");
+    Route::post("/password_reset", "resetPassword");
+});
+
+Route::get('/kelulusan', function () {
+    return view('ManageMarriagePrepCourse.adminKelulusan');
+});
+
+Route::get('/search', function () {
+    return view('ManageMarriageRequest.User.searchKP');
+});
+>>>>>>> origin/main
