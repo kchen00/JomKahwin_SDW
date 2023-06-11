@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MarriagePrepCourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,6 +57,9 @@ Route::get('/kehadiran', function () {
 Route::get('/kelulusan', function () {
     return view('ManageMarriagePrepCourseView.Admin.kelulusanPesertaView');
 });
+
+Route::get('/course', [MarriagePrepCourseController::class,index])->name('course.index');
+    
 
 
 
