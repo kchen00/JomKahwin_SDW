@@ -6,10 +6,12 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-   
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('I_incentive', function (Blueprint $table) {
+        Schema::create('i_incentives', function (Blueprint $table) {
             $table->id("I_incentiveID");
             // $table->foreignId('U_userID');
             // $table->foreignId('ST_staffID');
@@ -30,7 +32,9 @@ return new class extends Migration
         });
     }
 
-
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::dropIfExists('i_incentives');

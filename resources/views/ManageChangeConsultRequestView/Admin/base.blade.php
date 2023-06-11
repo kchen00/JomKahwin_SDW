@@ -5,7 +5,7 @@
 <head>
 
     <link rel="icon" type="image/png" href="https://jaip.pahang.gov.my/wp-content/uploads/2020/10/jata-pahang.png">
-	<link href="\css\classic.css" rel="stylesheet">
+	<link href="\css\modern.css" rel="stylesheet">
     
 
 	<title>JomKahwin-EMunakahat</title>
@@ -17,7 +17,7 @@
 
 		.wrapper:before
 		{
-			background:#1AA781;
+			background:#3c953f;
 			content:" ";
 			height:264px;
 			left:0;
@@ -25,7 +25,49 @@
 			top:0;width:100%
 		}
 
-	
+		.icon-button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+    }
+    
+    /* Example CSS for icon styles */
+    .icon-view::before {
+      content: "\1F50D"; /* Unicode for the magnifying glass icon */
+    }
+    
+    .icon-approval::before {
+      content: "\2714"; /* Unicode for the checkmark icon */
+    }
+    
+    .icon-send-email::before {
+      content: "\2709"; /* Unicode for the envelope icon */
+    }
+    
+    /* CSS for popup bar */
+    .popup-bar {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f0f0f0;
+      padding: 10px;
+      display: none;
+    }
+    
+    .popup-bar.show {
+      display: block;
+    }
+    
+    .popup-bar .message {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    
+    .popup-bar button {
+      margin-right: 5px;
+    }
 
 
 	</style>
@@ -38,7 +80,7 @@
 
     <div class="wrapper" >
 		<nav id="sidebar" class="sidebar">
-			<a class="sidebar-brand"  style="background: #1AA781;" href="dashboard-admin">
+			<a class="sidebar-brand"  style="background: #3c953f;" href="dashboard-admin">
 				<img src="https://jaip.pahang.gov.my/wp-content/uploads/2020/10/jata-pahang.png" style="height: 50px;">
 				Jom Kahwin
 			</a>
@@ -84,7 +126,7 @@
                               </svg><span class="align-middle">Daftar Perkahwinan</span>
 						</a>
 					</li>
-                    <li class="sidebar-item active">
+                    <li class="sidebar-item">
 						<a class="sidebar-link" href="user-dashboard">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
@@ -94,7 +136,7 @@
                               </svg> <span class="align-middle">Bantuan Insentif Khas</span>
 						</a>
 					</li>
-                    <li class="sidebar-item">
+                    <li class="sidebar-item active">
 						<a class="sidebar-link" href="dashboard-admin">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
                                 <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
@@ -127,7 +169,9 @@
 				<div class="container-fluid" >
 
 					{{-- Yield --}}
-                    @yield('ManageSpecialIncentiveView.Admin.AdminMainPageView')
+                    @yield('ManageChangeConsultRequestView.Admin.ManageApprovalChangeRequestView')
+					@yield('ManageChangeConsultRequestView.Admin.ManageUserRequestView')
+					@yield('ManageChangeConsultRequestView.Admin.UpdateChangeRequestView')
 					</div>
 
 			</main>

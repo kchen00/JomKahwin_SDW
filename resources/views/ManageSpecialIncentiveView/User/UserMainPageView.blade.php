@@ -52,7 +52,7 @@
                     </div>
                 </div>   
                 <div style="text-align: center;">
-                    <a href="" class="btn btn-primary">Seterusnya</a>
+                    <a href="user-status" class="btn btn-primary">Seterusnya</a>
                 </div>          
             </div>
         </div>
