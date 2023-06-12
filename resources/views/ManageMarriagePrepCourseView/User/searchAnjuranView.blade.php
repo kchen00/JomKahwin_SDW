@@ -11,11 +11,11 @@
           </div>
           <div class="card-body">
               <form>
-                  <div class="mb-3 row">
+                  <div class="mb-2 row">
                       <label class="col-form-label col-sm-2 text-sm-end">Pilih Anjuran</label>
                       <form action="/action_page.php">
                         
-                        <select name="cars" id="pejabat" class="form-control">
+                        <select name="anjuran" id="pejabat" class="form-control">
                           <option value="semua">SEMUA PEJABAT AGAMA DAERAH</option>
                           <option value="pahang">JABATAN AGAMA ISLAM NEGERI PAHANG</option>
                           <option value="bentong">JABATAN AGAMA ISLAM BENTONG</option>
@@ -57,19 +57,34 @@
                       </thead>
                       <tbody>
                           <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
+                              <td>1</td>
+                              <td>JABATAN AGAMA ISLAM AGAMA PEKAN</td>
+                              <td>DEWAN SRI SENTOSA</td>
+                              <td>15 JAN 2023</td>
+                              <td>500</td>
+                              <td>30</td>
                               <td class="table-action">
                                   <a href="#"><i class="align-middle fas fa-fw fa-search"></i></i></a>
                               </td>
                               <td class="table-action">
-                                <a href="#"><i class="align-middle fas fa-fw fa-search"></i></i></a>
+                                <a href="#"><i class="align-middle fas fa-fw fa-edit"></i></i></a>
                             </td>
                           </tr>
+
+                          <td>2</td>
+                          <td>JABATAN AGAMA ISLAM KUANTAN</td>
+                          <td>DEWAN CEMPAKA</td>
+                          <td>15 FEB 2023</td>
+                          <td>300</td>
+                          <td>PENUH <font color="#FF0000"></font></td>
+                          <td class="table-action">
+                              <a href="#"><i class="align-middle fas fa-fw fa-search"></i></i></a>
+                          </td>
+                          <td class="table-action">
+                            <a href="#"><i class="align-middle fas fa-fw fa-edit"></i></i></a>
+                        </td>
+                      </tr>
+
                       </tbody>
                   </table>
 

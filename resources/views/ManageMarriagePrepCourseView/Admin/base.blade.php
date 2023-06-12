@@ -61,7 +61,7 @@
                             </svg> <span class="align-middle">Profil</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
+                    <li class="sidebar-item active">
                         <a class="sidebar-link" href="dashboard-admin">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-calendar2-heart" viewBox="0 0 16 16">
@@ -88,7 +88,7 @@
                             </svg><span class="align-middle">Daftar Perkahwinan</span>
                         </a>
                     </li>
-                    <li class="sidebar-item active">
+                    <li class="sidebar-item ">
                         <a class="sidebar-link" href="user-dashboard">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-cash-coin" viewBox="0 0 16 16">
@@ -141,7 +141,7 @@
                     @yield('ManageMarriagePrepCourseView.Admin.daftarMaklumatView')
                     @yield('ManageMarriagePrepCourseView.Admin.daftarPesertaView')
                     @yield('ManageMarriagePrepCourseView.Admin.daftarKehadiranView')
-                    @yield('ManageMarriagePrepCourseView.Admin.KelulusanPesertaView')
+                    @yield('ManageMarriagePrepCourseView.Admin.kelulusanPesertaView')
 
 					
                 </div>

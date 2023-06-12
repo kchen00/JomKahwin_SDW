@@ -58,8 +58,8 @@ Route::get('/kelulusan', function () {
     return view('ManageMarriagePrepCourseView.Admin.kelulusanPesertaView');
 });
 
-Route::get('/course', [MarriagePrepCourseController::class,index])->name('course.index');
-    
+//Route::get('/mainPage', [MarriagePrepCourseController::class, 'nextPage'])->name('searchAnjuranView'); 
+   
 
 
 

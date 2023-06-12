@@ -45,7 +45,7 @@
 
                 <ul class="sidebar-nav">
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="dashboard-admin">
+                        <a class="sidebar-link" href="dashboard-admin" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-house-door-fill" viewBox="0 0 16 16">
                                 <path

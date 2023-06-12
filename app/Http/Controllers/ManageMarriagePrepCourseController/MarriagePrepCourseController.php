@@ -31,8 +31,9 @@ class MarriagePrepCourseController extends Controller
         //
     }
 
-    public function search()
+    public function nextPage()
     {
-        
+       return view('searchAnjuranView');
     }
+
 }

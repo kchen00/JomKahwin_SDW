@@ -1,11 +1,10 @@
 @extends('ManageMarriagePrepCourseView.Admin.base')
 @section('ManageMarriagePrepCourseView.Admin.daftarTempatView')
 
-<div class="col-12 col-xl-6">
+<div class="col-6 col-xl-12">
     <div class="card">
         <div class="card-header">
-            <h5 class="card-title">Horizontal form</h5>
-            <h6 class="card-subtitle text-muted">Horizontal Bootstrap layout.</h6>
+            
         </div>
         <div class="card-body">
             <form>

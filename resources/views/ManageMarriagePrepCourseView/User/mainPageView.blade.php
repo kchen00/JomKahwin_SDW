@@ -48,10 +48,11 @@
                             hendaklah mematuhi segala peraturan dan arahan dari semasa ke semasa oleh urusetia.</li>
                         </ul>
                     </div>
-                </div>   
+                </div>  
+                 
 
                 <div style="text-align: center;">
-                    <a href="user-status" class="btn btn-primary">Seterusnya</a>
+                    <button type="button" onclick="window.location.href='searchAnjuranView'" class="btn btn-primary">Seterusnya</a>
                 </div>          
             </div>
         </div>
