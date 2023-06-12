@@ -1,3 +1,8 @@
+@php
+    $account = Auth::guard('account')->user();
+    // dd($account);
+@endphp
+
 @extends('ManageSpecialIncentiveView.User.base')
 @section('ManageSpecialIncentiveView.User.UserApplyIncentiveView')
 
@@ -38,7 +43,7 @@
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
                                         <label for="namaMajikan">Nama Majikan</label>
-                                        <input type="password" class="form-control" id="namaMajikan" name="U_employerName">
+                                        <input type="text" class="form-control" id="namaMajikan" name="U_employerName">
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="alamatMajikan">Alamat Majikan</label>
@@ -62,7 +67,7 @@
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
                                         <label for="namaBank">Nama Bank</label>
-                                        <input type="text" class="form-control" id="namaBank" name="U_employerName">
+                                        <input type="text" class="form-control" id="namaBank" name="U_employerName" >
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="noAkaun">Nombor Akaun</label>

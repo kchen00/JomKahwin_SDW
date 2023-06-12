@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class I_incentive extends Model
 {
-    protected $table = 'I_incentive';
+    // protected $table = 'i_incentive';
     use HasFactory;
 }
