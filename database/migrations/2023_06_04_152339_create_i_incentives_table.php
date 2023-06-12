@@ -23,11 +23,7 @@ return new class extends Migration
             $table->string('I_relativeName', 20)->nullable();
             $table->string('I_relativePhone', 20)->nullable();
             $table->string('I_relativeAddress', 20)->nullable();
-            $table->string('I_relativeCity', 20)->nullable();
-            $table->string('I_relativeState', 20)->nullable();
-            $table->string('I_relativePostcode', 20)->nullable();
             $table->string('I_relativeRelation', 20)->nullable();
-            $table->string('I_relativePhoneHouse', 20)->nullable();
             $table->timestamps();
         });
     }

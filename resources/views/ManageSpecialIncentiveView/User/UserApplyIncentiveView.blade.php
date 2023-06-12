@@ -3,7 +3,7 @@
 
 
                         <div class="card">
-                            <form method="POST" action="/user-apply" enctype="multipart/form-data">
+                            <form method="POST" action="/user-status" enctype="multipart/form-data">
                                 @csrf 
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
@@ -28,20 +28,6 @@
                                 <div class="mb-3">
                                     <label for="alamatSaudara">Alamat Rumah</label>
                                     <input type="text" class="form-control" id="alamatSaudara" name="I_relativeAddress">
-                                </div>
-                                <div class="row">
-                                    <div class="mb-3 col-md-4">
-                                        <label for="poskod">Poskod</label>
-                                        <input type="text" class="form-control" id="poskod" name="I_relativePostcode">
-                                    </div>
-                                    <div class="mb-3 col-md-4">
-                                        <label for="bandar">Bandar</label>
-                                        <input type="text" class="form-control" id="bandar" name="I_relativeCity">
-                                    </div>
-                                    <div class="mb-3 col-md-4">
-                                        <label for="negeri">Negeri</label>
-                                        <input type="text" class="form-control" id="negeri" name="I_relativeState">
-                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="mb-3 col-md-6">

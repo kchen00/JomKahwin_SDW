@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id("U_userID");
             # decalring the foreign key A_accountID
             $table->integer("A_accountID");
-            $table->foreign("A_accountID")->references("A_accountID")->on("A_account");
+            // $table->foreign("A_accountID")->references("A_accountID")->on("A_account");
             $table->string("U_employerName", 50)->nullable();
         });
     }

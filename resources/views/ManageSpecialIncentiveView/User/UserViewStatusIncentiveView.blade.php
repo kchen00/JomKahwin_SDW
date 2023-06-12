@@ -10,7 +10,6 @@
         </h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="dashboard-default.html">Bantuan Perkahwinan</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Permohonan Baru</li>
             </ol>
         </nav>
@@ -41,9 +40,27 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td> @if ($i_incentive->I_applicationStatus === "Lulus")
+                                    <span class="badge rounded-pill bg-success">{{ $i_incentive->I_applicationStatus}}</span>
+                                    @elseif($i_incentive->I_applicationStatus === "Sedang diproses")
+                                    <span class="badge rounded-pill bg-warning">{{ $i_incentive->I_applicationStatus}}</span>
+                                    @else
+                                    <span class="badge rounded-pill bg-danger ">{{ $i_incentive->I_applicationStatus}}</span></td>
+                                    @endif</td>
+                                <td>
+                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modalDetails-{{ $i_incentive->id }}" >
+                                        <i class="text-dark ion ion-md-eye me-2"></i>
+                                    </a>
+                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#update-{{ $i_incentive->id }}">
+                                        <i class=" text-dark  fas fa-fw fa-pen"></i>
+                                    </a>
+                                    <a href="/user-status/{{$i_incentive->id}}/delete">
+                                        <i class="text-dark  fas fa-fw fa-trash"></i>
+                                    </a>
+                                </td>
+                                @endforeach
                             </tr>
+                        </tbody>
                         </tfoot>
                     </table>
                 </div>

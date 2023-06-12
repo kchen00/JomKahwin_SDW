@@ -10,7 +10,7 @@
         </h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="dashboard-default.html">Bantuan Perkahwinan</a></li>
+                <li class="breadcrumb-item"><a href="dashboard-default.html">Bantuan Insentif Khas</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Permohonan Baru</li>
             </ol>
         </nav>
@@ -18,14 +18,17 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
+                <div class="card-header">
+                    <a href="user-apply" class="btn btn-info" style="float: right;">Daftar Baru</a>
+                </div>
                 <div class="card-body">
                   
-                    <table id="datatables-buttons" class="table table-striped" style="width:100%">
+                    <table id="datatables-basic" class="table table-striped" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Bil</th>
                                 <th>No K/P Pemohon</th>
-                                <th>No K/P Pasangan</th>
+                                <th>No K/P Nama Pasangan</th>
                                 <th>Tarikh Mohon</th>
                                 <th>Status</th>
                                 <th>Operasi</th>
@@ -34,47 +37,34 @@
                         <tbody>
                             <tr>
                                 @foreach($i_incentive as $i_incentive)
+                                @foreach($account as $account)
                                 <td>{{$loop->index+1}}</td>
+                                <td>{{$account->A_icNum}}</td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-sm">
-                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#update-{{ $i_incentive->id }}">
-                                      <i class=" text-dark  fas fa-fw fa-pen"></i>
+                                <td> @if ($i_incentive->I_applicationStatus === "Lulus")
+                                    <span class="badge rounded-pill bg-success">{{ $i_incentive->I_applicationStatus}}</span>
+                                    @elseif($i_incentive->I_applicationStatus === "Sedang diproses")
+                                    <span class="badge rounded-pill bg-warning">{{ $i_incentive->I_applicationStatus}}</span>
+                                    @else
+                                    <span class="badge rounded-pill bg-danger ">{{ $i_incentive->I_applicationStatus}}</span></td>
+                                    @endif</td>
+                                <td>
+                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modalDetails-{{ $i_incentive->id }}" >
+                                        <i class="text-dark ion ion-md-eye me-2"></i>
                                     </a>
-                                  </td>
-                                        </tr>
-                                                         <!--Modal Kemaskini-->
-                                                         <div class="modal fade" id="update-{{ $i_incentive->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                            <div class="modal-dialog modal-dialog-scrollable">
-                                                            <div class="modal-content">
-                                                            <div class="modal-header">
-                                                            <h5 class="modal-title" id="staticBackdropLabel">Status Permohonan</h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                            <form method="POST" action="/admin-dashboard/{{ $i_incentive->id }}">
-                                                          @csrf 
-                                                          @method('PUT')
-                                                          <input type="hidden" name="id" value="{{$i_incentive->id}}">         
-                                                            <div class="form-group">
-                                                              <label for="inputType" class="form-label">Keputusan</label>
-                                                              <select class="form-select" name="keputusan" value="{{$i_incentive->I_applicationStatus}}">
-                                                               <option @if ($i_incentive->I_applicationStatus == 'Lulus') selected @endif value="Lulus">Lulus
-                                                               <option @if ($i_incentive->I_applicationStatus == 'Tidak Lulus') selected @endif value="Tidak Lulus">Tidak Lulus
-                                                                </select>
-                                                            </div>
-                                                          <br>                                         
-                                                          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">CLOSE</button>
-                                                          <button type="submit"class="btn btn-primary" >UPDATE</button>
-                                                            </form>
-                                                          </div>
-                                                        </div>
-                                                        </div>
-                                                        </div>            
-                                        @endforeach
+                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#update-{{ $i_incentive->id }}">
+                                        <i class=" text-dark  fas fa-fw fa-pen"></i>
+                                    </a>
+                                    <a href="/user-status/{{$i_incentive->id}}/delete">
+                                        <i class="text-dark  fas fa-fw fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                            @endforeach
                         </tbody>
+                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -97,5 +87,6 @@
         datatablesButtons.buttons().container().appendTo("#datatables-buttons_wrapper .col-md-6:eq(0)")
     });
 </script>
+
 
 @stop
