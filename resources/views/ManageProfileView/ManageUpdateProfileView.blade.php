@@ -1,7 +1,7 @@
 @extends($base_template)
 @section("ManageProfileView.ManageUpdateProfileView")
 
-<x-app-layout class="bg-red">
+<x-app-layout>
     <div class="display-1 p-4 card block w-full">
         <p>Kemaskini profil</p>
         <h1>Sila masukkan maklumat berikut</h1>

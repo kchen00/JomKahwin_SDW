@@ -18209,7 +18209,7 @@ div.dataTables_scrollBody table thead .sorting_desc:before {
 
 div.dataTables_scrollBody table tbody tr:first-child td,
 div.dataTables_scrollBody table tbody tr:first-child th {
-  border-top: none
+  border-top: nonde
 }
 
 div.dataTables_scrollFoot>.dataTables_scrollFootInner {

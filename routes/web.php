@@ -36,73 +36,28 @@ Route::get('/', function () {
 });
 
 // consultation admin routes
-Route::get('/requestChange', function () {
-    return view('ManageChangeConsultRequestView.Admin.ManageUserRequestView');
+Route::prefix('/consultation_admin')->group(function () {
+    Route::view('/requestChange', 'ManageChangeConsultRequestView.Admin.ManageUserRequestView');
+    Route::view('/approvalChange', 'ManageChangeConsultRequestView.Admin.ManageApprovalChangeRequestView');
+    Route::view('/updateChange', 'ManageChangeConsultRequestView.Admin.UpdateChangeRequestView');
+    Route::view('/userApplication', 'ManageConsultationView.Admin.ManageUserApplicationView');
+    Route::view('/updatedApplication', 'ManageConsultationView.Admin.UpdatedApplicationView');
+    Route::view('/manageConsultation', 'ManageConsultationView.Admin.AdminManageConsultationView');
+    Route::view('/approvalConsultation', 'ManageConsultationView.Admin.ManageApprovalApplicationView');
+    Route::view('/advisor', 'ManageConsultationView.Admin.ManageAdvisorView');
+    Route::view('/manageConsultSession', 'ManageConsultationView.Admin.ManageConsultSessionView');
 });
 
-Route::get('/approvalChange', function () {
-    return view('ManageChangeConsultRequestView.Admin.ManageApprovalChangeRequestView');
-});
-
-Route::get('/updateChange', function () {
-    return view('ManageChangeConsultRequestView.Admin.UpdateChangeRequestView');
-});
-
-Route::get('/userApplication', function () {
-    return view('ManageConsultationView.Admin.ManageUserApplicationView');
-});
-
-Route::get('/updatedApplication', function () {
-    return view('ManageConsultationView.Admin.UpdatedApplicationView');
-});
-
-Route::get('/manageConsultation', function () {
-    return view('ManageConsultationView.Admin.AdminManageConsultationView');
-});
-
-Route::get('/approvalConsultation', function () {
-    return view('ManageConsultationView.Admin.ManageApprovalApplicationView');
-});
-
-Route::get('/advisor', function () {
-    return view('ManageConsultationView.Admin.ManageAdvisorView');
-});
-
-Route::get('/manageConsultSession', function () {
-    return view('ManageConsultationView.Admin.ManageConsultSessionView');
-});
-
-//consultation user routes
-Route::get('/applyChange', function () {
-    return view('ManageChangeConsultRequestView.User.ApplyChangeRequestView');
-});
-
-Route::get('/mainConsultation', function () {
-    return view('ManageConsultationView.User.UserConsultationMainPageView');
-});
-
-Route::get('/applyConsultation', function () {
-    return view('ManageConsultationView.User.ApplyConsultationView');
-});
-
-Route::get('/listApplication', function () {
-    return view('ManageConsultationView.User.ListApplicationRecordView');
-});
-
-Route::get('/listStatusApprove', function () {
-    return view('ManageConsultationView.User.ListStatusApproveView');
-});
-
-Route::get('/updateApplication', function () {
-    return view('ManageConsultationView.User.UpdateApplicationView');
-});
-
-Route::get('/consultSession', function () {
-    return view('ManageConsultationView.User.DisplayConsultSessionView');
-});
-
-Route::get('/viewStatusConsultation', function () {
-    return view('ManageConsultationView.User.UserViewStatusConsultationView');
+// consultation routes for users
+Route::prefix('/consultation_user')->group(function () {
+    Route::view('/applyChange', 'ManageChangeConsultRequestView.User.ApplyChangeRequestView');
+    Route::view('/mainConsultation', 'ManageConsultationView.User.UserConsultationMainPageView');
+    Route::view('/applyConsultation', 'ManageConsultationView.User.ApplyConsultationView');
+    Route::view('/listApplication', 'ManageConsultationView.User.ListApplicationRecordView');
+    Route::view('/listStatusApprove', 'ManageConsultationView.User.ListStatusApproveView');
+    Route::view('/updateApplication', 'ManageConsultationView.User.UpdateApplicationView');
+    Route::view('/consultSession', 'ManageConsultationView.User.DisplayConsultSessionView');
+    Route::view('/viewStatusConsultation', 'ManageConsultationView.User.UserViewStatusConsultationView');
 });
 
 //incentive
@@ -115,6 +70,7 @@ Route::resource('user-dashboardIncentive', DashboardUserIncentiveController::cla
 Route::resource('user-status', UserViewStatusIncentiveController::class);
 Route::resource('user-apply', IIncentiveController::class);
 
+//marriage course routes
 Route::prefix("/marriage_course")->group(function () {
     Route::get('anjuran', [ManagePrepCourseController::class, "searchPrepCourse"]);
     Route::get("anjuran/search", [ManagePrepCourseController::class, "searchPrepCourse"]);

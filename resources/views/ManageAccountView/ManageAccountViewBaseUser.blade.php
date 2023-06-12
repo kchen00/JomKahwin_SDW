@@ -35,7 +35,18 @@
 
             <main class="content">
                 <div class="container-fluid">
-
+                    <div class="header">
+                        <h1 class="header-title">
+                            Selamat datang ke sistem JomKahwin!
+                        </h1>
+                        <div class="align-self-end">
+                            <nav aria-label="breadcrumb">
+                                <div class="p-4 breadcrumb-item active">
+                                    {{ now() }}
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
                     {{-- Yield --}}
                     @yield('ManageAccountView.LoginAccountView')
                     @yield("ManageAccountView.RegisterPublicAccountView")

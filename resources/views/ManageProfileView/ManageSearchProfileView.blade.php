@@ -1,33 +1,26 @@
+@extends("ManageProfileView.ManageProfileViewBaseAdmin")
+@section("ManageProfileView.ManageSearchProfileView")
 <x-app-layout>
-    {{-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot> --}}
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("Carian pengguna") }}
-                </div>
-            </div>
+    <div class="display-1 p-4 card block w-full rounded">
+        <p>Carian Pengguna</p>
+    </div>
+    <div class="block">
+            <form action="/search_user" method="post" class="">
+                @csrf
+                <input type="text" name="A_icNum">
+                <select name="A_accountType">
+                    <option disabled hidden selected>SILA PILIH JENIS PENGGUNA</option>
+                    <option value="P">PENGGUNA BIASA</option>
+                    <option value="S">STAFF JAIP</option>
+                </select>
+                <x-primary-button class="px-4 rounded" style="background-color: #635B5B">
+                    {{ __('Cari') }}
+                </x-primary-button>
+            </form>
             <div>
-                <form action="/search_user" method="post">
-                    @csrf
-                    <input type="text" name="A_icNum" >
-                    <select name="A_accountType">
-                        <option disabled hidden selected>SILA PILIH JENIS PENGGUNA</option>
-                        <option value="P">PENGGUNA BIASA</option>
-                        <option value="S">STAFF JAIP</option>
-                    </select>
-                    <x-primary-button class="ml-4">
-                        {{ __('Cari') }}
-                    </x-primary-button>
-                </form>
-            </div>
-            <div>
+                <p>Senarai pengguna</p>
                 @if(count($user_list)>0)
-                    <table>
+                    <table style="width: 100%; border: 1px black">
                         <tr>
                             <td>no.</td>
                             <td>Nama</td>
@@ -53,6 +46,6 @@
                     <p>Tiada hasilan</p>
                 @endif
             </div>
-        </div>
     </div>
 </x-app-layout>
+@stop
