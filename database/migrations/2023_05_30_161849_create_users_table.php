@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('U_user', function (Blueprint $table) {
             $table->id("U_userID");
             # decalring the foreign key A_accountID
-            $table->integer("A_accountID");
-            $table->foreign("A_accountID")->references("A_accountID")->on("A_account");
+            $table->foreignId("A_accountID")->references("A_accountID")->on("A_account");
             $table->string("U_employerName", 50)->nullable();
         });
     }

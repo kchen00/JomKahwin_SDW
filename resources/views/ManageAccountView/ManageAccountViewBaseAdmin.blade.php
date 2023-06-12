@@ -40,7 +40,7 @@
 				<div class="container-fluid" >
 
 					{{-- Yield --}}
-                    @yield('ManageAccountView.RegisterStaffAccountView')
+                    @yield("ManageAccountView.RegisterStaffAccountView")
 					</div>
 
 			</main>

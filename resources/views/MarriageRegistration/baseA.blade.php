@@ -5,7 +5,7 @@
 <head>
 
     <link rel="icon" type="image/png" href="https://jaip.pahang.gov.my/wp-content/uploads/2020/10/jata-pahang.png">
-	<link href="\css\classic.css" rel="stylesheet">
+	<link href="\css\modern.css" rel="stylesheet">
     
 
 	<title>JomKahwin-EMunakahat</title>
@@ -17,7 +17,7 @@
 
 		.wrapper:before
 		{
-			background:#1AA781;
+			background:#3c953f;
 			content:" ";
 			height:264px;
 			left:0;
@@ -38,7 +38,7 @@
 
     <div class="wrapper" >
 		<nav id="sidebar" class="sidebar">
-			<a class="sidebar-brand"  style="background: #1AA781;" href="dashboard">
+			<a class="sidebar-brand"  style="background: #3c953f;" href="dashboard-admin">
 				<img src="https://jaip.pahang.gov.my/wp-content/uploads/2020/10/jata-pahang.png" style="height: 50px;">
 				Jom Kahwin
 			</a>
@@ -112,6 +112,22 @@
 			</div>
 		</nav>
 		<div class="main">
+			<nav class="navbar navbar-expand navbar-theme">
+				
+
+			
+				<div class="navbar-collapse collapse" >
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item dropdown ms-lg-2">
+							<a href="/" class="text-light">
+								<i class="align-middle me-2 text-light" data-feather="log-out"></i>Sign out
+							</a>
+							
+						</li>
+					</ul>
+				</div>
+
+			</nav>
         
             
         <main class="content" >
@@ -119,6 +135,9 @@
 
 					{{-- Yield --}}
                     @yield('ManageSpecialIncentiveView.Admin.AdminMainPageView')
+					@yield('MarriageRegistration.StuffSearchApplication')
+					@yield('MarriageRegistration.StuffViewApplication')
+					@yield('MarriageRegistration.StuffApprovalApplication')
 					</div>
 
 			</main>
