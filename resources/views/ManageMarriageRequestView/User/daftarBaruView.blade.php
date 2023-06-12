@@ -39,11 +39,11 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>AISYAH BINTI ALI</td>
+                                    <td>750313060802</td>
+                                    <td>DN3/2023-087632</td>
+                                    <td>15 JAN 2023</td>
+                                    <td>BELUM HANTAR</td>
                                     <td class="table-action">
                                         <a href="#"><i class="align-middle fas fa-fw fa-search"></i></i></a>
                                     </td>
@@ -51,16 +51,19 @@
                             </tbody>
                         </table>
 
-                        <div class="mb-3 row text-right">
-                            <div class="col-sm-10 ms-sm-auto">
-                                <button type="submit" class="btn btn-primary">Kembali</button>
-                                <button type="submit" class="btn btn-primary">Seterusnya</button>
-                            </div>
+                        
+                        <div class="col-sm-17 ms-sm-auto" style="display: flex; justify-content: center; align-items: center;">
+                            <button type="submit" class="btn btn-primary mr-6  onclick=kembali()">Kembali</button>&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary onclick=seterusnya()">Seterusnya</button>&nbsp;&nbsp;
                         </div>
+
+                       
                 </div>
             </div>
             </form>
         </div>
     </div>
+
+   
 
 @stop

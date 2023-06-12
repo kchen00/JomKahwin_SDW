@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MarriageRequestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +32,7 @@ Route::get('/daftar', function () {
 
 Route::get('/applicant', function () {
     return view('ManageMarriageRequestView.User.ApplicantInformationView');
-});
+})->name('ApplicantInformationView');;
 
 Route::get('/wali', function () {
     return view('ManageMarriageRequestView.User.waliDocumentView');
@@ -57,6 +57,12 @@ Route::get('/info', function () {
 Route::get('/validate', function () {
     return view('ManageMarriageRequestView.Admin.validateApplicantView');
 });
+
+Route::get('/applicant-information', function () {
+    return view('ApplicantInformationView');
+})->name('applicant-information');
+
+Route::post('/seterusnya', 'MarriageRequestController@seterusnya')->name('seterusnya');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
