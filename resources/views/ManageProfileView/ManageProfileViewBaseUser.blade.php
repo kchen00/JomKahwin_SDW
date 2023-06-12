@@ -19,6 +19,25 @@
 			position:absolute;
 			top:0;width:100%
 		}
+
+		.grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			justify-items: stretch;
+			align-items: start;
+			column-gap: 20px;
+			row-gap: 20px;
+		}
+
+		.grid_content {
+			color: #242424;
+			background-color: #D9D9D9;
+			font-weight: 600;
+			text-align: left;
+			box-sizing: border-box;
+			height: 100%;
+			padding: 10px;
+		}
 	</style>
 	<script src="js/settings.js"></script>
 	<script src="js/app.js"></script>
@@ -54,7 +73,7 @@
 						</a>
 					</li>
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="/marriage_course_register">
+						<a class="sidebar-link" href="/marriage_course/mainPage">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2-heart" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5ZM1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3Zm2 .5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V4a.5.5 0 0 0-.5-.5H3Zm5 4.493c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
                               </svg> <span class="align-middle">Daftar Kursus Kahwin</span>
@@ -106,8 +125,21 @@
 			<main class="content">
 					<div class="container-fluid">
 						{{-- Yield --}}
-						@yield("ManageProfileView.ManageDisplayProfile")
-						@yield("ManageProfileView.ManageUpdateProfileView")
+						 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+							<div class="text-gray-900 card">
+								<div class="display-1 align-self-center fw-bold">
+									{{ __("Selamat datang ke sistem JomKahwin!") }}	
+								</div>
+								<div class="align-self-end p-4">
+									{{ now() }}
+								</div>
+							</div>
+           				 </div>
+						 <div class="p-auto">
+							@yield("ManageProfileView.ManageDisplayProfile")
+							@yield("ManageProfileView.ManageUpdateProfileView")	
+						 </div>
+
 					</div>
 
 			</main>

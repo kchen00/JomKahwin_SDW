@@ -10,6 +10,8 @@ use App\Http\Controllers\ManageAccountController\ManageAccountRegister;
 use App\Http\Controllers\ManageAccountController\ManageLogin;
 use App\Http\Controllers\ManageAccountController\ManagePasswordReset;
 use App\Http\Controllers\ManageProfileController\ManageProfile;
+use App\Http\Controllers\ManageMarriagePrepCourseController\ManagePrepCourseController;
+use App\Http\Controllers\ManageMarriageRequestContoller\MarriageRequestContoller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Manager;
@@ -113,43 +115,24 @@ Route::resource('user-dashboardIncentive', DashboardUserIncentiveController::cla
 Route::resource('user-status', UserViewStatusIncentiveController::class);
 Route::resource('user-apply', IIncentiveController::class);
 
-// marriage preparation couse
-Route::get('/marriage_course_anjuran', function () {
-    return view('ManageMarriagePrepCourse.searchAnjuran');
-});
-
-Route::get('/marriage_course_mainPage', function () {
-    return view('ManageMarriagePrepCourse.mainPageView');
-});
-
-Route::get('/marriage_course_register', function () {
-    return view('ManageMarriagePrepCourse.registerCourse');
-});
-
-Route::get('/marriage_course_tempat', function () {
-    return view('ManageMarriagePrepCourse.adminDaftarTempat');
-});
-
-Route::get('/marriage_course_maklumat', function () {
-    return view('ManageMarriagePrepCourse.adminDaftarMaklumat');
-});
-
-Route::get('/marriage_course_peserta', function () {
-    return view('ManageMarriagePrepCourse.adminDaftarPeserta');
-});
-
-Route::get('/marriage_course_kehadiran', function () {
-    return view('ManageMarriagePrepCourse.adminDaftarKehadiran');
-});
-
-Route::get('/marriage_course_kelulusan', function () {
-    return view('ManageMarriagePrepCourse.adminKelulusan');
-});
+Route::prefix("/marriage_course")->group(function () {
+    Route::get('anjuran', [ManagePrepCourseController::class, "searchPrepCourse"]);
+    Route::get("anjuran/search", [ManagePrepCourseController::class, "searchPrepCourse"]);
+    Route::view('register', 'ManageMarriagePrepCourse.registerCourse');
+    Route::post("register/submit", [ManagePrepCourseController::class, "submitRegister"]);
+    Route::view('mainPage', 'ManageMarriagePrepCourse.mainPageView');
+    Route::view('tempat', 'ManageMarriagePrepCourse.adminDaftarTempat');
+    Route::view('maklumat', 'ManageMarriagePrepCourse.adminDaftarMaklumat');
+    Route::view('peserta', 'ManageMarriagePrepCourse.adminDaftarPeserta');
+    Route::view('kehadiran', 'ManageMarriagePrepCourse.adminDaftarKehadiran');
+    Route::view('kelulusan', 'ManageMarriagePrepCourse.adminKelulusan');
+})->middleware(["auth"]);
 
 // marriage request routs
 Route::get('/marriage_request_search', function () {
-    return view('ManageMarriageRequest.User.searchKP');
+    return view('ManageMarriageRequest.User.searchKP', ["results"=>[]]);
 });
+Route::get('marriage_request_search_KP', [MarriageRequestContoller::class, "searchPartner"]);
 
 //routes for registering new account
 Route::controller(ManageAccountRegister::class)->group(function () {

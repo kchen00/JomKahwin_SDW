@@ -29,7 +29,7 @@ class ManagePasswordReset extends Controller
         if($isValid) {
             // make sure there is no user logged in the system before doing password reset
             if(Auth::guard('account')->user() == NULL) {
-                return view("ManageAccountView/ManageResetPasswordView");
+                return view("ManageAccountView/ManageResetPasswordView", ["token"=>$token]);
             } 
             // redirect user back to dashboard if user access this form when logged in
             return redirect("/dashboard");   

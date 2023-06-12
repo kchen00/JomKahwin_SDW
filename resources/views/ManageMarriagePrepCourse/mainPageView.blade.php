@@ -38,7 +38,7 @@
 
                     
                 <div style="text-align: center;">
-                    <a href="" class="btn btn-primary">Seterusnya</a>
+                    <a href="/marriage_course/anjuran" class="btn btn-primary">Seterusnya</a>
                 </div>          
             </div>
         </div>

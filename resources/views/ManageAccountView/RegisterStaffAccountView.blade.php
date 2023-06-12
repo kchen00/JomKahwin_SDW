@@ -2,7 +2,7 @@
 @section("ManageAccountView.RegisterStaffAccountView")
 <x-guest-layout>
     {{-- <form method="POST" action="{{ route('register') }}"> --}}
-    <form method="POST" action="/register_new_staff">
+    <form method="POST" action="/register_new_staff" class="card">
         @csrf
         <div class="text-center display-6">
             <p>DAFTAR AKAUN STAFF BARU</p>

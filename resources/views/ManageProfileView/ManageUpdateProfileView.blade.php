@@ -1,24 +1,24 @@
 @extends($base_template)
 @section("ManageProfileView.ManageUpdateProfileView")
 
-<x-app-layout>
+<x-app-layout class="bg-red">
     <div class="display-1 p-4 card block w-full">
         <p>Kemaskini profil</p>
         <h1>Sila masukkan maklumat berikut</h1>
     </div>
-    <div class="card p-4">
-        <form method="POST" action="/update_profile_store" enctype="multipart/form-data">
+    <div>
+        <form method="POST" action="/update_profile_store" enctype="multipart/form-data" class="p-4 card block w-full">
             @csrf
             {{-- field to update information --}}
-            <div>
-                <div name="basic_information" class="list-inline-item">
-                    <p>Maklumat asas</p>
-                    <div class="block">
+            <div class="mt-4 grid">
+                <div name="basic_information" class="grid_content">
+                    <p class="display-4">Maklumat asas</p>
+                    <div>
                         <x-input-label for="A_name" :value="__('Nama')" />
-                        <x-text-input id="A_name" class="block mt-1 w-full" type="text" name="A_name" :value="old('A_name', $account->A_name)" required autofocus autocomplete="A_name" />
+                        <x-text-input id="A_name" class="block mt-1 w-full " type="text" name="A_name" :value="old('A_name', $account->A_name)" required autofocus autocomplete="A_name" />
                         <x-input-error :messages="$errors->get('A_name')" class="mt-2" />
                     </div> 
-                    <div>
+                    <div >
                         <x-input-label for="A_ethnicity" :value="__('Kaum')" />
                         <select name="A_ethnicity" class="block mt-1 w-full" :value="old("A_ethnicity", $account->A_ethnicity)">
                             <option disabled selected hidden>SILA PILIH KAUM ANDA</option>
@@ -37,8 +37,8 @@
                         </select>
                     </div> 
                 </div>
-                <div name="job information">
-                    <p>Maklumat Pekerjaan</p>
+                <div name="job information" class="grid_content">
+                    <p class="display-4">Maklumat Pekerjaan</p>
                     <div>
                         <x-input-label for="A_jobSector" :value="__('Sektor pekerjaan')" />
                         <x-text-input id="A_jobSector" class="block mt-1 w-full" type="text" name="A_jobSector" :value="old('A_jobSector', $account->A_jobSector)" required autofocus autocomplete="A_jobSector" />
@@ -61,9 +61,9 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <div name="contact_information">
-                    <p>Maklumat perhubungan</p>
+            <div class="mt-4 grid">
+                <div name="contact_information" class="grid_content">
+                    <p class="display-4">Maklumat perhubungan</p>
                     <div>
                         <x-input-label for="A_houseAddress" :value="__('Alamat rumah')" />
                         <x-text-input id="A_houseAddress" class="block mt-1 w-full" type="text" name="A_houseAddress" :value="old('A_houseAddress', $account->A_houseAddress)" required autofocus autocomplete="A_houseAddress" />
@@ -80,7 +80,7 @@
                         <x-input-error :messages="$errors->get('A_landlineNumber')" class="mt-2" />
                     </div> 
                 </div>
-                <div>
+                <div class="grid_content">
                     <div name="other_information">
                         <div>
                             <x-input-label for="A_marriageStatus" :value="__('Status perkahwinan')" />
@@ -98,15 +98,15 @@
                             <x-input-error :messages="$errors->get('A_educationLevel')" class="mt-2" />
                         </div> 
                     </div>
-                    <div>
+                    <div name="upload_profile_photo" class="mt-4">
                         {{-- upload photo here --}}
                         <x-input-label for="A_profilePhoto" :value="__('Muat Naik Gambar Anda')" />
                         <x-text-input id="A_profilePhoto" class="block mt-1 w-full" type="file" name="A_profilePhoto" :value="old('A_profilePhoto')" required autofocus autocomplete="A_profilePhoto" />
                     </div>
                 </div>
             </div>
-            <div>
-                <x-primary-button class="ml-3">
+            <div class="mt-4 align-self-center" >
+                <x-primary-button class="rounded">
                     {{ __('Hantar') }}
                 </x-primary-button>            
             </div>

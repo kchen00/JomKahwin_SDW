@@ -2,12 +2,7 @@
 @section("ManageProfileView.ManageDisplayProfile")
 <x-app-layout>
     <div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 card">
-            {{-- <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 card">
-                    {{ __("Selamat datang ke sistem JomKahwin!") }}
-                </div>
-            </div> --}}
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 card mt-4">
             {{-- check if current state of this view is showing profile of a user from the search result or not --}}
             @if($displaying_profile == False)
                 @if ($account->A_accountType == 'S')
@@ -31,12 +26,12 @@
                 {{-- <div class="img-fluid">
                     <img src={{ asset('A_profilePhoto/' . $account->A_profilePhoto) }} class="img-thumbnail">
                 </div> --}}
-            <div class="table">
+            <div class="p-4">
                 {{-- table to display the personal information of user  --}}
                 @if($displaying_profile == True)
                     <p>Maklumat bagi {{ $account->A_name }}</p>  
                 @endif
-                <table class="table-responsive">
+                <table>
                     <tr>
                         <th>No Kad Pengenalan</th>
                         <th>{{ $account->A_icNum }}</th>
@@ -69,12 +64,12 @@
                         @endif
                 </table>
             </div>
-            <div class="justify-center">
-                <button class="btn-link">
+            <div class="align-self-center">
+                <button class="btn-link rounded m-4">
                     @if($displaying_profile == False)
-                        <a href="/update_profile">Kemas kini profil</a>
+                        <a href="/update_profile" class="p-4">Kemas kini profil</a>
                     @else
-                        <a href="/user_directory">Kembali</a>
+                        <a href="/user_directory" class="p-4">Kembali</a>
                     @endif
                 </button>
             </div>

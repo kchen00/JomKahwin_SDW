@@ -40,6 +40,7 @@
                     @yield('ManageAccountView.LoginAccountView')
                     @yield("ManageAccountView.RegisterPublicAccountView")
                     @yield("ManageAccountView.ManageForgetPasswordView")
+                    @yield("ManageAccountView.ManageResetPasswordView")
                 </div>
 
             </main>
