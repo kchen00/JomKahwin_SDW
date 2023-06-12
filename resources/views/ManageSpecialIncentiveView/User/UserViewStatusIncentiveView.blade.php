@@ -1,9 +1,7 @@
 @extends('ManageSpecialIncentiveView.User.base')
 @section('ManageSpecialIncentiveView.User.UserViewStatusIncentiveView')
 
-
 <div class="container-fluid">
-
     <div class="header">
         <h1 class="header-title">
             Bantuan Insentif Khas
@@ -18,49 +16,54 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
+                    @if (!$i_incentive) <!-- Check if $i_incentive is null or empty -->
                     <a href="user-apply" class="btn btn-primary" style="float: right;">Daftar Baru</a>
+                    @endif
                 </div>
                 <div class="card-body">
-                  
                     <table id="datatables-basic" class="table table-striped" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Bil</th>
                                 <th>No K/P Pemohon</th>
-                                <th>No K/P Nama Pasangan</th>
                                 <th>Tarikh Mohon</th>
                                 <th>Status</th>
                                 <th>Operasi</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @if($i_incentive)
+                            @foreach($i_incentive as $incentive)
                             <tr>
-                                @foreach($i_incentive as $i_incentive)
                                 <td>{{$loop->index+1}}</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td> @if ($i_incentive->I_applicationStatus === "Lulus")
-                                    <span class="badge rounded-pill bg-success">{{ $i_incentive->I_applicationStatus}}</span>
-                                    @elseif($i_incentive->I_applicationStatus === "Sedang diproses")
-                                    <span class="badge rounded-pill bg-warning">{{ $i_incentive->I_applicationStatus}}</span>
-                                    @else
-                                    <span class="badge rounded-pill bg-danger ">{{ $i_incentive->I_applicationStatus}}</span></td>
-                                    @endif</td>
+                                <td>010516140273</td>
+                                <td>{{$incentive->created_at}}</td>
                                 <td>
-                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modalDetails-{{ $i_incentive->id }}" >
+                                    @if ($incentive->I_applicationStatus === "Lulus")
+                                        <span class="badge rounded-pill bg-success">{{ $incentive->I_applicationStatus }}</span>
+                                    @elseif($incentive->I_applicationStatus === "Dalam Proses")
+                                        <span class="badge rounded-pill bg-warning">{{ $incentive->I_applicationStatus }}</span>
+                                    @else
+                                        <span class="badge rounded-pill bg-danger">{{ $incentive->I_applicationStatus }}</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="user-view">
                                         <i class="text-dark ion ion-md-eye me-2"></i>
                                     </a>
-                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#update-{{ $i_incentive->id }}">
-                                        <i class=" text-dark  fas fa-fw fa-pen"></i>
+                                    <a href="user-update">                                       
+                                      <i class="text-dark fas fa-fw fa-pen"></i>
                                     </a>
-                                    <a href="/user-status/{{$i_incentive->id}}/delete">
-                                        <i class="text-dark  fas fa-fw fa-trash"></i>
+                                    <a href="/user-status/{{$incentive->I_incentiveID}}/delete">
+                                        <i class="text-dark fas fa-fw fa-trash"></i>
                                     </a>
                                 </td>
-                                @endforeach
                             </tr>
+                            @endforeach
+                            @endif
                         </tbody>
+                        <tfoot>
+                            <!-- Table footer content here if needed -->
                         </tfoot>
                     </table>
                 </div>
@@ -81,7 +84,7 @@
             buttons: ["copy", "print"],
             responsive: true
         });
-        datatablesButtons.buttons().container().appendTo("#datatables-buttons_wrapper .col-md-6:eq(0)")
+        datatablesButtons.buttons().container().appendTo("#datatables-buttons_wrapper .col-md-6:eq(0)");
     });
 </script>
 

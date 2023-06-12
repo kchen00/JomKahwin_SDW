@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Models\M_marriage;
+use App\Models\ManageSpecialIncentiveModel\I_incentive;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -110,4 +112,15 @@ class Account extends Authenticatable
     {
         return $this->A_email;
     }
+
+    public function marriage()
+    {
+        return $this->hasOne(M_marriage::class, 'U_userID', 'A_icNum');
+    }
+
+    public function iIncentive()
+    {
+        return $this->hasOne(I_incentive::class, 'U_userID', 'U_userID');
+    }
+    
 }

@@ -13,19 +13,16 @@ return new class extends Migration
     {
         Schema::create('I_incentive', function (Blueprint $table) {
             $table->id("I_incentiveID");
-            // $table->foreignId('U_userID');
-            // $table->foreignId('ST_staffID');
-            // $table->foreignId('M_marriageID')->references("M_marriageID")->on("M_marriage");
-            // $table->foreignId("D_documentID")->references("D_documentID")->on("D_document");
-            $table->enum('I_applicationStatus', ['Lulus', 'Tidak lulus'])->nullable();
+            $table->enum('I_applicationStatus', ['Lulus', 'Tidak lulus', 'Dalam Proses'])->nullable();
             $table->string('I_bankName', 20)->nullable();
-            $table->string('I_noAcc', 20)->nullable();
+            $table->string('I_noAcc', 50)->nullable();
             $table->string('I_relativeName', 20)->nullable();
             $table->string('I_relativePhone', 20)->nullable();
-            $table->string('I_relativeAddress', 20)->nullable();
+            $table->string('I_relativeAddress', 50)->nullable();
             $table->string('I_relativeRelation', 20)->nullable();
             $table->timestamps();
         });
+        
     }
 
     /**

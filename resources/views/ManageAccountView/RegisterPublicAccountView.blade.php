@@ -4,7 +4,10 @@
     {{-- <form method="POST" action="{{ route('register') }}"> --}}
     <form method="POST" action="/register_new_user">
         @csrf
-
+        <div class="text-center display-6">
+            <p>DAFTAR AKAUN BARU</p>
+            <p>Sila masukkan maklumat seperti berikut</p>  
+        </div>
         <!-- Ic number -->
         <div class="mt-4">
             <x-input-label for="A_icNum" :value="__('Nombor IC')" />
@@ -55,15 +58,18 @@
             </select>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/login">
-                {{ __('Sudah Daftar?') }}
-            </a>
-
+        <div class="flex items-center justify-center mt-4">
             <x-primary-button class="ml-4">
                 {{ __('Daftar akaun') }}
             </x-primary-button>
         </div>
+
+        <div class="flex items-center justify-center mt-4">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/login">
+                {{ __('Sudah Daftar?') }}
+            </a>
+        </div>
+
     </form>
 </x-guest-layout>
 @stop

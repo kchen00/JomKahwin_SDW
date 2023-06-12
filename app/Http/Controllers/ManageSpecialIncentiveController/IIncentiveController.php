@@ -3,86 +3,94 @@
 namespace App\Http\Controllers\ManageSpecialIncentiveController;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\ManageSpecialIncentiveModel\I_incentive;
 use App\Http\Requests\StoreI_incentiveRequest;
 use App\Http\Requests\UpdateI_incentiveRequest;
+use App\Models\Account\Account;
 
 class IIncentiveController extends Controller
 {
-    
     public function index()
     {
+        $userId = null;
+        $userName = null;
+        $i_incentive = null;
+
+        if (Auth::check()) {
+            $account = Auth::user();
+            $userId = $account->A_icNum;
+            $userName = $account->A_name;
+
+            // Retrieve i_incentive data for the authenticated user
+            $i_incentive = $account->iIncentive;
+        }
         $i_incentive = I_incentive::all();
-        return view ('ManageSpecialIncentiveView.User.UserViewStatusIncentiveView',[
-            'i_incentive' => $i_incentive
+
+        return view('ManageSpecialIncentiveView.User.UserViewStatusIncentiveView', compact('i_incentive', 'userId', 'userName'));
+    }
+
+    public function create()
+    {
+        $userId = null;
+        $userName = null;
+        $partner = null;
+
+        if (Auth::check()) {
+            $account = Auth::user();
+            $userId = $account->A_icNum;
+            $userName = $account->A_name;
+
+            // Find the marriage based on the relationship
+            $marriage = $account->marriage;
+
+            if ($marriage) {
+                $partner = Account::where('A_icNum', $marriage->M_partnerIC)->first();
+            }
+        }
+
+        return view('ManageSpecialIncentiveView.User.UserApplyIncentiveView', compact('userId', 'userName', 'partner'));
+    }
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'I_bankName' => 'required',
+            'I_noAcc' => 'required',
+            'I_relativeName' => 'required',
+            'I_relativePhone' => 'required',
+            'I_relativeAddress' => 'required',
+            'I_relativeRelation' => 'required',
+        ]);
+
+        $i_incentive = new I_incentive($validatedData);
+        $i_incentive->I_applicationStatus = 'Dalam Proses';
+        $i_incentive->save();
+
+        return redirect('/user-status');
+    }
+
+    public function update()
+    {
+        return view('ManageSpecialIncentiveView.User.UserUpdateApplyIncentiveView', [
+           
         ]);
     }
 
-   
-    public function create()
-    {
-        return view('ManageSpecialIncentiveView.User.UserApplyIncentiveView');
-    }
-
-  
-    public function store(StoreI_incentiveRequest $request)
-    {
-        $i_incentive = New I_incentive;
-
-        $i_incentive->I_bankName = $request->I_bankName;
-        $i_incentive->I_noAcc = $request->I_noAcc;
-        $i_incentive->I_applicationStatus = 'Sedang diproses';
-        $i_incentive->I_relativeName = $request->I_relativeName;
-        $i_incentive->I_relativePhone = $request->I_relativePhone;
-        $i_incentive->I_relativeAddress = $request->I_relativeAddress;
-        $i_incentive->I_relativeRelation = $request->I_relativeRelation;
-        $i_incentive->I_relativePhoneHouse = $request->I_relativePhoneHouse;
-
-        $i_incentive->save();
-
-        return redirect('/user-status');
-
-    }
-
-
-    public function show(I_incentive $i_incentive)
-    {
-        //
-    }
-
-  
-    public function edit(I_incentive $i_incentive)
-    {
-        //
-    }
-
-  
-    public function update(UpdateI_incentiveRequest $request, I_incentive $i_incentive)
-    {
-        
-        $i_incentive->I_bankName = $request->I_bankName;
-        $i_incentive->I_noAcc = $request->I_noAcc;
-        $i_incentive->I_relativeName = $request->I_relativeName;
-        $i_incentive->I_relativePhone = $request->I_relativePhone;
-        $i_incentive->I_relativeAddress = $request->I_relativeAddress;
-        $i_incentive->I_relativeCity = $request->I_relativeCity;
-        $i_incentive->I_relativeState = $request->I_relativeState;
-        $i_incentive->I_relativePostcode = $request->I_relativePostcode;
-        $i_incentive->I_relativeRelation = $request->I_relativeRelation;
-        $i_incentive->I_relativePhoneHouse = $request->I_relativePhoneHouse;
-
-        $i_incentive->I_applicationStatus = 'Sedang diproses';
-
-        $i_incentive->save();
-
-        return redirect('/user-status');
-    }
-
-   
     public function destroy(I_incentive $i_incentive)
     {
         $i_incentive->delete();
 
         return redirect('/user-status');
     }
+
+    public function show()
+    {
+     
+        return view('ManageSpecialIncentiveView.User.UserViewIncentiveView', [
+           
+        ]);
+    }
+
 }

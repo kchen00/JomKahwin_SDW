@@ -6,6 +6,9 @@
 
     <form method="POST" action="/authenticate">
         @csrf
+        <div class="display-6 mt-4 text-center">
+            <p>LOG MASUK</p>    
+        </div>
 
         <!-- ic number input -->
         <div>
@@ -36,30 +39,23 @@
                 <option value="S">Staff</option>
             </select>
         </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
+        
+        <div class="flex items-center justify-center mt-4">
+            <x-primary-button class="ml-3">
+                {{ __('Log Masuk') }}
+            </x-primary-button>            
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center justify-between mt-4">
 
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="forget_password">
-                                {{ __('Lupa Kata Laluan?') }}
+                {{ __('Lupa Kata Laluan?') }}
             </a>
 
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/register">
                 {{ __('Belum Daftar?') }}
             </a>
 
-        </div>
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button class="ml-3">
-                {{ __('Log Masuk') }}
-            </x-primary-button>            
         </div>
     </form>
 </x-guest-layout>
