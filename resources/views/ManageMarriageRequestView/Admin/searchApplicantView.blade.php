@@ -72,7 +72,9 @@
 
                         <div class="col-sm-17 ms-sm-auto" style="display: flex; justify-content: center; align-items: center;">
                             <button type="submit" class="btn btn-primary mr-6 ">Kembali</button>&nbsp;&nbsp;
-                            <button type="submit" class="btn btn-primary">Seterusnya</button>&nbsp;&nbsp;
+                            <a href="info" class= "btn btn-primary mr-6 ">Seterusnya</button></a>&nbsp;&nbsp; 
+                            {{-- <button type="submit" class="btn btn-primary mr-6 ">Kembali</button>&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">Seterusnya</button>&nbsp;&nbsp; --}}
                         </div>
                     </form>
                 </div>

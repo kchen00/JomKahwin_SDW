@@ -53,8 +53,12 @@
 
                         
                         <div class="col-sm-17 ms-sm-auto" style="display: flex; justify-content: center; align-items: center;">
-                            <button type="submit" class="btn btn-primary mr-6  onclick=kembali()">Kembali</button>&nbsp;&nbsp;
-                            <button type="submit" class="btn btn-primary onclick=seterusnya()">Seterusnya</button>&nbsp;&nbsp;
+                           
+                            <button type="submit" class="btn btn-primary">Kembali</button>&nbsp;&nbsp; 
+                            <a href="applicant" class= "btn btn-primary mr-6 ">Seterusnya</button></a>&nbsp;&nbsp;
+                            
+                            {{-- <button type="submit" class="btn btn-primary mr-6  onclick=kembali()">Kembali</button>&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary onclick=seterusnya()">Seterusnya</button>&nbsp;&nbsp; --}}
                         </div>
 
                        

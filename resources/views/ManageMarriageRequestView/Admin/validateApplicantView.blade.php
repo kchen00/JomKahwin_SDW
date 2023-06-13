@@ -115,6 +115,7 @@
                                 </div><br><br>
                                 <div class="mb-3 row text-right">
                                     <div class="col-sm-10 ms-sm-auto">
+                                        
                                         <button type="submit" class="btn btn-primary">GAGAL</button>
                                         <button type="submit" class="btn btn-primary">LULUS</button>
                                     </div>
