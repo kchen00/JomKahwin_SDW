@@ -1,4 +1,4 @@
-@extends('ManageMarriageRequest.base')
+@extends('ManageMarriageRequest.Admin.base')
 @section('ManageMarriageRequest.ApplicationInformation')
 
     <div class='header'>

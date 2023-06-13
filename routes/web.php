@@ -88,7 +88,8 @@ Route::prefix("/marriage_course")->group(function () {
 Route::get('/marriage_request_search', function () {
     return view('ManageMarriageRequest.User.searchKP', ["results"=>[]]);
 });
-Route::get('marriage_request_search_KP', [MarriageRequestContoller::class, "searchPartner"]);
+Route::get('/marriage_request_search_KP', [MarriageRequestContoller::class, "searchPartner"]);
+Route::view('/manage_marriage_application', "ManageMarriageRequest.ApplicantInformation");
 
 //routes for registering new account
 Route::controller(ManageAccountRegister::class)->group(function () {
