@@ -14,7 +14,7 @@
     </nav>
 </div>
 
-<div class="row">
+<div class="row block card">
     <div class="col-12 col-xxl-6">
         <div id="smartwizard-default-primary" class="wizard wizard-primary mb-4">
             <ul class="nav">
@@ -26,7 +26,7 @@
                 </li>
             </ul>
 
-            <div class="tab-content">
+            <div>
                 <div id="tujuan-pengaduan" class="tab-pane" role="tabpanel">
                     <div class="col-md-12">
                             <div class="card-body">
@@ -107,6 +107,7 @@
                 </div>
             </div>
         </div>
+    </div>
             
 
         <script>
@@ -188,7 +189,4 @@
                 });
             });
         </script>
-
-
-
 @stop

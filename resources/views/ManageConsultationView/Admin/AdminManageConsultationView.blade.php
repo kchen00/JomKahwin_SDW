@@ -23,7 +23,7 @@
 
             <div style="text-align: center;">
 
-            <a href="applyConsultation" class="btn btn-primary">Daftar Baru</a>
+            {{-- <a href="applyConsultation" class="btn btn-primary">Daftar Baru</a> --}}
             <a href="approvalChange" class="btn btn-primary">Pengesahan Online</a>
             <a href="requestChange"class="btn btn-primary">Pengesahan Penukaran Sesi<a><br>
 

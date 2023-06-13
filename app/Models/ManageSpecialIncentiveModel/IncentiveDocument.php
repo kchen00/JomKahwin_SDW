@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\ManageSpecialIncentiveModel;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class I_incentive extends Model
+class IncentiveDocumentModel extends Model
 {
-    // protected $table = 'i_incentive';
     use HasFactory;
 }

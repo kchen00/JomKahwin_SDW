@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\I_incentive;
+use App\Models\ManageSpecialIncentiveModel\I_incentive;
 
 class DashboardUserIncentiveController extends Controller
 {

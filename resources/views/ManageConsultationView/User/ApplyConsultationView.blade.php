@@ -26,7 +26,7 @@
                 </li>
             </ul>
 
-            <div class="tab-content">
+            <div class="row card block">
                 <div id="tujuan-pengaduan" class="tab-pane" role="tabpanel">
                     <div class="col-md-12">
                             <div class="card-body">

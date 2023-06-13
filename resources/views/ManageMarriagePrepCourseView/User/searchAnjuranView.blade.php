@@ -1,5 +1,5 @@
-@extends('ManageMarriagePrepCourse.base')
-@section('ManageMarriagePrepCourseView.searchAnjuranView')
+@extends('ManageMarriagePrepCourseView.User.base')
+@section('ManageMarriagePrepCourseView.User.searchAnjuranView')
 
 <div class='header'>
   <h5>Search IC</h5>
@@ -89,8 +89,8 @@
                   </table>
 
                   <div class="col-sm-17 ms-sm-auto" style="display: flex; justify-content: center; align-items: center;">
-                    <a href="mainPage" class= "btn btn-primary mr-6 ">Kembali</button>&nbsp;&nbsp;</a>
-                    <a href="/marriage_course/register" class= "btn btn-primary mr-6 ">Seterusnya</button>&nbsp;&nbsp;</a>
+                    <a href="mainPage" class= "btn btn-primary mr-6 ">Kembali</button></a>&nbsp;&nbsp;
+                    <a href="registerCourse" class= "btn btn-primary mr-6 ">Seterusnya</button>&nbsp;&nbsp;</a>
                    
                     {{-- <a href="{{ route('kehadiran') }}" class="btn btn-primary">Seterusnya</a> --}}
                     {{-- <button type="submit" class="btn btn-primary mr-6 ">Kembali</button>&nbsp;&nbsp;
@@ -103,3 +103,4 @@
 </div>
 
 @stop
+

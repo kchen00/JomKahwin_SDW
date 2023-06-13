@@ -140,9 +140,9 @@
             alert("Pengesahan Permohonan Telah Dihantar Kepada Email Pemohon.");
         }
 
-        function view() {
-            window.location.href = "applyApplication";
-        }
+        // function view() {
+        //     window.location.href = "/consultation_admin/userApplication";
+        // }
     </script>
 
 

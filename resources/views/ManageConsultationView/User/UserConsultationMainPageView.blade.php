@@ -19,14 +19,18 @@
     </div>
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="p-4">
+                <button>
+                    <a href="/consultation_user/listStatusApprove">Keputusan</a>
+                </button>
             </div>
             
             <div class="card-body" style="text-align: center;">
                 <label for="ICnum">No.K/P / Passport Kene Adu</label>
-                <form name="formNasihat" method="post">
+                <form action="/consultation_user/listApplication">
 		            <td><input type="text" name="ICnum" id="ICnum"></td>
 		            <td><button type="submit"class="btn btn-primary">Semak</button></td>
+                    {{-- <td><a href=""></a></td> --}}
 	            </form><br>
                 <h5 style="border-style: solid; border: 1px solid blue; border-radius: 8px; padding: 5px;">Sila Masukkan No. Kad Pengenalan Pasangan/Kena Adu Terlebih Dahulu</h5><br>
                 <p style="color:#192D95;"><i>Nota: Aduan bagi Wali Enggan hanya benar dimohon oleh pihak Perempuan sahaja.

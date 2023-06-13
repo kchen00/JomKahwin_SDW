@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\DashboardAdminIncentiveController;
-use App\Http\Controllers\DashboardUserIncentiveController;
-use App\Http\Controllers\IIncentiveController;
 use App\Http\Controllers\UserViewStatusIncentiveController;
 // specify the contoller class here
+use App\Http\Controllers\ManageSpecialIncentiveController\DashboardAdminIncentiveController;
+use App\Http\Controllers\ManageSpecialIncentiveController\DashboardUserIncentiveController;
+use App\Http\Controllers\ManageSpecialIncentiveController\IIncentiveController;
 use App\Http\Controllers\ManageAccountController\ManageAccountRegister;
 use App\Http\Controllers\ManageAccountController\ManageLogin;
 use App\Http\Controllers\ManageAccountController\ManagePasswordReset;
@@ -38,7 +38,7 @@ Route::get('/', function () {
 // consultation admin routes
 Route::prefix('/consultation_admin')->group(function () {
     Route::view('/requestChange', 'ManageChangeConsultRequestView.Admin.ManageUserRequestView');
-    Route::view('/approvalChange', 'ManageChangeConsultRequestView.Admin.ManageApprovalChangeRequestView');
+    Route::view('/approvalChange', 'ManageConsultationView.Admin.ManageApprovalApplicationView');
     Route::view('/updateChange', 'ManageChangeConsultRequestView.Admin.UpdateChangeRequestView');
     Route::view('/userApplication', 'ManageConsultationView.Admin.ManageUserApplicationView');
     Route::view('/updatedApplication', 'ManageConsultationView.Admin.UpdatedApplicationView');
@@ -61,14 +61,26 @@ Route::prefix('/consultation_user')->group(function () {
 });
 
 //incentive
-Route::get('/incentive', function () {
-    return view('ManageSpecialIncentiveView.Admin.AdminMainPageView');
+Route::get('/admin-viewDocument', function () {
+    return view('ManageSpecialIncentiveView.Admin.AdminViewDocumentIncentiveView');
+});
+Route::get('/user-viewDocument', function () {
+    return view('ManageSpecialIncentiveView.User.UserViewDocumentIncentiveView');
 });
 
-Route::resource('admin-dashboardIncentive', DashboardAdminIncentiveController::class);
-Route::resource('user-dashboardIncentive', DashboardUserIncentiveController::class);
-Route::resource('user-status', UserViewStatusIncentiveController::class);
-Route::resource('user-apply', IIncentiveController::class);
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('admin-dashboardIncentive', DashboardAdminIncentiveController::class);
+    Route::resource('/user-dashboardIncentive', DashboardUserIncentiveController::class);
+    Route::get('/user-apply', [IIncentiveController::class, 'create'])->name('apply.incentive');
+    Route::post('/user-apply', [IIncentiveController::class, 'store'])->name('apply.incentive.store');
+    Route::get('/user-status', [IIncentiveController::class, 'index'])->name('user.status');
+    Route::put('/admin-IncentiveDashboard', [DashboardAdminIncentiveController::class, 'update'])->name('admin.incentive.update');
+    Route::get('/admin-IncentiveDashboard/{i_incentive}/delete', [DashboardAdminIncentiveController::class, 'destroy'])->name('admin.incentive.destroy');
+    Route::get('/user-status/{i_incentive}/delete', [IIncentiveController::class, 'destroy'])->name('user.incentive.destroy');
+    Route::get('/admin-view', [DashboardAdminIncentiveController::class, 'show'])->name('admin-view');
+    Route::get('/user-view', [IIncentiveController::class, 'show'])->name('user-view');
+    Route::get('/user-update', [IIncentiveController::class, 'update'])->name('user-update');
+});
 
 //marriage course routes
 Route::prefix("/marriage_course")->group(function () {
@@ -82,14 +94,46 @@ Route::prefix("/marriage_course")->group(function () {
     Route::view('peserta', 'ManageMarriagePrepCourse.adminDaftarPeserta');
     Route::view('kehadiran', 'ManageMarriagePrepCourse.adminDaftarKehadiran');
     Route::view('kelulusan', 'ManageMarriagePrepCourse.adminKelulusan');
-})->middleware(["auth"]);
-
-// marriage request routs
-Route::get('/marriage_request_search', function () {
-    return view('ManageMarriageRequest.User.searchKP', ["results"=>[]]);
 });
+
+Route::get('/marriage_request_search', function () {
+    return view('ManageMarriageRequestView.User.daftarBaruView');
+});
+
+Route::get('/applicant', function () {
+    return view('ManageMarriageRequestView.User.ApplicantInformationView');
+})->name('ApplicantInformationView');;
+
+Route::get('/wali', function () {
+    return view('ManageMarriageRequestView.User.waliDocumentView');
+});
+
+Route::get('/document', function () {
+    return view('ManageMarriageRequestView.User.documentView');
+});
+
+Route::get('/semak', function () {
+    return view('ManageMarriageRequestView.User.senaraiSemakView');
+});
+
+Route::get('/search', function () {
+    return view('ManageMarriageRequestView.Admin.searchApplicantView');
+});
+
+Route::get('/info', function () {
+    return view('ManageMarriageRequestView.Admin.infoApplicantView');
+});
+
+Route::get('/validate', function () {
+    return view('ManageMarriageRequestView.Admin.validateApplicantView');
+});
+
+// // marriage request routs
+// Route::get('/marriage_request_search', function () {
+//     return view('ManageMarriageRequest.User.searchKP', ["results"=>[]]);
+// });
 Route::get('/marriage_request_search_KP', [MarriageRequestContoller::class, "searchPartner"]);
-Route::view('/manage_marriage_application', "ManageMarriageRequest.ApplicantInformation");
+Route::view('/manage_marriage_application', "ManageMarriageRequestView.Admin.searchApplicantView");
 
 //routes for registering new account
 Route::controller(ManageAccountRegister::class)->group(function () {

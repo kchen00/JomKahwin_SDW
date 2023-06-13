@@ -1,203 +1,117 @@
-@php
-    $account = Auth::guard('account')->user();
-    // dd($account);
-@endphp
-
 @extends('ManageSpecialIncentiveView.User.base')
 @section('ManageSpecialIncentiveView.User.UserApplyIncentiveView')
 
-<div class="row">
-    <div class="col-12 col-xxl-6">
-        <div id="smartwizard-default-primary" class="wizard wizard-primary mb-4">
+
+        <div id="smartwizard-arrows-primary" class="wizard wizard-primary mb-4">
             <ul class="nav">
-                <li class="nav-item"><a class="nav-link" href="#maklumat-pemohon">Maklumat Pemohon<br /><small>Step description</small></a>
+                <li class="nav-item"><a class="nav-link" href="#maklumatPemohon">Maklumat Pemohon<br /><small>Step description</small></a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#maklumat-pasangan">Maklumat Pasangan<br /><small>Step description</small></a>
+                <li class="nav-item"><a class="nav-link" href="#maklumatPasangan">Maklumat Pasangan<br /><small>Step description</small></a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#maklumat-lain2">Maklumat Lain-Lain<br /><small>Step description</small></a>
+                <li class="nav-item"><a class="nav-link" href="#maklumatLainLain">Maklumat Lain-lain<br /><small>Step description</small></a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#dokumen">Muat Naik Dokumen<br /><small>Step description</small></a>
+                <li class="nav-item"><a class="nav-link" href="#dokumen">Dokumen<br /><small>Step description</small></a>
                 </li>
             </ul>
 
             <div class="tab-content">
-                <div id="maklumat-pemohon" class="tab-pane" role="tabpanel">
-                    <div class="col-md-12">
-                            <div class="card-body">
-                                <form method="POST" action="/user-status" enctype="multipart/form-data">
-                                    @csrf 
-                                    <div class="row">
-                                        <div class="mb-3 col-md-4">
-                                            <label for="jenisPekerjaan">Jenis Pekerjaan</label>
-                                            <input type="text" class="form-control" id="jenisPekerjaan" name="A_jobSector">
-                                        </div>
-                                        <div class="mb-3 col-md-4">
-                                            <label for="namaPekerjaan">Nama Pekerjaan</label>
-                                            <input type="text" class="form-control" id="namaPekerjaan" name="">
-                                        </div>
-                                        <div class="mb-3 col-md-4">
-                                            <label for="pendapatan">Pendapatan</label>
-                                            <input type="text" class="form-control" id="pendapatan" name="">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="mb-3 col-md-6">
-                                        <label for="namaMajikan">Nama Majikan</label>
-                                        <input type="text" class="form-control" id="namaMajikan" name="U_employerName">
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label for="alamatMajikan">Alamat Majikan</label>
-                                        <input type="text" class="form-control" id="alamatMajikan" name="">
-                                     </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="mb-3 col-md-4">
-                                            <label for="poskod">Poskod</label>
-                                            <input type="text" class="form-control" id="poskod" name="A_jobSector">
-                                        </div>
-                                        <div class="mb-3 col-md-4">
-                                            <label for="bandar">Bandar</label>
-                                            <input type="text" class="form-control" id="bandar" name="">
-                                        </div>
-                                        <div class="mb-3 col-md-4">
-                                            <label for="negeri">Negeri</label>
-                                            <input type="text" class="form-control" id="negeri" name="">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="mb-3 col-md-6">
-                                        <label for="namaBank">Nama Bank</label>
-                                        <input type="text" class="form-control" id="namaBank" name="U_employerName" >
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label for="noAkaun">Nombor Akaun</label>
-                                        <input type="text" class="form-control" id="noAkaun" name="">
-                                     </div>
-                                    </div>
-                                </form>
-                            </div>
+                <div id="maklumatPemohon" class="tab-pane" role="tabpanel">
+                    <form>
+                        <div class="form-group">
+                            <label for="icNum">No. K/Pengenalan</label>
+                            <input type="text" class="form-control" id="icNum" value="{{ $userId }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="nama" value="{{ $userName }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat Semasa</label>
+                            <input type="text" class="form-control" id="alamat" value="{{ auth()->user()->A_houseAddress }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefon">No Telefon</label>
+                            <input type="text" class="form-control" id="telefon" value="{{ auth()->user()->A_telephoneNum }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="kewarganegaraan">Kewarganegaraan</label>
+                            <input type="text" class="form-control" id="kewarganegaraan" value="{{ auth()->user()->A_nationality }}" disabled>
+                        </div>
+                    </form>
+                </div>                
+                <div id="maklumatPasangan" class="tab-pane" role="tabpanel">
+                    @if ($partner)
+                        <label>No. K/Pengenalan (IC):</label>
+                        <input type="text" value="{{ $partner->account->A_icNum }}" readonly>
+                
+                        <label>Nama:</label>
+                        <input type="text" value="{{ $partner->account->A_name }}" readonly>
+                
+                        <label>Alamat Semasa:</label>
+                        <input type="text" value="{{ $partner->account->A_houseAddress }}" readonly>
+                
+                        <label>No Telefon:</label>
+                        <input type="text" value="{{ $partner->account->A_telephoneNum }}" readonly>
+                
+                        <label>Kewarganegaraan:</label>
+                        <input type="text" value="{{ $partner->account->A_nationality }}" readonly>
+                    @else
+                        <p>No partner information available.</p>
+                    @endif
+                </div>                
+                <div id="maklumatLainLain" class="tab-pane" role="tabpanel">
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="namaBank">Nama Bank Pemohon</label>
+                            <input type="text" class="form-control" id="namaBank" name="I_bankName" value="Bank Islam">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="noAkaun">Nombor Akaun Pemohon</label>
+                            <input type="text" class="form-control" id="noAkaun" name="I_noAcc" value="123456789">
+                        </div>
                     </div>
-                </div>
-                <div id="maklumat-pasangan" class="tab-pane" role="tabpanel">
-                    <div class="col-md-12">
-                        <div class="card-body">
-                            <form>
-                                <div class="row">
-                                    <div class="mb-3 col-md-4">
-                                        <label for="jenisPekerjaan">Jenis Pekerjaan</label>
-                                        <input type="text" class="form-control" id="jenisPekerjaan" name="A_jobSector">
-                                    </div>
-                                    <div class="mb-3 col-md-4">
-                                        <label for="namaPekerjaan">Nama Pekerjaan</label>
-                                        <input type="text" class="form-control" id="namaPekerjaan" name="">
-                                    </div>
-                                    <div class="mb-3 col-md-4">
-                                        <label for="pendapatan">Pendapatan</label>
-                                        <input type="text" class="form-control" id="pendapatan" name="">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="mb-3 col-md-6">
-                                    <label for="namaMajikan">Nama Majikan</label>
-                                    <input type="text" class="form-control" id="namaMajikan" name="U_employerName">
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="alamatMajikan">Alamat Majikan</label>
-                                    <input type="text" class="form-control" id="alamatMajikan" name="">
-                                 </div>
-                                </div>
-                                <div class="row">
-                                    <div class="mb-3 col-md-4">
-                                        <label for="poskod">Poskod</label>
-                                        <input type="text" class="form-control" id="poskod" name="A_jobSector">
-                                    </div>
-                                    <div class="mb-3 col-md-4">
-                                        <label for="bandar">Bandar</label>
-                                        <input type="text" class="form-control" id="bandar" name="">
-                                    </div>
-                                    <div class="mb-3 col-md-4">
-                                        <label for="negeri">Negeri</label>
-                                        <input type="text" class="form-control" id="negeri" name="">
-                                    </div>
-                                </div>
-                            </form>
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="namaSaudara">Nama Saudara terdekat</label>
+                            <input type="text" class="form-control" id="namaSaudara" name="I_relativeName" value="Omar bin Abi">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="telSaudara">Nombor Telefon Saudara terdekat</label>
+                            <input type="text" class="form-control" id="telSaudara" name="I_relativePhone" value="0198765567">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="alamatSaudara">Alamat Rumah Saudara terdekat</label>
+                        <input type="text" class="form-control" id="alamatSaudara" name="I_relativeAddress" value="Temerloh, Pahang">
+                    </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="hubungan">Hubungan dengan Pemohon</label>
+                            <input type="text" class="form-control" id="hubungan" name="I_relativeRelation" value="Sepupu">
                         </div>
                     </div>
                 </div>
-                <div id="maklumat-lain2" class="tab-pane" role="tabpanel">
-                    <div class="col-md-12">
-                        <div class="card-body">
-                            <form>
-                                <div class="row">
-                                    <div class="mb-3 col-md-6">
-                                    <label for="namaSaudara">Nama</label>
-                                    <input type="text" class="form-control" id="namaSaudara" name="">
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="hubungan">Hubungan dengan Pemohon</label>
-                                    <input type="text" class="form-control" id="hubungan" name="">
-                                 </div>
-                                </div>
-                                <div class="row">
-                                    <div class="mb-3 col-md-6">
-                                    <label for="telSaudara">Nombor Telefon</label>
-                                    <input type="text" class="form-control" id="telSaudara" name="">
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="telRumahSaudara">Nombor Telefon Rumah</label>
-                                    <input type="text" class="form-control" id="telRumahSaudara" name="">
-                                 </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="alamatSaudara">Alamat Rumah</label>
-                                    <input type="text" class="form-control" id="alamatSaudara">
-                                </div>
-                                <div class="row">
-                                    <div class="mb-3 col-md-4">
-                                        <label for="poskod">Poskod</label>
-                                        <input type="text" class="form-control" id="poskod" name="A_jobSector">
-                                    </div>
-                                    <div class="mb-3 col-md-4">
-                                        <label for="bandar">Bandar</label>
-                                        <input type="text" class="form-control" id="bandar" name="">
-                                    </div>
-                                    <div class="mb-3 col-md-4">
-                                        <label for="negeri">Negeri</label>
-                                        <input type="text" class="form-control" id="negeri" name="">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                
+            
                 <div id="dokumen" class="tab-pane" role="tabpanel">
-                    <div class="col-md-12">
-                        <div class="card-body">
-                            <form>
-                                <div class="row">
-                                 <div class="mb-3 col-md-6">
-                                    <label for="slipGaji">Slip gaji 3 bulan terkini</label>
-                                    <input type="file" class="form-control" name="dokumen" multiple class="form-control" id="slipGaji">
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="suratPengesahan">Surat Pengesahan</label>
-                                    <input type="file" class="form-control" multiple class="form-control" id="suratPengesahan" name="">
-                                 </div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-check">
-                                    <input type="checkbox" class="form-check-input">
-                                    <span class="form-check-label">Saya mengaku dengan nama Allah S.W.T bahawa semua keterangan yang telah diberikan adalah benar. Pihak kerajaan Negeri atau Jabatan Agama Islam Pahang berhak menolak permohonan saya ini sekiranya maklumat/keterangan yang diberikan adalah TIDAK BENAR.</span>
-                                </label>
-                            </div>
-                            </form>
+                    <form>
+                        <div class="form-group">
+                            <label for="slipGaji">Slip Gaji 3 Bulan Terkini</label>
+                            <input type="file" class="form-control-file" id="slipGaji" name="slipGaji">
                         </div>
-                    </div>
+                        <div class="text-right">
+                            <a href="user-status" class="btn btn-primary">Submit</a>
+                        </div>
+                    </form>
                 </div>
+                
+                
             </div>
         </div>
-            
+        
+        
+
+
 
         <script>
             document.addEventListener("DOMContentLoaded", function() {
@@ -278,6 +192,8 @@
                 });
             });
         </script>
+
+     
 
 
 

@@ -1,52 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
     <link rel="icon" type="image/png" href="https://jaip.pahang.gov.my/wp-content/uploads/2020/10/jata-pahang.png">
-	<link href="\css\classic.css" rel="stylesheet">
-    
-
-	<title>JomKahwin-EMunakahat</title>
-
-	<style>
-		body {
-			opacity: 0;
-		}
-
-		.wrapper:before
-		{
-			background:#1AA781;
-			content:" ";
-			height:264px;
-			left:0;
-			position:absolute;
-			top:0;width:100%
-		}
-
-	
+    <link href="\css\modern.css" rel="stylesheet">
 
 
-	</style>
-	<script src="js/settings.js"></script>
-	<script src="js/app.js"></script>
-	<!-- END SETTINGS -->
+    <title>JomKahwin-EMunakahat</title>
+
+    <style>
+        body {
+            opacity: 0;
+        }
+
+        .wrapper:before {
+            background: #1AA781;
+            content: " ";
+            height: 264px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%
+        }
+    </style>
+    {{-- <script src="js/settings.js"></script>
+    <script src="js/app.js"></script> --}}
+    <!-- END SETTINGS -->
 </head>
 
 <body>
 
-    <div class="wrapper" >
-		<nav id="sidebar" class="sidebar">
-			<a class="sidebar-brand"  style="background: #1AA781;" href="dashboard">
-				<img src="https://jaip.pahang.gov.my/wp-content/uploads/2020/10/jata-pahang.png" style="height: 50px;">
-				Jom Kahwin
-			</a>
-			<div class="sidebar-content">
-				<div class="sidebar-user">
-					<small>{{ "ID:  " . Auth::guard('account')->user()->A_icNum }}</small><br>
-					<small>{{ "Nama:  " . Auth::guard('account')->user()->A_name }}</small>
-				</div>
+    <div class="wrapper">
+        <nav id="sidebar" class="sidebar">
+            <a class="sidebar-brand" style="background: #1AA781;" href="dashboard-admin">
+                <img src="https://jaip.pahang.gov.my/wp-content/uploads/2020/10/jata-pahang.png" style="height: 50px;">
+                Jom Kahwin
+            </a>
+            <div class="sidebar-content">
+                <div class="sidebar-user">
+                    <small>ID : 980708069889</small><br>
+                    <small>Nama : Abi bin Bakar</small>
+                </div>
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-item">
@@ -109,40 +104,57 @@
 						</a>
 					</li>
 				</ul>
-			</div>
-		</nav>
-		<div class="main">
-        
-            
-        <main class="content" >
-				<div class="container-fluid" >
-
-					{{-- Yield --}}
-                    @yield('ManageSpecialIncentiveView.Admin.AdminMainPageView')
-					@yield('ManageSpecialIncentiveView.Admin.AdminViewApplyIncentiveView')
-					@yield('ManageSpecialIncentiveView.Admin.AdminViewDocumentIncentiveView')
+            </div>
+        </nav>
+        <div class="main">
+            <nav class="navbar navbar-expand navbar-theme">
 
 
-					</div>
 
-			</main>
-			<footer class="footer">
-				<div class="container-fluid">
-					<div class="row text-muted">
-						<div class="col-8 text-start">
-						</div>
-						<div class="col-4 text-end">
-							<p class="mb-0">
-								&copy; 2023</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown ms-lg-2">
+                            <a href="/" class="text-light">
+                                <i class="align-middle me-2 text-light" data-feather="log-out"></i>Sign out
+                            </a>
 
-	</div>
-	
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+
+
+            <main class="content">
+                <div class="container-fluid">
+
+                    {{-- Yield --}}
+<<<<<<< Updated upstream
+                    @yield('ManageMarriageRequestView.Admin.searchApplicantView')
+                    @yield('ManageMarriageRequestView.Admin.infoApplicantView')
+                    @yield('ManageMarriageRequestView.Admin.validateApplicantView')
+=======>>>>>>> Stashed changes
+					
+                </div>
+
+            </main>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-8 text-start">
+                        </div>
+                        <div class="col-4 text-end">
+                            <p class="mb-0">
+                                &copy; 2023</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
 
 </body>
 
