@@ -88,12 +88,11 @@
                       </tbody>
                   </table>
 
-                  <div class="mb-3 row text-right">
-                      <div class="col-sm-10 ms-sm-auto">
-                          <button type="submit" class="btn btn-primary">Kembali</button>
-                          <button type="submit" class="btn btn-primary">Seterusnya</button>
-                      </div>
-                  </div>
+                  <div class="col-sm-17 ms-sm-auto" style="display: flex; justify-content: center; align-items: center;">
+                    {{-- <a href="{{ route('kehadiran') }}" class="btn btn-primary">Seterusnya</a> --}}
+                    <button type="submit" class="btn btn-primary mr-6 ">Kembali</button>&nbsp;&nbsp;
+                    <button type="submit" class="btn btn-primary">Seterusnya</button>&nbsp;&nbsp; 
+                </div>
           </div>
       </div>
       </form>

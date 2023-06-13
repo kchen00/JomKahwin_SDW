@@ -138,32 +138,41 @@
 
                                 </div>
 
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th style="width:40%;">Bil</th>
-                                            <th style="width:25%">Nama Peserta</th>
-                                            <th style="width:25%">No.Kad Pengenalan</th>
-                                            <th style="width:25%">Jantina</th>
-                                            <th style="width:40%;">Kehadiran</th>
-                                            <th>LULUS</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>AHMAD ZULHILMI BIN MOHD</td>
-                                            <td>010115110021</td>
-                                            <td>LELAKI</td>
-                                            <td>LULUS <font color="AEF359">
-                                            </td>
-                                            <td class="table-action">
-                                                <a href="#"><i
-                                                        class="align-middle fas fa-fw fa-check-square"></i></i></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                               
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:40%;">Bil</th>
+                                                <th style="width:25%">Nama Peserta</th>
+                                                <th style="width:25%">No.Kad Pengenalan</th>
+                                                <th style="width:25%">Jantina</th>
+                                                <th style="width:40%;">Kehadiran</th>
+                                                <th>LULUS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>AHMAD ZULHILMI BIN MOHD</td>
+                                                <td>010115110021</td>
+                                                <td>LELAKI</td>
+                                                <td>LULUS <font color="AEF359">
+                                                </td>
+                                                <td class="table-action">
+                                                    <a href="#"><i
+                                                            class="align-middle fas fa-fw fa-check-square"></i></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table><br><br>
+                                    
+
+                                    <div class="col-sm-17 ms-sm-auto"
+                                        style="display: flex; justify-content: center; align-items: center;">
+                                        <button type="submit" class="btn btn-primary mr-6 ">Kembali</button>&nbsp;&nbsp;
+                                        <button type="submit" class="btn btn-primary">Seterusnya</button>&nbsp;&nbsp;
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -174,5 +183,5 @@
         </div>
 
     </div>
- 
+
 @stop

@@ -134,11 +134,9 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row">
-                        <div class="text-right">
-                            <button type="kembali" class="btn btn-primary">Kembali</button>
-                            <button type="next" class="btn btn-primary">Seterusnya</button>
-                        </div>
+                    <div class="col-sm-17 ms-sm-auto" style="display: flex; justify-content: center; align-items: center;">
+                        <button type="submit" class="btn btn-primary mr-6 ">Kembali</button>&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-primary">Seterusnya</button>&nbsp;&nbsp;
                     </div>
                 
                 </form>

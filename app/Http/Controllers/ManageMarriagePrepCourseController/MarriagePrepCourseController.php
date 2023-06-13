@@ -8,12 +8,14 @@ class MarriagePrepCourseController extends Controller
 {
     public function index()
     {
-        return 'Hi from MarriagePrepCourseController';
+        return ;
     }
 
-    public function show()
+    
+    public function showNextPage()
     {
-        //
+        return view('kehadiran');
+        
     }
 
     public function store(Request $request)

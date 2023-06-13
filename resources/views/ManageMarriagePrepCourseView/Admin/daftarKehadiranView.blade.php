@@ -121,16 +121,18 @@
                         </div>
 
                         <div class="mb-3 row">
-                            <div class="text-right">
+                            <div class="text-right" style="display: flex; justify-content: center; align-items: center;">
                                 <button type="kembali" class="btn btn-primary">Senarai Peserta</button>
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label"></label>
-                            <textarea class="form-control text-center" placeholder="Anjuran: PEJABAT AGAMA ISLAM&#10;No.Siri: TLOH/001/2023&#10;Tarikh Kursus: 27-28 JANUARI 2023&#10;Tempat Kursus: DEWAN TARBIAH ISLAM PERAMU KAMPUNG PERAMU 25150 KUANTAN PAHANG" rows="4"></textarea>
+                            <textarea class="form-control text-center"
+                                placeholder="Anjuran: PEJABAT AGAMA ISLAM&#10;No.Siri: TLOH/001/2023&#10;Tarikh Kursus: 27-28 JANUARI 2023&#10;Tempat Kursus: DEWAN TARBIAH ISLAM PERAMU KAMPUNG PERAMU 25150 KUANTAN PAHANG"
+                                rows="4"></textarea>
                         </div>
-                        
+
 
                         <div class="col-12 col-xl-6">
                             <div class="card">
@@ -146,7 +148,8 @@
                                             <th style="width:25%">Jantina</th>
                                             <th style="width:40%;">Kehadiran</th>
                                             <th style="width:40%;">Catatan</th>
-                                            <th style="width: 40%;">catatan<div class="additional-box"></div></th>
+                                            <th style="width: 40%;">catatan<div class="additional-box"></div>
+                                            </th>
                                             <th>LULUS</th>
                                         </tr>
                                     </thead>
@@ -157,13 +160,21 @@
                                             <td>010115110021</td>
                                             <td>LELAKI</td>
                                             <td>HADIR</td>
-                                            <td>CATATAN <font color="AEF359"></td>
+                                            <td>CATATAN <font color="AEF359">
+                                            </td>
                                             <td class="table-action">
-                                                <a href="#"><i class="align-middle fas fa-fw fa-check-square"></i></i></a>
+                                                <a href="#"><i
+                                                        class="align-middle fas fa-fw fa-check-square"></i></i></a>
+                                            <td>
                                             </td>
                                         </tr>
                                     </tbody>
-                                </table>
+                                </table><br><br>
+                                <div class="col-sm-17 ms-sm-auto"
+                                    style="display: flex; justify-content: center; align-items: center;">
+                                    <button type="submit" class="btn btn-primary mr-6 ">Kembali</button>&nbsp;&nbsp;
+                                    <button type="submit" class="btn btn-primary">Seterusnya</button>&nbsp;&nbsp;
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -174,6 +185,3 @@
         </div>
 
     @stop
- 
-
-    

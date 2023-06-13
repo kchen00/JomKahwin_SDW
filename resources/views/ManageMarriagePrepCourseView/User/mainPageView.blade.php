@@ -51,9 +51,11 @@
                 </div>  
                  
 
-                <div style="text-align: center;">
-                    <button type="button" onclick="window.location.href='searchAnjuranView'" class="btn btn-primary">Seterusnya</a>
-                </div>          
+                <div class="col-sm-17 ms-sm-auto" style="display: flex; justify-content: center; align-items: center;">
+                    <button type="submit" class="btn btn-primary mr-6 ">Kembali</button>&nbsp;&nbsp;
+                    <button type="submit" class="btn btn-primary">Kembali</button>&nbsp;&nbsp;
+                    {{-- <button type="submit" onlcick="window.location.href = searchAnjuranView.php;" class="btn btn-primary">Seterusnya</button>&nbsp;&nbsp; --}}
+                </div>     
             </div>
         </div>
     </div>

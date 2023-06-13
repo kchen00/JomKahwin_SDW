@@ -15,15 +15,15 @@
                         <div class="mb-3 row">
                             <label class="col-form-label col-sm-2 text-sm-end">No. K/P Peserta </label>
                             <div class="col-sm-3">
-                                <input type="kad" class="form-control">
+                                <div class="input-group">
+                                    <input type="kad" class="form-control"> &nbsp;
+                                    &nbsp;<button type="submit" class="btn btn-primary">Cari</button>
+                                </div>
                             </div>
+
                         </div>
 
-                        <div class="mb-3 row">
-                            <div class="text-right">
-                                <button type="kembali" class="btn btn-primary">Cari</button>
-                            </div>
-                        </div>
+
 
                         <div class="col-12 col-xl-6">
                             <div class="card">
@@ -58,7 +58,13 @@
                                             </td>
                                         </tr>
                                     </tbody>
-                                </table>
+                                </table><br><br>
+
+                                <div class="col-sm-17 ms-sm-auto"
+                                    style="display: flex; justify-content: center; align-items: center;">
+                                    <button type="submit" class="btn btn-primary mr-6 ">Kembali</button>&nbsp;&nbsp;
+                                    <button type="submit" class="btn btn-primary">Seterusnya</button>&nbsp;&nbsp;
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -69,8 +75,5 @@
         </div>
 
     </div>
-    
+
 @stop
-
-    
-
