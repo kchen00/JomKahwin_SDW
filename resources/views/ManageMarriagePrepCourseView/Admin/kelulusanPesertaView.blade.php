@@ -169,8 +169,8 @@
 
                                     <div class="col-sm-17 ms-sm-auto"
                                         style="display: flex; justify-content: center; align-items: center;">
-                                        <button type="submit" class="btn btn-primary mr-6 ">Kembali</button>&nbsp;&nbsp;
-                                        <button type="submit" class="btn btn-primary">Seterusnya</button>&nbsp;&nbsp;
+                                        <a href="kehadiran" class= "btn btn-primary mr-6 ">Kembali</button></a>&nbsp;&nbsp;
+                                        <a href="kelulusan" class= "btn btn-primary mr-6 ">Seterusnya</button>&nbsp;&nbsp;</a>
                                     </div>
                                 </div>
                             </div>
