@@ -8,7 +8,7 @@
     </h1>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="dashboard-default.html">Urusan Khidmat Nasihat</a></li>
+            <li class="breadcrumb-item"><a href="manageConsultation">Urusan Khidmat Nasihat</a></li>
             <li class="breadcrumb-item active" aria-current="page">Senarai Permohonan</li>
         </ol>
     </nav>
@@ -55,15 +55,6 @@
 
                                     <label for="namePengadu">Nama Kene Adu</label>
                                     <p class="border">Abi bin Bakar</p>
-
-                                    <label for="brithdatePengadu">Tarikh Lahir</label>
-                                    <p class="border">25/07/2002</p>
-
-                                    <label for="bangsaPengadu">Bangsa</label>
-                                    <p class="border">Melayu</p>
-
-                                    <label for="jobPengadu">Sektor Pekerjaan</label>
-                                    <p class="border">Guru</p>
  
                                     <label for="addressPengadu">Alamat dalam K/P</label>
                                     <p class="border">Pekan, Pahang</p>
@@ -83,15 +74,6 @@
 
                                     <label for="nameKeneAdu">Nama Kene Adu</label>
                                     <p class="border">Alia binti Ali</p>
-
-                                    <label for="brithdateKeneAdu">Tarikh Lahir</label>
-                                    <p class="border">Alia binti Ali</p>
-
-                                    <label for="bangsaKeneAdu">Bangsa</label>
-                                    <p class="border">Melayu</p>
-
-                                    <label for="jobKeneAdu">Sektor Pekerjaan</label>
-                                    <p class="border">Guru</p>
  
                                     <label for="addressKeneAdu">Alamat dalam K/P</label>
                                     <p class="border">Kuantan, Pahang</p>

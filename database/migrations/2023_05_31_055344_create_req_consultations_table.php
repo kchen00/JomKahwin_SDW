@@ -17,6 +17,9 @@ return new class extends Migration
             $table->foreignId("ST_staffID")->references("ST_staffID")->on("ST_staff");
             $table->string("RC_purpose", 50);
             $table->string("RC_paidChoice", 20);
+            $table->date("RC_date");
+            $table->date("RC_time");
+            $table->string("RC_applicationStatus", 20);
         });
     }
 

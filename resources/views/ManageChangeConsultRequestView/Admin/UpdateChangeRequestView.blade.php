@@ -10,7 +10,7 @@
         </h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="dashboard-default.html">Urusan Khidmat Nasihat</a></li>
+                <li class="breadcrumb-item"><a href="manageConsultation">Urusan Khidmat Nasihat</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Pengesahan Tukar Sesi</li>
             </ol>
         </nav>
@@ -43,7 +43,7 @@
                             <div class="card-body" style="text-align: center;">
                                 <td><button type="submit"class="btn btn-primary" onclick="saveApplication()">Simpan</button></td>
                                 
-                                <td><a href="requestChange" class="btn btn-primary">Kembali</a></td>
+                                <td><a href="approvalChange" class="btn btn-primary">Kembali</a></td>
                             </div>
                     </div>
         </div>
@@ -57,3 +57,4 @@
 </script>
 
 @stop
+

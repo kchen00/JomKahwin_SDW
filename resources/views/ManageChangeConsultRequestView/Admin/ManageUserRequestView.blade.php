@@ -10,7 +10,7 @@
         </h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="dashboard-default.html">Urusan Khidmat Nasihat</a></li>
+                <li class="breadcrumb-item"><a href="manageConsultation">Urusan Khidmat Nasihat</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Pengesahan Tukar Sesi</li>
             </ol>
         </nav>
@@ -51,27 +51,11 @@
                 <td width="15%">Operasi</td>
                 </tr>
 
-                <tr bgcolor="#FFFFFF" class="font12" height="30" align="center">
-                <!--<td colspan="7" align="center">Sila buat carian untuk mendapatkan senarai...</td>-->
-                <td>1</td>
-                <td>Abi bin Bakar</td>
-                <td>Alia binti Ali</td>
-                <td>KTN1M5/2023-000001</td>
-                <td>BARU</td>
-                <td>
-                    <button class="icon-button icon-view" title="View" onclick="view()"></button>
-                    <button class="icon-button icon-approval" title="Approval" onclick="showPopupBar()"></button>
-                    <button class="icon-button icon-send-email" title="Send Email" onclick="sendEmail()"></button>
-                </td>
+                <tr bgcolor="#FFFFFF" class="font12" height="30">
+                <td colspan="7" align="center">Sila buat carian untuk mendapatkan senarai...</td>
                 </tr>
         
 			</table><br>
-
-            <div id="popupBar" class="popup-bar">
-                <span class="message">Kelulusan Permohonan</span>
-                <button onclick="acceptChange()">Terima</button>
-                <button onclick="denyChange()">Tolak</button>
-            </div>
                         
             </div>
         </div>
@@ -99,6 +83,7 @@
             document.getElementById("searchICpengadu").value = "";
             document.getElementById("searchICkeneadu").value = "";
             document.getElementById("searchNoSlip").value = "";
+
         }
 
         document.addEventListener("DOMContentLoaded", function() {
@@ -114,35 +99,6 @@
         });
         datatablesButtons.buttons().container().appendTo("#datatables-buttons_wrapper .col-md-6:eq(0)")
         });
-
-        function showPopupBar() {
-            var popupBar = document.getElementById("popupBar");
-            popupBar.style.display = "block";
-        }
-    
-        function acceptChange() {
-            alert("Permohonan Diluluskan!");
-            hidePopupBar();
-            window.location.href = "updateChange";
-        }
-    
-        function denyChange() {
-            alert("Permohonan Ditolak!");
-            hidePopupBar();
-        }
-    
-        function hidePopupBar() {
-            var popupBar = document.getElementById("popupBar");
-            popupBar.style.display = "none";
-        }
-
-        function sendEmail() {
-            alert("Pengesahan Permohonan Telah Dihantar Kepada Email Pemohon.");
-        }
-
-        function view() {
-            window.location.href = "applyApplication";
-        }
     </script>
 
 

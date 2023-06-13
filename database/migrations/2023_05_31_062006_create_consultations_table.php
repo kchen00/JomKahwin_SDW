@@ -17,10 +17,11 @@ return new class extends Migration
             $table->foreignId("SA_advisorID")->references("SA_advisorID")->on("SA_serviceAdvisor");
             // $table->integer("U_userID");
             $table->foreignId("U_userID")->references("U_userID")->on("U_user");
-            $table->dateTime("CO_consultationDateTimeStart");
-            $table->dateTime("CO_consultationDateTimeEnd");
-            $table->string("CO_consultationLocation", 50);
-            $table->string("CO_consultationRemarks", 50);
+            $table->string("CO_purpose", 50);
+            $table->date("CO_date");
+            $table->time("CO_time");
+            $table->string("CO_paidChoice", 50);
+            $table->string("CO_applicationStatus", 20);
         });
     }
 

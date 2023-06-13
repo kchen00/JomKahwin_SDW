@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardAdminIncentiveController;
 use App\Http\Controllers\DashboardUserIncentiveController;
 use App\Http\Controllers\IIncentiveController;
 use App\Http\Controllers\UserViewStatusIncentiveController;
+use App\Http\Controllers\ManageConsultationController\UserConsultationController;
 // specify the contoller class here
 use App\Http\Controllers\ManageAccountController\ManageAccountRegister;
 use App\Http\Controllers\ManageAccountController\ManageLogin;
@@ -102,6 +103,13 @@ Route::get('/consultSession', function () {
 Route::get('/viewStatusConsultation', function () {
     return view('ManageConsultationView.User.UserViewStatusConsultationView');
 });
+
+Route::post('/validateICnumber', [UserConsultationController::class, 'validateICnumber'])->name('validateICnumber');
+Route::get('/listApplication', [UserConsultationController::class, 'index'])->name('listApplication.index');
+Route::get('/listApplication/applyConsultation', [UserConsultationController::class, 'applyConsultation'])->name('listApplication.applyConsultation');
+Route::post('/listApplication', [UserConsultationController::class, 'store'])->name('listApplication.store');
+Route::post('/applyConsultation', [ConsultationController::class, 'store'])->name('applyConsultation.store');
+
 
 //incentive
 Route::get('/incentive', function () {

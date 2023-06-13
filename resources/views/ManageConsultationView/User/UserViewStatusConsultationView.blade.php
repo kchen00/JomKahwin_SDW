@@ -38,12 +38,10 @@
                 <td>14/01/2023</td>
                 <td>BARU</td>
                 <td>
+                    <button class="icon-button icon-update" title="Edit" onclick="editApplication()"></button>
                     <button class="icon-button icon-view" title="View" onclick=""></button>
-                    <button class="icon-button icon-approval" title="Approval" onclick="confirmApproval()"></button>
-                    <button class="icon-button icon-send-email" title="Send Email" onclick="sendEmail()"></button>
                     <button class="icon-button icon-print" title="Print" onclick="printApplication()"></button>
                     <button class="icon-button icon-delete" title="Delete" onclick="deleteApplication()"></button>
-                    <button class="icon-button icon-update" title="Update" onclick="updateApplication()"></button>
                 </td>
                 </tr>
 
@@ -53,7 +51,7 @@
             
             <div class="card-body" style="text-align: center;">
             <p style="color:#192D95;"><b><i>Nota: Sila klik Sesi Khidmat Nasihat untuk maklumat sesi khidmat nasihat anda</i></b></p>   
-            <p style="color:#192D95;"><b>Sila klik ‘Daftar Baru’ jika ingin membuat aduan / khidmat nasihat bagi pasangan 012345011234</b></p>   
+            <p style="color:#192D95;"><b>Sila klik ‘Daftar Baru’ jika ingin membuat aduan / khidmat nasihat</b></p>   
 
             <div style="text-align: center;">
                     <a href="applyConsultation" class="btn btn-primary">Daftar Baru</a>
@@ -81,29 +79,7 @@
         });
         datatablesButtons.buttons().container().appendTo("#datatables-buttons_wrapper .col-md-6:eq(0)")
     });
-
-    function confirmApproval() {
-      var confirmation = confirm("Do you want to approve this application?");
-      if (confirmation) {
-        acceptChange();
-      } else {
-        denyChange();
-      }
-    }
-    
-    function acceptChange() {
-      // Logic for accepting the change goes here
-      alert("Permohonan Diterima!");
-    }
-    
-    function denyChange() {
-      // Logic for denying the change goes here
-      alert("Permohonan Ditolak!");
-    }
-
-    function sendEmail() {
-      alert("Application sent to applicant's email");
-    }
+   
     
     function printApplication() {
       alert("Printing the application");
@@ -113,7 +89,7 @@
       alert("Deleting the application");
     }
     
-    function updateApplication() {
+    function editApplication() {
       alert("Updating the application");
     }
 

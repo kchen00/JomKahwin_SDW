@@ -8,7 +8,7 @@
     </h1>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="dashboard-default.html">Urusan Khidmat Nasihat</a></li>
+            <li class="breadcrumb-item"><a href="manageConsultation">Urusan Khidmat Nasihat</a></li>
             <li class="breadcrumb-item active" aria-current="page">Pengesahan Permohonan Online</li>
         </ol>
     </nav>
@@ -18,7 +18,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title mb-0">Senarai Permohonan Tukar Sesi</h5>
+                <h5 class="card-title mb-0">Senarai Permohonan Online</h5>
             </div>
             <div class="card-body">
 
@@ -120,7 +120,7 @@
         function acceptChange() {
             alert("Permohonan Diluluskan!");
             hidePopupBar();
-            window.location.href = "updateChange";
+            window.location.href = "manageConsultSession";
         }
     
         function denyChange() {

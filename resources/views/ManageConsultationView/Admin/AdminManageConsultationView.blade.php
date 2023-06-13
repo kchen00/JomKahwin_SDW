@@ -8,7 +8,7 @@
     </h1>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="dashboard-default.html">Urusan Khidmat Nasihat</a></li>
+            <li class="breadcrumb-item"><a href="manageConsultation">Urusan Khidmat Nasihat</a></li>
             <li class="breadcrumb-item active" aria-current="page">Senarai Permohonan</li>
         </ol>
     </nav>
@@ -24,7 +24,7 @@
             <div style="text-align: center;">
 
             <a href="applyConsultation" class="btn btn-primary">Daftar Baru</a>
-            <a href="approvalChange" class="btn btn-primary">Pengesahan Online</a>
+            <a href="approvalConsultation" class="btn btn-primary">Pengesahan Online</a>
             <a href="requestChange"class="btn btn-primary">Pengesahan Penukaran Sesi<a><br>
 
             </div>

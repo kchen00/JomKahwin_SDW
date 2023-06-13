@@ -40,7 +40,6 @@
                 <td>
                     <button class="icon-button icon-view" title="View" onclick="userApplication"></button>
                     <button class="icon-button icon-approval" title="Approval" onclick="confirmApproval()"></button>
-                    <button class="icon-button icon-send-email" title="Send Email" onclick="sendEmail()"></button>
                     <button class="icon-button icon-print" title="Print" onclick="printApplication()"></button>
                     <button class="icon-button icon-delete" title="Delete" onclick="deleteApplication()"></button>
                     <button class="icon-button icon-update" title="Update" onclick="updateApplication()"></button>
@@ -97,10 +96,6 @@
     function denyChange() {
       // Logic for denying the change goes here
       alert("Permohonan Ditolak!");
-    }
-
-    function sendEmail() {
-      alert("Application sent to applicant's email");
     }
     
     function printApplication() {

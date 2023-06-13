@@ -8,7 +8,7 @@
     </h1>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="dashboard-default.html">Khidmat Nasihat</a></li>
+            <li class="breadcrumb-item"><a href="mainConsultation">Khidmat Nasihat</a></li>
             <li class="breadcrumb-item active" aria-current="page">Permohonan Pendaftaran</li>
         </ol>
     </nav>
@@ -27,24 +27,25 @@
             </ul>
 
             <div class="tab-content">
-                <div id="tujuan-pengaduan" class="tab-pane" role="tabpanel">
+                <div id="tujuan-pengaduan" class="tab-pane" role="tabpanel" >
                     <div class="col-md-12">
                             <div class="card-body">
-                            <form method="POST" action="" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('applyConsultation.store') }}" enctype="multipart/form-data">
+
                                     @csrf 
                                     <div class="row">
                                     <div class="mb-3 col-md-4">
-                                    <label for="tujuan">Tujuan Aduan</label><br>
+                                    <label for="CO_purpose">Tujuan Aduan</label><br>
                                     <select>
                                         <option selected value="" disabled selected>-Sila Pilih-</option>
                                         <option value="penceraian">Penceraian</option>
                                         <option value="waliEnggan">Wali Enggan</option>
                                         <option value="waliEnggan">Khidmat Nasihat</option>
                                     </select><br><br>
-                                    <label for="namaPekerjaan">Jika lain-lain (Nyatakan)</label>
-                                    <input type="text" class="form-control" id="other" name="other"><br>
-                                    <label for="pendapatan">PAID Pilihan</label>
-                                    <input type="text" class="form-control" id="paidpilihan" name="paidpilihan"><br>
+                                    <label for="CO_purpose">Jika lain-lain (Nyatakan)</label>
+                                    <input type="text" class="form-control" id="CO_purpose" name="CO_purpose"><br>
+                                    <label for="CO_paidChoice">PAID Pilihan</label>
+                                    <input type="text" class="form-control" id="CO_paidChoice" name="CO_paidChoice"><br>
                                     </div>
                                     </div>
                                 </form>
@@ -54,18 +55,19 @@
                 <div id="maklumat-pengadu" class="tab-pane" role="tabpanel">
                     <div class="col-md-12">
                         <div class="card-body">
-                            <form>
-                                    <label for="ICnumPengadu">No. K/P Baru</label>
-                                    <input type="text" class="form-control" id="ICnumPengadu" name="ICnumPengadu">
+                        <form method="POST" action="{{ route('applyConsultation.store') }}" enctype="multipart/form-data">
+                            @csrf
+                                    <label for="A_icNum">No. K/P Baru</label>
+                                    <input type="text" class="form-control" id="A_icNum" name="A_icNum">
 
-                                    <label for="namePengadu">Nama Kene Adu</label>
-                                    <input type="text" class="form-control" id="namePengadu" name="namePengadu">
+                                    <label for="A_name">Nama Kene Adu</label>
+                                    <input type="text" class="form-control" id="A_name" name="A_name">
  
-                                    <label for="addressPengadu">Alamat dalam K/P</label>
-                                    <input type="text" class="form-control" id="addressPengadu" name="addressPengadu">
+                                    <label for="A_houseAddress">Alamat dalam K/P</label>
+                                    <input type="text" class="form-control" id="A_houseAddress" name="A_houseAddress">
 
-                                    <label for="numPhonePengadu">No. Telefon</label>
-                                    <input type="text" class="form-control" id="numPhonePengadu" name="numPhonePengadu">
+                                    <label for="A_telephoneNum">No. Telefon</label>
+                                    <input type="text" class="form-control" id="A_telephoneNum" name="A_telephoneNum">
                             </form>
                         </div>
                     </div>
@@ -73,18 +75,19 @@
                 <div id="maklumat-keneAdu" class="tab-pane" role="tabpanel">
                     <div class="col-md-12">
                         <div class="card-body">
-                            <form>
-                                    <label for="ICnumKeneAdu">No. K/P Baru</label>
-                                    <input type="text" class="form-control" id="ICnumKeneAdu" name="ICnumKeneAdu">
+                        <form method="POST" action="{{ route('applyConsultation.store') }}" enctype="multipart/form-data">
+                            @csrf
+                                    <label for="A_icNum">No. K/P Baru</label>
+                                    <input type="text" class="form-control" id="A_icNum" name="A_icNum">
 
-                                    <label for="nameKeneAdu">Nama Kene Adu</label>
-                                    <input type="text" class="form-control" id="nameKeneAdu" name="nameKeneAdu">
+                                    <label for="A_name">Nama Kene Adu</label>
+                                    <input type="text" class="form-control" id="A_name" name="A_name">
  
-                                    <label for="addressKeneAdu">Alamat dalam K/P</label>
-                                    <input type="text" class="form-control" id="addressKeneAdu" name="addressKeneAdu">
+                                    <label for="A_houseAddress">Alamat dalam K/P</label>
+                                    <input type="text" class="form-control" id="A_houseAddress" name="A_houseAddress">
 
-                                    <label for="numPhoneKeneAdu">No. Telefon</label>
-                                    <input type="text" class="form-control" id="numPhoneKeneAdu" name="numPhoneKeneAdu">
+                                    <label for="A_telephoneNum">No. Telefon</label>
+                                    <input type="text" class="form-control" id="A_telephoneNum" name="A_telephoneNum">
                             </form>
                             
                         </div>

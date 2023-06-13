@@ -8,7 +8,7 @@
     </h1>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="dashboard-default.html">Urusan Khidmat Nasihat</a></li>
+            <li class="breadcrumb-item"><a href="manageConsultation">Urusan Khidmat Nasihat</a></li>
             <li class="breadcrumb-item active" aria-current="page">Penetapan Maklumat Sesi</li>
         </ol>
     </nav>
@@ -35,21 +35,27 @@
                                     <input type="text" class="form-control" id="paidpilihan" name="paidpilihan"><br>
                                     <label for="penasihat">Penasihat</label><br>
                                     <input type="text" class="form-control" id="penasihat" name="penasihat"><br>
+                                    <a href="advisor" >Maklumat Penasihat</a>
                                     
                                     </div>
                                     </div>
                             </form>
 
                             <div class="card-body" style="text-align: center;">
-                                <td><button type="submit"class="btn btn-primary">Hantar</button></td>
-                                <td><button type="submit"class="btn btn-primary">Kembali</button></td><br>
+                                <td><button type="submit"class="btn btn-primary" onclick="saveApplication()">Simpan</button></td>
+                                
+                                <td><a href="approvalConsultation" class="btn btn-primary">Kembali</a></td>
                             </div>
                     </div>
         </div>
     </div>
 </div>
 
-
+<script>
+    function saveApplication() {
+      alert("Maklumat sesi khidmat nasihat telah disimpan.");
+    }
+</script>
 
 
 @stop
